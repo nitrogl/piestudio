@@ -8,8 +8,6 @@ A visual editor for [ProVerif](https://bblanche.gitlabpages.inria.fr/proverif/) 
 
 **[Open PieStudio](https://www-users.york.ac.uk/roberto.metere/piestudio/)** &middot; I started the task to convert the [The ProVerif manual](https://bblanche.gitlabpages.inria.fr/proverif/manual.pdf) into a web-manual. I already started off with automated tools, but I still need more time to curate the content yet (not even sure it's complete). The aim is to reformat the original manual to make it more accessible to students with additional requirements.
 
-![PieStudio with the Handshake example](docs/images/main.png)
-
 PieStudio is free software under the GNU General Public License, version 2 or later, the licence of ProVerif. Nothing leaves your computer: there is no server and no cloud service, and the libraries are served from the same folder. It speaks English and Italian, and any language that you add with only a browser.
 
 ## What it does
@@ -37,7 +35,8 @@ Opening `index.html` directly from disk also works; ProVerif then runs in the pa
 
 ## Developing it
 
-PieStudio is TypeScript, compiled to plain scripts that the page loads with script tags, built on [Studio Core](https://github.com/nitrogl/studio-core) (in `studio-core/`) with its engine from [proverif-cryptoverif-wasm](https://github.com/nitrogl/proverif-cryptoverif-wasm) (in `engine/`), each copied there, minified, by a script. [Developing PieStudio](docs/developing.md) has the code layout, what PieStudio adds to the core, how to update the core and the engine, the checks (`npm test`, and `node tests/check-ui.ts` in a headless Chromium), and the build of this documentation (`npm run docs`, with pandoc). [Translating PieStudio](docs/translating.md) explains the languages.
+PieStudio is TypeScript, compiled to plain scripts that the page loads with script tags, built on [Studio Core](https://github.com/nitrogl/studio-core) (in `studio-core/`) with its engine from [proverif-cryptoverif-wasm](https://github.com/nitrogl/proverif-cryptoverif-wasm) (in `engine/`), each copied there, minified, by a script. PieStudio adds to the core. Documentation are still an ongoing task I haven't finished (when ready, `npm run docs`, and are based on pandoc).
+
 
 ### The TypeScript build
 

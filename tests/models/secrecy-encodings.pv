@@ -1,0 +1,43 @@
+(* Secrecy of a nonce, which ProVerif encodes twice: as an equivalence in
+   biprocess 1 for real-or-random secrecy, and with an event that records
+   the nonce in process 2, where it also moves the lets downwards. Both
+   listings number the actions apart from the initial process. *)
+
+free c: channel.
+
+type skey.
+type pkey.
+type nonce.
+
+fun pk(skey): pkey.
+fun aenc(bitstring, pkey): bitstring.
+reduc forall m: bitstring, k: skey; adec(aenc(m, pk(k)), k) = m.
+
+table keys(pkey).
+
+event sent(pkey, nonce).
+event received(pkey, nonce).
+
+query secret n [reachability].
+query secret n [real_or_random].
+query k: pkey, x: nonce; inj-event(received(k, x)) ==> inj-event(sent(k, x)).
+
+let Sender() =
+  in(c, pkB: pkey);
+  get keys(=pkB) in
+  n <-R nonce;
+  event sent(pkB, n);
+  m <- aenc((n, pkB), pkB);
+  out(c, m).
+
+let Receiver(skB: skey) =
+  in(c, x: bitstring);
+  let (y: nonce, =pk(skB)) = adec(x, skB) in
+  event received(pk(skB), y).
+
+process
+  skB <-R skey;
+  pkB <- pk(skB);
+  insert keys(pkB);
+  out(c, pkB);
+  ( !Sender() | !Receiver(skB) )

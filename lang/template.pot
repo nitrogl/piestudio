@@ -1,0 +1,3178 @@
+# The template of the translations of PieStudio.
+#
+# For each message, msgid is the English text and msgstr its translation:
+# write the translation between the quotes of msgstr, and leave msgid as
+# it is. Keep the placeholders in braces, such as {count}, which the
+# studio fills in, and the tags of the messages that have some, such as
+# <b>...</b>. A message left empty, '', shows in English.
+#
+# In the header below, write the code of the language after Language
+# (zh for Chinese, fr for French, es for Spanish...), its name in the
+# language itself after X-Language-Name, and its plural forms after
+# Plural-Forms, for instance:
+#   Chinese, Japanese, Korean, Vietnamese    nplurals=1; plural=0;
+#   English, German, Italian, Spanish        nplurals=2; plural=(n != 1);
+#   French, Portuguese of Brazil             nplurals=2; plural=(n > 1);
+#  (see https://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html)
+# A message with a plural (msgid_plural) has a msgstr[0], msgstr[1]... for
+# each form. Poedit (poedit.net) does all of this with a form.
+#
+# Load the file in PieStudio (View, Language, Load a translation) to see the
+# interface in the new language at once, as often as needed. Then send
+# it to whoever maintains PieStudio: they load it in the same way, and put it
+# in the folder lang/, next to the page, with the languages.js that PieStudio
+# then gives, and the language is there for everyone.
+msgid ""
+msgstr ""
+"Project-Id-Version: PieStudio 0.1.0\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Language-Name: \n"
+
+#: index.html:20 index.html:82 src/app/controller/PieStudio.ts:1540
+msgid "About PieStudio"
+msgstr ""
+
+#: index.html:23
+msgid "Model file"
+msgstr ""
+
+#: index.html:27 src/app/model/ReportWriter.ts:46
+#: src/app/view/BottomPanel.ts:170
+msgid "File"
+msgstr ""
+
+#: index.html:29
+msgid "New model"
+msgstr ""
+
+#: index.html:30
+msgid "Open a model (.pv, .pp)..."
+msgstr ""
+
+#: index.html:30
+msgid "Ctrl+O"
+msgstr ""
+
+#: index.html:31
+msgid "Save the model (.pv)"
+msgstr ""
+
+#: index.html:31
+msgid "Ctrl+S"
+msgstr ""
+
+#: index.html:32
+msgid "Export for ProVerif..."
+msgstr ""
+
+#: index.html:32
+msgid "Ctrl+E"
+msgstr ""
+
+#: index.html:33 src/app/view/DeclarationsPanel.ts:242
+msgid "Open a library (.pvl)..."
+msgstr ""
+
+#: index.html:34
+msgid "LaTeX of the protocol (TikZ)..."
+msgstr ""
+
+#: index.html:36
+msgid "Examples"
+msgstr ""
+
+#: index.html:41 studio-core/src/text/EditHistory.ts:57
+#: src/app/controller/PieStudio.ts:1102 src/app/controller/PieStudio.ts:1274
+msgid "Edit"
+msgstr ""
+
+#: index.html:43
+msgid "Undo"
+msgstr ""
+
+#: index.html:43
+msgid "Ctrl+Z"
+msgstr ""
+
+#: index.html:44
+msgid "Redo"
+msgstr ""
+
+#: index.html:44
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+#: index.html:46
+msgid "Add a party"
+msgstr ""
+
+#: index.html:47 index.html:226 src/app/controller/PieStudio.ts:1275
+msgid "Rename everywhere"
+msgstr ""
+
+#: index.html:48
+msgid "Refactor in the selection..."
+msgstr ""
+
+#: index.html:48
+msgid "Shift+F2"
+msgstr ""
+
+#: index.html:49
+msgid "Write new and let as in CryptoVerif"
+msgstr ""
+
+#: index.html:49
+msgid "k <-R key; and x <- M;"
+msgstr ""
+
+#: index.html:50
+msgid "Write new and let as in ProVerif"
+msgstr ""
+
+#: index.html:50
+msgid "new k: key; and let x = M in"
+msgstr ""
+
+#: index.html:51 index.html:225
+msgid "Delete the selection"
+msgstr ""
+
+#: index.html:51 index.html:225 src/app/controller/PieStudio.ts:1120
+#: src/app/controller/PieStudio.ts:1279
+msgid "Del"
+msgstr ""
+
+#: index.html:53
+msgid "Active or passive attacker"
+msgstr ""
+
+#: index.html:57 index.html:97
+msgid "View"
+msgstr ""
+
+#: index.html:59
+msgid "Design mode (formulas)"
+msgstr ""
+
+#: index.html:60
+msgid "Expert mode (ProVerif)"
+msgstr ""
+
+#: index.html:62 index.html:98 index.html:136
+msgid "Diagram"
+msgstr ""
+
+#: index.html:63 index.html:99
+msgid "Diagram and code"
+msgstr ""
+
+#: index.html:64 index.html:100 index.html:153
+#: src/app/view/SettingsDialog.ts:234
+msgid "Code"
+msgstr ""
+
+#: index.html:66 index.html:141
+msgid "Zoom in"
+msgstr ""
+
+#: index.html:67 index.html:140
+msgid "Zoom out"
+msgstr ""
+
+#: index.html:68
+msgid "Actual size"
+msgstr ""
+
+#: index.html:70
+msgid "Light or dark theme"
+msgstr ""
+
+#: index.html:71
+msgid "Notation..."
+msgstr ""
+
+#: index.html:72
+msgid "Theme..."
+msgstr ""
+
+#: index.html:73
+msgid "Language..."
+msgstr ""
+
+#: index.html:77
+msgid "Help"
+msgstr ""
+
+#: index.html:79
+msgid "User guide"
+msgstr ""
+
+#: index.html:80 src/app/controller/PieStudio.ts:1547
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#: index.html:81
+msgid "ProVerif manual (online)"
+msgstr ""
+
+#: index.html:88
+msgid "Undo (Ctrl+Z)"
+msgstr ""
+
+#: index.html:89
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr ""
+
+#: index.html:93
+msgid "Mode"
+msgstr ""
+
+#: index.html:94
+msgid "Design mode: blocks as formulas (F9)"
+msgstr ""
+
+#: index.html:94
+msgid "Design"
+msgstr ""
+
+#: index.html:95
+msgid "Expert mode: blocks as ProVerif code (F9)"
+msgstr ""
+
+#: index.html:95
+msgid "Expert"
+msgstr ""
+
+#: index.html:103
+msgid "Verify with ProVerif 2.05 (F5)"
+msgstr ""
+
+#: index.html:103 index.html:106 src/app/controller/Verifier.ts:318
+msgid "Verify"
+msgstr ""
+
+#: index.html:104
+msgid "Verification options"
+msgstr ""
+
+#: index.html:107
+msgid "Stop the verification"
+msgstr ""
+
+#: index.html:108
+msgid "Verify as I edit"
+msgstr ""
+
+#: index.html:109
+msgid "Report of the verification (HTML)"
+msgstr ""
+
+#: index.html:111
+msgid "Engine settings (memory, time)..."
+msgstr ""
+
+#: index.html:121
+msgid "Declarations"
+msgstr ""
+
+#: index.html:126
+msgid "Filter declarations"
+msgstr ""
+
+#: index.html:137
+msgid "Add a party (a process macro)"
+msgstr ""
+
+#: index.html:139 src/app/controller/PieStudio.ts:489
+msgid "active attacker"
+msgstr ""
+
+#: index.html:143
+msgid "The code has syntax errors: the diagram and the declarations show the last version that parsed."
+msgstr ""
+
+#: index.html:164
+msgid "Problems"
+msgstr ""
+
+#: index.html:165
+msgid "Results"
+msgstr ""
+
+#: index.html:166
+msgid "Attack trace"
+msgstr ""
+
+#: index.html:167
+msgid "ProVerif output"
+msgstr ""
+
+#: index.html:168
+msgid "History"
+msgstr ""
+
+#: index.html:170
+msgid "Hide or show the panel"
+msgstr ""
+
+#: index.html:189 studio-core/src/view/Dialogs.ts:95
+#: studio-core/src/view/Toast.ts:33 src/app/controller/Toolbox.ts:337
+#: src/app/controller/PieStudio.ts:1525
+msgid "Close"
+msgstr ""
+
+#: index.html:209
+msgid "The model never leaves your computer."
+msgstr ""
+
+#: index.html:212
+msgid "<b>PieStudio</b> is a visual editor for ProVerif models. Each block of the diagram is one construct of ProVerif's typed pi calculus; the diagram and the code are two views of the same model, and ProVerif 2.05 verifies it in your browser."
+msgstr ""
+
+#: index.html:213
+msgid "Free software: you can redistribute it and modify it under the terms of the GNU General Public License, version 2 or (at your option) any later version (COPYING). Roberto Metere."
+msgstr ""
+
+#: index.html:214
+msgid "The verifier is ProVerif 2.05 by Bruno Blanchet, Vincent Cheval and Marc Sylvestre (INRIA, CNRS), as ProVerif for WebAssembly: compiled with the OCaml 4.14 runtime to WebAssembly by Roberto Metere, and distributed under the GNU GPL v2 or later (engine/NOTICE, engine/COPYING; the OCaml runtime is under the LGPL 2.1 with the OCaml linking exception, engine/LICENSE-OCaml.txt, and the parts of Emscripten under the MIT licence, engine/LICENSE-Emscripten.txt). Studio Core, the parts that PieStudio shares with CryStudio, is by Roberto Metere under the MIT licence (studio-core/LICENSE). Bootstrap, jQuery, jQuery UI and KaTeX are under the MIT licence; Font Awesome Free under the SIL OFL (fonts) and MIT (code)."
+msgstr ""
+
+#: index.html:220
+msgid "Verify with ProVerif"
+msgstr ""
+
+#: index.html:221
+msgid "Design or Expert mode"
+msgstr ""
+
+#: index.html:222 index.html:223 index.html:228
+msgid "Ctrl"
+msgstr ""
+
+#: index.html:222 index.html:227
+msgid "Shift"
+msgstr ""
+
+#: index.html:222
+msgid "Undo, redo (no limit)"
+msgstr ""
+
+#: index.html:223
+msgid "Open, save, export"
+msgstr ""
+
+#: index.html:224 src/app/controller/PieStudio.ts:1102
+#: src/app/controller/PieStudio.ts:1274
+msgid "Enter"
+msgstr ""
+
+#: index.html:224
+msgid "double click"
+msgstr ""
+
+#: index.html:224
+msgid "Edit the selected block or declaration"
+msgstr ""
+
+#: index.html:227
+msgid "Refactor in the selection"
+msgstr ""
+
+#: index.html:228
+msgid "click"
+msgstr ""
+
+#: index.html:228
+msgid "Go to the declaration (in the code)"
+msgstr ""
+
+#: index.html:229
+msgid "Right click"
+msgstr ""
+
+#: index.html:229
+msgid "The menu of a block or a declaration"
+msgstr ""
+
+#: studio-core/src/text/I18n.ts:933
+msgid "The file does not say its language: write its code after Language, in its header (Language: zh for Chinese)."
+msgstr ""
+
+#: studio-core/src/text/I18n.ts:1006
+msgid "the translation leaves out {placeholders}"
+msgstr ""
+
+#: studio-core/src/text/I18n.ts:1010
+msgid "the translation has {placeholders}, which the message does not have"
+msgstr ""
+
+#: studio-core/src/text/I18n.ts:1014
+msgid "the translation has tags or links that the message does not have"
+msgstr ""
+
+#: studio-core/src/notation/Conventions.ts:65 src/app/language/PvLanguage.ts:64
+msgid "variables"
+msgstr ""
+
+#: studio-core/src/notation/Conventions.ts:65
+msgid "formula"
+msgstr ""
+
+#: studio-core/src/notation/Conventions.ts:75 src/app/language/PvLanguage.ts:71
+msgid "Terms"
+msgstr ""
+
+#: studio-core/src/notation/Conventions.ts:76
+msgid "Identifiers"
+msgstr ""
+
+#: studio-core/src/notation/Conventions.ts:77 src/app/language/PvLanguage.ts:73
+#: src/app/view/SettingsDialog.ts:194
+msgid "Colours"
+msgstr ""
+
+#: studio-core/src/notation/LatexLexer.ts:92
+msgid "a brace } closes no {"
+msgstr ""
+
+#: studio-core/src/notation/LatexLexer.ts:97
+#: studio-core/src/notation/LatexLexer.ts:166
+msgid "a brace { is not closed"
+msgstr ""
+
+#: studio-core/src/notation/HintParser.ts:172
+msgid "@{kind}: the name of a convention is expected"
+msgstr ""
+
+#: studio-core/src/notation/HintParser.ts:182
+msgid "@{kind}: a name is expected, the same on an output and on the inputs that receive it"
+msgstr ""
+
+#: studio-core/src/notation/HintParser.ts:194
+msgid "@{kind}: a quoted colour is expected"
+msgstr ""
+
+#: studio-core/src/notation/HintParser.ts:194
+msgid "@{kind}: a quoted text is expected"
+msgstr ""
+
+#: studio-core/src/notation/HintParser.ts:215
+msgid "@{kind}: the quote is not closed"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:140
+msgid "@convention: unknown convention {name}"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:162
+msgid "@{kind} in a .pp file needs an explicit target"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:163
+msgid "@{kind}: I cannot tell what this hint applies to; name its target after it"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:186
+msgid "@inout goes in a comment just before an output or an input"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:202
+msgid "@inout {name}: no input has this name"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:204
+msgid "@inout {name}: no output has this name"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:234
+msgid "@{kind}: {name} is not declared"
+msgstr ""
+
+#: studio-core/src/notation/NotationTable.ts:290
+msgid "@{kind}: {name} has {count} argument; an infix notation needs 2"
+msgid_plural "@{kind}: {name} has {count} arguments; an infix notation needs 2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/notation/NotationTable.ts:297
+msgid "@{kind}: {name} has {count} argument; a prefix notation needs 1"
+msgid_plural "@{kind}: {name} has {count} arguments; a prefix notation needs 1"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/notation/NotationTable.ts:304
+msgid "@{kind}: {name} has {count} argument; a postfix notation needs 1"
+msgid_plural "@{kind}: {name} has {count} arguments; a postfix notation needs 1"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/notation/NotationTable.ts:320
+msgid "@notation: {name} has {count} argument but the notation uses #{hole}"
+msgid_plural "@notation: {name} has {count} arguments but the notation uses #{hole}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/view/CodeView.ts:131
+msgid "{language} code of the model"
+msgstr ""
+
+#: studio-core/src/view/CodeView.ts:730
+msgid "F2 renames, F12 goes to the declaration"
+msgstr ""
+
+#: studio-core/src/view/Dialogs.ts:207 studio-core/src/view/Dialogs.ts:260
+#: studio-core/src/view/FileEditor.ts:80 studio-core/src/view/RefactorBar.ts:70
+#: src/app/view/DeclarationDialog.ts:122 src/app/view/ActionDialog.ts:181
+#: src/app/view/SettingsDialog.ts:104
+msgid "Cancel"
+msgstr ""
+
+#: studio-core/src/view/Dialogs.ts:208 studio-core/src/view/Dialogs.ts:261
+#: src/app/controller/PieStudio.ts:497 src/app/controller/PieStudio.ts:499
+msgid "OK"
+msgstr ""
+
+#: studio-core/src/view/FileEditor.ts:60
+msgid "{count} error: {message}"
+msgid_plural "{count} errors, the first: {message}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/view/FileEditor.ts:61
+msgid "No problems in {name}."
+msgstr ""
+
+#: studio-core/src/view/FileEditor.ts:76
+msgid "Save the file"
+msgstr ""
+
+#: studio-core/src/view/FileEditor.ts:81 studio-core/src/view/RefactorBar.ts:69
+#: src/app/view/DeclarationDialog.ts:123 src/app/view/ActionDialog.ts:182
+msgid "Apply"
+msgstr ""
+
+#: studio-core/src/view/FileEditor.ts:88 src/app/controller/PieStudio.ts:921
+msgid "Edit the code"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:20
+msgid "Studio (default)"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:22
+msgid "Midnight"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:27
+msgid "Paper (for printing and slides)"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:32
+msgid "High contrast"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:37
+msgid "Solarized light"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:50
+msgid "Accent"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:51
+msgid "Background"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:52
+msgid "Parties"
+msgstr ""
+
+#: studio-core/src/view/ThemeSettings.ts:58
+msgid "Calls"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:66
+msgid "Rename"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:66
+msgid "to"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:67
+msgid "all"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:68
+msgid "none"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:100
+msgid "lines {from} to {to}"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:101
+msgid "the whole model"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:102
+msgid "{included} of {total} in {range}"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:106
+msgid "Type the new name: nothing changes until you apply it. Click an occurrence in the code to leave it out."
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:114 src/app/view/BottomPanel.ts:110
+msgid "line {number}"
+msgstr ""
+
+#: studio-core/src/view/RefactorBar.ts:118
+msgid "and {count} more line"
+msgid_plural "and {count} more lines"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/view/DiagramView.ts:233
+msgid "Double click to edit the party"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:242
+msgid "No process runs this party"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:242
+msgid "unused"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:247
+msgid "Symmetric role: shown with its mirrored copy. Click to show it once."
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:247
+msgid "Symmetric role? Show it with a mirrored copy"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:252
+msgid "Show this party as code"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:252
+msgid "Show this party as formulas"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:285
+msgid "Add an action here"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:308
+msgid "End of the process"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:327
+msgid "Show the other way"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:370
+msgid "runs process {number}"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:370
+msgid "runs {name}"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:385
+msgid "any number of copies"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:387
+msgid "{count} process in parallel"
+msgid_plural "{count} processes in parallel"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/view/DiagramView.ts:740
+msgid "Message {name} on {channel} (private channel)"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:740
+msgid "Message {name} on {channel}"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:743
+msgid "Message {name}"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:746
+msgid "Message on {channel} (private channel)"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:746
+msgid "Message on {channel}"
+msgstr ""
+
+#: studio-core/src/view/DiagramView.ts:748 src/app/view/ActionDialog.ts:30
+msgid "Message"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:82
+msgid "Load a translation (.po)..."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:86
+msgid "Download the file to translate (.pot)"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:99
+msgid "Download languages.js"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:103
+msgid "Language of the interface"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:104
+msgid "When the settings are saved, the page loads again in the language chosen, with the model and the history of its changes."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:106
+msgid "Translate {app}"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:107
+msgid "Hand the file to translate to whoever knows another language: they write the translation of each message after msgstr, with a text editor or with Poedit, and load the file here to see it at once."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:108
+msgid "To give a translation to everyone who opens {app}, load it here, then put the languages.js that this pane gives in the folder lang/, next to the page, in place of the one there. Keep the translation in lang/ too, for later changes."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:124
+msgid "Automatic: the language of the browser ({name})"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:127
+msgid "{name} (loaded)"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:137
+msgid "Loaded by you: {name} ({code})"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:138 src/app/view/FormBuilder.ts:306
+msgid "Remove"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:168
+msgid "The messages of {app} are written in English."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:176
+msgid "All {total} messages are translated."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:177
+msgid "{translated} of {total} messages are translated; the others show in English."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:178
+msgid "Download {name} to improve it (.po)"
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:206
+msgid "Loaded {file}: {name} ({code}), {translated} of {total} messages. Save the settings to see it."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:216
+msgid "{count} line could not be read: {lines}"
+msgid_plural "{count} lines could not be read: {lines}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: studio-core/src/view/LanguagePane.ts:222
+msgid "The file does not give the plural forms of the language: write them after Plural-Forms, in its header (see the comments at its top). Until then, plurals show as in English."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:228
+msgid "Line {line}: {reason}; the message shows in English."
+msgstr ""
+
+#: studio-core/src/view/LanguagePane.ts:231
+msgid "And {count} more."
+msgid_plural "And {count} more."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/language/PvSettings.ts:24
+msgid "An active attacker reads, writes and blocks public channels; a passive one only listens."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:25
+msgid "Compromise of session keys of other sessions."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:26
+msgid "Allow private communications on public terms."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:27
+msgid "Allow choice/diff inside patterns."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:28
+msgid "Make every input, get and let...suchthat precise."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:29
+msgid "Ignore types during verification (types are still checked when parsing)."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:30
+msgid "Move restrictions downwards before translating to clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:31
+msgid "Move let bindings downwards before translating to clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:32
+msgid "Include terms of the equational theory in the arguments of names."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:33
+msgid "Expand let terms precisely."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:34
+msgid "Prove lemmas by induction by default."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:35
+msgid "Prove queries by induction by default."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:36
+msgid "Remove events that are only used by lemmas."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:37
+msgid "How lemmas are applied during saturation."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:38
+msgid "How lemmas are applied during verification."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:39
+msgid "Display the application of lemmas."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:40
+msgid "Ignore nounif declarations a few times."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:41
+msgid "How many times nounif declarations are ignored."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:42
+msgid "Selection function of the resolution."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:43
+msgid "Stop when the resolution may not terminate."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:44
+msgid "Elimination of redundant clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:45
+msgid "Elimination of redundant hypotheses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:46
+msgid "Maximum depth of terms in clauses (an approximation)."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:47
+msgid "Maximum number of hypotheses of clauses (an approximation)."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:48
+msgid "Maximum length of chains of inequalities."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:49
+msgid "Simplify equalities at the end of saturation."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:50
+msgid "Check that all terms of clauses are in normal form."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:51
+msgid "Treatment of equations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:52
+msgid "Ordering of function symbols for the termination of equations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:53
+msgid "Check that predicates can be implemented."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:54
+msgid "Threshold for cleaning up the clause database (percent)."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:55
+msgid "Maximum depth of the unification index."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:56
+msgid "Reconstruct attack traces (yes, no, or the number of attempts)."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:57
+msgid "Backtrack when reconstructing traces."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:58
+msgid "Unify derivations to help trace reconstruction."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:59
+msgid "Reconstruct derivations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:60
+msgid "Simplify derivations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:61
+msgid "Explain derivations in English."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:62
+msgid "Display derivations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:63
+msgid "Abbreviate names in derivations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:64
+msgid "How attack traces are displayed."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:65
+msgid "Display the generated clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:66
+msgid "Remove subsumed clauses before displaying them."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:67
+msgid "Abbreviate clauses when displaying them."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:68
+msgid "Use ANSI colours in the output."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:69
+msgid "Display the clause database."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:70
+msgid "Display statistics while saturating."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:71
+msgid "Display \"goal reachable\" clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:72
+msgid "Display rules."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:73
+msgid "Display redundant clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:74
+msgid "Display completed clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:75
+msgid "Display information on equations."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:76
+msgid "Display termination warnings."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:77
+msgid "Display information on destructors."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:78
+msgid "Simplify biprocesses before proving equivalences."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:79
+msgid "Reject simplified processes containing choice[true, false]."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:80
+msgid "Reject processes that cannot be simplified."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:81
+msgid "Simplify tests on constants when expanding terms."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:82
+msgid "Deprecated."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:83
+msgid "Choose swappings of synchronisations interactively."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:84
+msgid "Swapping of synchronisations, e.g. \"tag1 -> tag2\"."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:85
+msgid "Record features of clauses."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:86
+msgid "Record function symbols as features."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:87
+msgid "Record names as features."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:88
+msgid "Record predicates as features."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:89
+msgid "Record events as features."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:90
+msgid "Record tables as features."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:91
+msgid "Record the depth of terms as a feature."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:92
+msgid "Record the width of terms as a feature."
+msgstr ""
+
+#: src/app/language/PvSettings.ts:101
+msgid "Attacker model"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:101
+msgid "Syntax"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:101
+msgid "Precision"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:101
+msgid "Lemmas"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:101
+msgid "Attack reconstruction"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:102
+msgid "Resolution"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:102
+msgid "Process simplification"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:102
+msgid "Display"
+msgstr ""
+
+#: src/app/language/PvSettings.ts:102
+msgid "Features"
+msgstr ""
+
+#: src/app/language/PvExplain.ts:16
+msgid "Declares a type, for names, variables and the arguments of functions."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:17
+msgid "Declares free names, which the attacker knows unless they are [private]: public channels, or secrets."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:18
+msgid "Declares constants: functions without arguments."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:19
+msgid "Declares a constructor, a function that builds terms such as encryptions; the attacker can apply it unless it is [private]."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:20
+msgid "Declares a destructor by rewrite rules, such as decryption: sdec(senc(m, k), k) = m. When no rule applies, it fails."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:21
+msgid "Declares equations between terms, such as the commutativity of exponentiation in Diffie-Hellman."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:22
+msgid "Declares a predicate, for clauses and for the conditions of queries."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:23
+msgid "Declares a table: processes insert rows into it and look them up with get; the attacker cannot read it."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:24
+msgid "Declares or executes an event: events mark points of the protocol, for correspondence queries."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:25
+msgid "Asks a security property: the secrecy of a term (attacker(s)), or a correspondence between events (==>)."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:26
+msgid "States a property that ProVerif proves first, then uses to prove the queries."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:27
+msgid "States a property that ProVerif assumes without proof, to help prove the queries."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:28
+msgid "Restricts the traces to those that satisfy a property."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:29
+msgid "Asks for strong secrecy: the attacker cannot tell runs apart when the given names change value."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:30
+msgid "Asks whether a weak secret, such as a password, resists offline guessing."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:31
+msgid "A secrecy assumption: a fact that never holds. ProVerif checks it, and uses it to speed up the proof."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:32
+msgid "A hint for the resolution: do not resolve on facts of this form. It changes speed and termination, not soundness."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:33
+msgid "A hint for the resolution: resolve on facts of this form first."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:34
+msgid "Defines a function by a term, expanded where it is used."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:35
+msgid "Binds a variable or matches a pattern: let x = M in P. It also defines a process macro: let P(x: T) = ..."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:36
+msgid "Starts the main process: the roles of the protocol, usually in parallel and replicated."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:37
+msgid "Creates a fresh name that the attacker does not know: a nonce or a key."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:38
+msgid "Receives a message on a channel: in(c, x: T); on a public channel it comes from the attacker. Also ends a let: let x = M in P."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:39
+msgid "Sends a message on a channel: out(c, M); on a public channel the attacker gets it."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:40
+msgid "A test: if M then P else Q."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:41
+msgid "What runs when the test, the match or the lookup succeeds."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:42
+msgid "What runs when the test, the match or the lookup fails."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:43
+msgid "Inserts a row into a table: insert t(M1, ..., Mn)."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:44
+msgid "Looks up a row of a table that matches a pattern: get t(=M, x) in P else Q."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:45
+msgid "A condition: get ... suchthat M, or let x suchthat p(x), which picks any value that satisfies it."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:46
+msgid "Starts a new phase: earlier processes stop, and the attacker keeps what it knows. Used for forward secrecy."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:47
+msgid "A synchronisation barrier: processes wait for each other at sync n."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:48
+msgid "A biprocess: choice[M, N] is M on the left and N on the right; ProVerif proves the two sides equivalent."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:49
+msgid "A biprocess: diff[M, N] is M on the left and N on the right; ProVerif proves the two sides equivalent."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:50
+msgid "The failure of a computation, such as a destructor that does not apply."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:51
+msgid "Declares the variables of a rewrite rule, an equation, a clause or a query."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:52
+msgid "Adds rules to a destructor that apply when the rules before them do not."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:53
+msgid "Defines a macro of declarations, which expand instantiates."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:54
+msgid "Expands a macro of declarations defined with def, with its arguments."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:55
+msgid "Sets an option of ProVerif, such as set attacker = passive."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:56
+msgid "Declares channels: free names of type channel."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:57
+msgid "The end of a process, as 0, in the syntax of CryptoVerif."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:58
+msgid "Declares Horn clauses directly, for the attacker or for predicates."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:59
+msgid "Declares a fact that always holds, to simplify the clauses."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:60
+msgid "Asks whether two processes are observationally equivalent."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:61
+msgid "In noninterf: the values that a secret ranges over."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:62
+msgid "An injective event in a query: each occurrence matches a distinct occurrence of the events before it."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:63
+msgid "attacker(M): the attacker knows M. query attacker(s) asks whether s stays secret."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:64
+msgid "mess(c, M): the message M is on channel c."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:78
+msgid "Picks any values that satisfy a condition: let x suchthat p(x) in P."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:83
+msgid "Runs a process macro, defined with let, with its arguments."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:86
+msgid "Replication: unboundedly many copies of the process run in parallel, one per session."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:87
+msgid "Parallel composition: the processes run at the same time."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:88
+msgid "The end of a process: it does nothing more."
+msgstr ""
+
+#: src/app/language/PvExplain.ts:89
+msgid "branch"
+msgstr ""
+
+#: src/app/language/PvExplain.ts:89
+msgid "A branch: what runs after a test, a match, or in a parallel composition."
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:105
+#: src/app/model/ProcessEditor.ts:126
+msgid "name"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:104
+#: src/app/model/ProcessEditor.ts:126 src/app/model/ProcessEditor.ts:172
+msgid "type"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:65
+#: src/app/model/ProcessEditor.ts:130 src/app/model/ProcessEditor.ts:162
+msgid "pattern"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:64 src/app/model/ProcessEditor.ts:163
+msgid "value"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:66
+#: src/app/model/ProcessEditor.ts:177 src/app/model/ProcessEditor.ts:181
+#: src/app/model/ProcessEditor.ts:184
+msgid "condition"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:65 src/app/model/ProcessEditor.ts:130
+#: src/app/model/ProcessEditor.ts:133
+msgid "channel"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:65 src/app/model/ProcessEditor.ts:133
+msgid "message"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:65 src/app/language/PvLanguage.ts:107
+#: src/app/model/ProcessEditor.ts:137
+msgid "event"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:65 src/app/language/PvLanguage.ts:66
+msgid "row"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:66 src/app/language/PvLanguage.ts:67
+msgid "number"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:67
+msgid "call"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:67
+msgid "left"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:67
+msgid "right"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:70
+msgid "Actions"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:72
+msgid "Builtin types"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:85
+msgid "A fresh name: new k: key, or k <-R key as in CryptoVerif"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:86
+msgid "Send a message: out(c, M)"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:87
+msgid "Receive a message: in(c, x: T)"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:88
+msgid "Compute or match: let x = M in, or x <- M; as in CryptoVerif"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:89
+msgid "A test: if M then ... else ..."
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:90
+msgid "An event, for correspondence queries"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:91
+msgid "Insert a row into a table"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:92
+msgid "Look up a row of a table"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:93
+msgid "Run a process macro: P(args)"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:94
+msgid "Start a new phase"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:106
+msgid "function"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:108 src/app/model/ProcessEditor.ts:141
+#: src/app/model/ProcessEditor.ts:184
+msgid "table"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:109
+msgid "predicate"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:110 src/app/model/ProcessEditor.ts:188
+msgid "process"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:111
+msgid "function (letfun)"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:112 src/app/language/PvLanguage.ts:113
+#: src/app/model/ProcessEditor.ts:172
+msgid "variable"
+msgstr ""
+
+#: src/app/language/PvLanguage.ts:114
+msgid "keyword"
+msgstr ""
+
+#: src/app/model/Analysis.ts:71
+msgid "internal error of the checker: {message}"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:69
+msgid "Identifiers start with a letter and contain letters, digits, _ and '"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:72
+msgid "{name} is a ProVerif keyword"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:306
+msgid "Unknown symbol"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:309
+msgid "{name} is built in and cannot be renamed"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:317
+msgid "{name} is already declared ({kind})"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:550
+msgid "not a process declaration"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:556 src/app/model/ModelEditor.ts:690
+msgid "parameters"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:563
+msgid "cannot locate the header of this process"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:571
+msgid "cannot rename this process"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:633
+msgid "this declaration has no options"
+msgstr ""
+
+#: src/app/model/ModelEditor.ts:685
+msgid "{name} is already declared"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:79
+msgid "empty"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:124
+msgid "argument of the name"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:137 src/app/model/ProcessEditor.ts:141
+#: src/app/model/ProcessEditor.ts:188
+msgid "arguments"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:146
+msgid "phase: a positive integer is expected"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:154
+msgid "sync: a positive integer is expected"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:156
+msgid "tag"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:170
+msgid "variables: x: type is expected, not {text}"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:175
+msgid "variables: at least one typed variable is required"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:184
+msgid "patterns"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:201
+msgid "unknown action {kind}"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:279 src/app/model/ProcessEditor.ts:329
+#: src/app/model/ProcessEditor.ts:423 src/app/model/ProcessEditor.ts:519
+msgid "no such node"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:334
+msgid "only actions followed by a continuation can change kind"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:347
+msgid "this action has an else branch: remove the branch first, or keep a conditional"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:364
+msgid "this action has no options"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:382
+msgid "insertion point is not a process"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:523
+msgid "only sequential actions and conditionals can be moved"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:526
+msgid "cannot move a conditional into its own else branch"
+msgstr ""
+
+#: src/app/model/ProcessEditor.ts:583
+msgid "only conditionals have an else branch"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:135
+msgid "Observational equivalence of the biprocess (choice)"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:138
+msgid "Observational equivalence of the two processes"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:143
+msgid "Queries are incompatible with equivalence"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:145
+msgid "Queries are incompatible with choice"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:219
+msgid "Generated by PieStudio; verify with: proverif <this file>"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:227
+msgid "reachability and correspondence queries"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:233
+msgid "queries"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:263
+msgid "all goals (no split needed)"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:268
+msgid "observational equivalence of the two processes"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:268
+msgid "observational equivalence (biprocess)"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:269
+msgid "biprocess (choice)"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:278
+msgid "first process of the equivalence"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:278
+msgid "second process of the equivalence"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:284
+msgid "choice[,] projected on its left side"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:284
+msgid "choice[,] projected on its right side"
+msgstr ""
+
+#: src/app/model/ExportPlanner.ts:298
+msgid "model"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:183 src/app/model/DeclSpecs.ts:199
+#: src/app/model/DeclSpecs.ts:220 src/app/view/ActionDialog.ts:20
+msgid "Type"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:184
+msgid "A type of messages. channel, bitstring, bool and nat are built in."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:186 src/app/model/DeclSpecs.ts:233
+#: src/app/model/DeclSpecs.ts:249 src/app/model/DeclSpecs.ts:298
+#: src/app/model/DeclSpecs.ts:310 src/app/model/DeclSpecs.ts:322
+#: src/app/model/DeclSpecs.ts:335 src/app/model/DeclSpecs.ts:347
+#: src/app/view/ActionDialog.ts:19
+msgid "Name"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:187
+msgid "Options (for CryptoVerif)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:188 src/app/model/DeclSpecs.ts:201
+#: src/app/model/DeclSpecs.ts:223 src/app/model/DeclSpecs.ts:239
+#: src/app/model/DeclSpecs.ts:254 src/app/model/DeclSpecs.ts:300
+#: src/app/model/DeclSpecs.ts:312
+msgid "Notation (LaTeX)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:195
+msgid "Free name"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:196
+msgid "Names known from the start: public channels and constants, or secrets unknown to the attacker ([private])."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:198
+msgid "Names"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:200
+msgid "unknown to the attacker (a private channel is drawn dotted)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:208 src/app/view/ActionDialog.ts:24
+#: src/app/view/ActionDialog.ts:29
+msgid "Channel"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:209
+msgid "Public channels (the same as free c: channel)."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:210
+msgid "Channels"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:216
+msgid "Constant"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:217
+msgid "Public constants of a type."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:219
+msgid "Constants"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:221
+msgid "unknown to the attacker"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:222
+msgid "Other options"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:230
+msgid "Constructor"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:231
+msgid "A function symbol that builds messages (encryption, signature, hash, pairing). The attacker can apply it unless it is private."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:234 src/app/model/DeclSpecs.ts:250
+#: src/app/model/DeclSpecs.ts:299 src/app/model/DeclSpecs.ts:323
+msgid "Argument types"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:235 src/app/model/DeclSpecs.ts:251
+msgid "Result type"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:236 src/app/model/DeclSpecs.ts:253
+#: src/app/model/DeclSpecs.ts:265
+msgid "the attacker cannot apply it"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:237
+msgid "the attacker can also take it apart, like a tuple"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:238
+msgid "the identity, changing the type"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:246
+msgid "Destructor (fun ... reduc)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:247
+msgid "A function defined by rewrite rules tried in order (otherwise). It fails when no rule applies."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:252
+msgid "Rewrite rules (tried in order)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:261
+msgid "Destructor (reduc)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:262
+msgid "Rewrite rules defining a destructor of constructors declared with fun, e.g. sdec(senc(x, k), k) = x."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:264
+msgid "Rewrite rules"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:266
+msgid "Notation of the destructor (LaTeX)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:273
+msgid "Equation"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:274
+msgid "Equational theory, e.g. Diffie-Hellman exp(exp(g, x), y) = exp(exp(g, y), x). A notation here is the one of the function on the left."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:276
+msgid "Equations"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:277
+msgid "the equations form a convergent rewrite system"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:278
+msgid "the equations are linear"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:279
+msgid "Notation of the function on the left (LaTeX)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:295 src/app/view/ActionDialog.ts:49
+msgid "Event"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:296
+msgid "Events mark steps of the protocol; correspondence queries relate them (authentication). Drawn in green boxes."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:307 src/app/view/ActionDialog.ts:53
+#: src/app/view/ActionDialog.ts:57
+msgid "Table"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:308
+msgid "Tables store rows private to the honest processes (insert and get), e.g. a key directory. Drawn in purple boxes."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:311
+msgid "Column types"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:319
+msgid "Predicate"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:320
+msgid "Predicates defined by clauses, usable in let ... suchthat and in queries."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:324
+msgid "the predicate is not defined by clauses"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:325
+msgid "optimise the membership predicate (arity 2)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:332
+msgid "Term macro (letfun)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:333
+msgid "A macro for terms, expanded where it is used."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:336 src/app/model/DeclSpecs.ts:348
+msgid "Parameters"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:337
+msgid "Definition"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:344
+msgid "Process (party)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:345
+msgid "A process macro: one party of the protocol. Its actions are edited in the diagram."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:355
+msgid "Query"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:356
+msgid "Security properties to verify: secrecy attacker(s), correspondences event(e1(x)) ==> event(e2(x)), injective ones with inj-event."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:358 src/app/model/DeclSpecs.ts:371
+#: src/app/view/ActionDialog.ts:39
+msgid "Variables"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:358
+msgid "Types of the variables of the queries (Infer finds them from the events)."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:359
+msgid "Queries"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:360 src/app/model/DeclSpecs.ts:373
+msgid "Options"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:367
+msgid "Lemma, axiom or restriction"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:368
+msgid "lemma: proved, then used to help other proofs; axiom: assumed; restriction: excludes traces."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:370
+msgid "Kind"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:372
+msgid "Statements"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:380
+msgid "Strong secrecy (noninterf)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:381
+msgid "The attacker cannot distinguish runs with different values of these names (optionally among a set of terms)."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:383
+msgid "Variables (for the among terms)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:384
+msgid "Secrets"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:391
+msgid "Weak secret"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:392
+msgid "Resistance to off-line guessing attacks on a low-entropy secret (a password)."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:393
+msgid "Secret"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:399 src/app/model/DeclSpecs.ts:401
+msgid "Setting"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:400
+msgid "ProVerif settings, e.g. set attacker = passive. A setting at its default value is not written."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:401 src/app/view/ActionDialog.ts:34
+msgid "Value"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:414
+msgid "Secrecy assumption (not)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:414
+msgid "Facts assumed unreachable, e.g. not attacker(new k). ProVerif checks them."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:415
+msgid "Unification hint (nounif)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:415
+msgid "nounif / select / noselect guide the resolution strategy, e.g. nounif x: key; attacker(f(*x))."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:416
+msgid "Facts always true for a predicate."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:417
+msgid "Clauses"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:417
+msgid "Horn clauses defining predicates."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:418
+msgid "Macro (def)"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:418
+msgid "A parameterised block of declarations, instantiated with expand."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:419
+msgid "Macro expansion"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:419
+msgid "Instantiates a def macro."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:420
+msgid "CryptoVerif declaration"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:420
+msgid "param, proba, letproba, proof, implementation: ProVerif ignores them (they are kept for CryptoVerif)."
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:429
+msgid "Types and names"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:430
+msgid "Cryptographic primitives"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:431
+msgid "Protocol"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:432 src/app/model/ReportWriter.ts:45
+#: src/app/view/DeclarationsPanel.ts:26
+msgid "Security goals"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:433
+msgid "Advanced"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:509
+msgid "empty declaration"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:651 src/app/model/DeclSpecs.ts:653
+msgid "Secrecy of {name}"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:665
+msgid "Authentication: {end} implies {begin}"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:666
+msgid "Injective: {end} implies {begin}"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:669
+msgid "Reachability of {name}"
+msgstr ""
+
+#: src/app/model/DeclSpecs.ts:673
+msgid "Real-or-random secrecy of {name}"
+msgstr ""
+
+#: src/app/model/DiagramModel.ts:108
+msgid "Main process"
+msgstr ""
+
+#: src/app/model/DiagramModel.ts:111
+msgid "Equivalence, side {number}"
+msgstr ""
+
+#: src/app/model/Examples.ts:20
+msgid "Handshake (flawed)"
+msgstr ""
+
+#: src/app/model/Examples.ts:21
+msgid "Secrecy and authentication fail: a man in the middle learns the key."
+msgstr ""
+
+#: src/app/model/Examples.ts:28
+msgid "Handshake (fixed)"
+msgstr ""
+
+#: src/app/model/Examples.ts:29
+msgid "The server signs the client key: all queries hold."
+msgstr ""
+
+#: src/app/model/Examples.ts:36
+msgid "Signed Diffie-Hellman, in paper notation"
+msgstr ""
+
+#: src/app/model/Examples.ts:37
+msgid "Pretty printing hints: g^a, {m}_k, x || y."
+msgstr ""
+
+#: src/app/model/Examples.ts:44
+msgid "Key confirmation (symmetric role)"
+msgstr ""
+
+#: src/app/model/Examples.ts:45
+msgid "One role run by both devices, drawn with its mirrored copy."
+msgstr ""
+
+#: src/app/model/Examples.ts:52
+msgid "Needham-Schroeder public key"
+msgstr ""
+
+#: src/app/model/Examples.ts:53
+msgid "Lowe's attack on the authentication of the responder."
+msgstr ""
+
+#: src/app/model/Examples.ts:60
+msgid "Needham-Schroeder-Lowe"
+msgstr ""
+
+#: src/app/model/Examples.ts:61
+msgid "The fix: the responder names itself in message 2."
+msgstr ""
+
+#: src/app/model/Examples.ts:68
+msgid "Signed Diffie-Hellman, phases"
+msgstr ""
+
+#: src/app/model/Examples.ts:69
+msgid "Long-term keys leak in phase 1; the session secret survives."
+msgstr ""
+
+#: src/app/model/Examples.ts:76
+msgid "Weak secret and non-interference"
+msgstr ""
+
+#: src/app/model/Examples.ts:77
+msgid "Off-line guessing breaks the password."
+msgstr ""
+
+#: src/app/model/Examples.ts:84
+msgid "Strong secrecy (biprocess)"
+msgstr ""
+
+#: src/app/model/Examples.ts:85
+msgid "choice[,] and observational equivalence."
+msgstr ""
+
+#: src/app/model/Examples.ts:92
+msgid "Mixed goals (split export)"
+msgstr ""
+
+#: src/app/model/Examples.ts:93
+msgid "Queries and choice together: verified, and exported, as several files."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:129
+msgid "No occurrence is chosen."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:132
+msgid "The name is the same."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:147
+msgid "With this name, the renamed occurrences would not all refer to the same declaration."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:158
+msgid "The name {name} is already used on line {line}: it would refer to the renamed declaration."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:167
+msgid "The name {name} is already used in the selection: the renamed declaration would hide it, or be hidden by it."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:168
+msgid "The name {name} is already used in the model: the renamed declaration would hide it, or be hidden by it."
+msgstr ""
+
+#: src/app/model/RefactorSession.ts:173
+msgid "The model would have new errors: {message} (line {line})."
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:26
+msgid "attack"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:32
+msgid "Attack on {goal}"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:34
+msgid "Library {name}"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:37
+msgid "{file}: verification report"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:43
+msgid "Verified with ProVerif 2.05 in PieStudio, {date}."
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:44
+msgid "Time: {seconds} s, memory: {size} MB."
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:46 src/app/view/BottomPanel.ts:170
+msgid "Result"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:46
+msgid "Goal"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:47
+msgid "Attack traces"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:48
+msgid "Model"
+msgstr ""
+
+#: src/app/model/ReportWriter.ts:51
+msgid "Written by PieStudio."
+msgstr ""
+
+#: src/app/engine/OutputParser.ts:35
+msgid "true"
+msgstr ""
+
+#: src/app/engine/OutputParser.ts:36
+msgid "false"
+msgstr ""
+
+#: src/app/engine/OutputParser.ts:37
+msgid "cannot be proved"
+msgstr ""
+
+#: src/app/engine/TraceMapper.ts:348
+msgid "new {name}: {type} creating {value}"
+msgstr ""
+
+#: src/app/engine/TraceMapper.ts:354
+msgid "{channel}: {message} (between processes)"
+msgstr ""
+
+#: src/app/engine/TraceMapper.ts:369
+msgid "attacker obtains {message}"
+msgstr ""
+
+#: src/app/engine/TraceMapper.ts:372
+msgid "event {event} executed"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:20 src/app/view/SettingsDialog.ts:99
+msgid "Settings"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:21
+msgid "Types"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:22
+msgid "Names and channels"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:23
+msgid "Functions and equations"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:24
+msgid "Events, tables, predicates"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:25
+msgid "Term macros"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:27
+msgid "Parties (processes)"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:188 src/app/view/FormBuilder.ts:310
+#: src/app/view/DeclarationDialog.ts:123 src/app/view/ActionDialog.ts:182
+msgid "Add"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:193
+msgid "Show more ({count} not shown)"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:196
+msgid "None yet"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:198
+msgid "None matches"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:221
+msgid "Libraries (-lib)"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:227
+msgid "{name}: {count} declaration"
+msgid_plural "{name}: {count} declarations"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/view/DeclarationsPanel.ts:230
+msgid "{count} decl."
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:230
+msgid "not used by this model"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:232 src/app/controller/PieStudio.ts:495
+msgid "{count} error"
+msgid_plural "{count} errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/view/DeclarationsPanel.ts:234
+msgid "Edit the library"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:235
+msgid "Remove the library"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:239
+msgid "The model needs {name} (@library): open it"
+msgstr ""
+
+#: src/app/view/DeclarationsPanel.ts:241
+msgid "missing"
+msgstr ""
+
+#: src/app/view/TraceView.ts:68
+msgid "Attacker"
+msgstr ""
+
+#: src/app/view/TraceView.ts:125
+msgid "attacker has"
+msgstr ""
+
+#: src/app/view/TraceView.ts:128
+msgid "goal: event"
+msgstr ""
+
+#: src/app/view/TraceView.ts:131
+msgid "attacker test"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:103
+msgid "No problems: ProVerif accepts this model."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:113
+msgid "Reported by ProVerif 2.05 itself"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:139
+msgid "Verify the model (F5) to see the results of its security goals."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:143
+msgid "ProVerif is working..."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:153
+msgid "Memory of the engine: {used} MB, with no budget"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:154
+msgid "Memory of the engine: {used} MB of a budget of {limit} MB"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:156
+msgid "{used} MB, no limit"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:170
+msgid "Security goal"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:179
+msgid "trace"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:214
+msgid "Verify the model, then choose a result that has an attack trace."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:222
+msgid "Previous step"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:223
+msgid "Next step"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:234
+msgid "ProVerif found an attack but could not rebuild a trace of it."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:235
+msgid "The goal holds: there is no attack to show."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:235
+msgid "ProVerif could neither prove the goal nor find an attack."
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:240
+msgid "Derivation ({count} step)"
+msgid_plural "Derivation ({count} steps)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/view/BottomPanel.ts:255
+msgid "Step {number} of {count}: {text}"
+msgstr ""
+
+#: src/app/view/BottomPanel.ts:256
+msgid "{count} step. Click a step to see the action that made it."
+msgid_plural "{count} steps. Click a step to see the action that made it."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/view/FormBuilder.ts:68
+msgid "Modifiers"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:168
+msgid "Find the types from the events and tables"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:168
+msgid "Infer"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:209
+msgid "any value (empty)"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:235
+msgid "Default: {value}."
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:254
+msgid "{value} (default)"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:273
+msgid "for example {example}"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:275
+msgid "Shown as"
+msgstr ""
+
+#: src/app/view/FormBuilder.ts:294
+msgid "Suggestions"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:86
+msgid "Form"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:89
+msgid "ProVerif source"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:117
+msgid "Edit {what}"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:117 src/app/controller/PieStudio.ts:1037
+msgid "Add {what}"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:249
+msgid "Fill in the form: the declaration is checked as you type."
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:259
+msgid "Valid"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:292
+msgid "the default"
+msgstr ""
+
+#: src/app/view/DeclarationDialog.ts:330
+msgid "Declare events and names first"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:21 src/app/view/ActionDialog.ts:36
+msgid "as in CryptoVerif"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:21
+msgid "k <-R key; instead of new k: key; ProVerif reads both"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:25
+msgid "Pattern (what is received)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:26
+msgid "a more precise analysis of this input (ProVerif 2.03 and later)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:33
+msgid "Pattern"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:35 src/app/view/ActionDialog.ts:42
+#: src/app/view/ActionDialog.ts:46 src/app/view/ActionDialog.ts:61
+msgid "else branch"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:35
+msgid "what to do when the value does not match"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:36
+msgid "x <- M; instead of let x = M in, for a variable or _ without else branch; ProVerif reads both"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:40 src/app/view/ActionDialog.ts:45
+msgid "Condition"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:41
+msgid "a more precise analysis of this choice"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:42
+msgid "what to do when no value fits"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:46
+msgid "what to do when the condition is false"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:50 src/app/view/ActionDialog.ts:65
+msgid "Arguments"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:54
+msgid "Row"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:58
+msgid "Row patterns"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:59
+msgid "Condition (optional)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:60
+msgid "a more precise analysis of this lookup"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:61
+msgid "what to do when no row matches"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:64
+msgid "Process"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:68
+msgid "Phase"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:71
+msgid "Barrier"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:72
+msgid "Tag (optional)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:110
+msgid "Add a fresh name (new)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:110
+msgid "Edit the fresh name (new)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:111
+msgid "Add an input (in)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:111
+msgid "Edit the input (in)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:112
+msgid "Add an output (out)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:112
+msgid "Edit the output (out)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:113
+msgid "Add an assignment or a match (let)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:113
+msgid "Edit the assignment or match (let)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:114
+msgid "Add a choice (let ... suchthat)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:114
+msgid "Edit the choice (let ... suchthat)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:115
+msgid "Add a test (if)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:115
+msgid "Edit the test (if)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:116
+msgid "Add an event"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:116
+msgid "Edit the event"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:117
+msgid "Add an insertion into a table"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:117
+msgid "Edit the insertion into a table"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:118
+msgid "Add a lookup in a table (get)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:118
+msgid "Edit the lookup in a table (get)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:119
+msgid "Add a call of a process"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:119
+msgid "Edit the call of a process"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:120
+msgid "Add a phase"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:120
+msgid "Edit the phase"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:121
+msgid "Add a synchronisation (sync)"
+msgstr ""
+
+#: src/app/view/ActionDialog.ts:121
+msgid "Edit the synchronisation (sync)"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:21
+msgid "As the model writes most of them"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:22
+msgid "As in ProVerif: new k: key; and let x = M in"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:23
+msgid "As in CryptoVerif: k <-R key; and x <- M;"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:32
+msgid "Engine"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:33
+msgid "Notation"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:34
+msgid "Theme"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:35
+msgid "Language"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:105
+msgid "Save"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:125
+msgid "No limit: as much as the browser gives (at most 4 GB, all that WebAssembly can address)"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:133
+msgid "Memory budget of a verification"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:134
+msgid "ProVerif runs in a WebAssembly module whose memory grows as needed, up to this budget. Beyond it, or when the browser has no more memory to give, the verification stops with a clear message, and the page is not affected."
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:136
+msgid "Time limit, in seconds (0 for none)"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:138
+msgid "A verification that runs in the page (opened from a file) cannot be interrupted."
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:139
+msgid "Extra command line arguments"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:142
+msgid "Check the model with ProVerif while editing"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:143
+msgid "ProVerif 2.05 parses the model with -parse-only after each change"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:182
+msgid "The default"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:193
+msgid "Preset"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:195
+msgid "Font of the code"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:196
+msgid "Size of the interface"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:198
+msgid "Explain the constructs"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:199
+msgid "A short description shows when the pointer rests on a block of the diagram or on a keyword of the code"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:235
+msgid "New names and lets that the diagram adds"
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:236
+msgid "ProVerif 2.05 reads both styles. Edit, Write new and let as in CryptoVerif (or as in ProVerif) rewrites those of the model."
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:237
+msgid "LaTeX templates of the Design mode: #1, #2 are the parts of the action (see the placeholders), # is the identifier in the styles. Hints in the model (@notation, @infix) take precedence."
+msgstr ""
+
+#: src/app/view/SettingsDialog.ts:266
+msgid "Restore the defaults"
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:66 src/app/controller/PieStudio.ts:1064
+msgid "Fix the syntax errors of the code first."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:81
+msgid "There is no name to rename in the selection."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:162
+msgid "Rename {name} to {to} ({count} place)"
+msgid_plural "Rename {name} to {to} ({count} places)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/Toolbox.ts:173
+msgid "Apply the refactoring?"
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:173
+msgid "Apply anyway"
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:214
+msgid "Library {names} loaded: its declarations are checked with the model and given to ProVerif."
+msgid_plural "Libraries {names} loaded: their declarations are checked with the model and given to ProVerif."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/Toolbox.ts:268
+msgid "{name} changed: the model is checked with it again."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:332
+msgid "LaTeX of the protocol (TikZ)"
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:335
+msgid "The honest run, as paired in the diagram, in the notation of the Design mode."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:338
+msgid "Copy"
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:339
+msgid "LaTeX copied."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:343
+msgid "Download .tex"
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:359
+msgid "Verify the model first: the report gives the results of the last verification."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:373
+msgid "The model is verified again after each change."
+msgstr ""
+
+#: src/app/controller/Toolbox.ts:373
+msgid "Verify with F5."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:94
+msgid "A verification is already running."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:103
+msgid "The code has syntax errors: fix them before verifying."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:110
+msgid "all goals"
+msgstr ""
+
+#: src/app/controller/Verifier.ts:114
+msgid "Verifying {count} file: the goals need separate runs."
+msgid_plural "Verifying {count} files: the goals need separate runs."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/Verifier.ts:115
+msgid "ProVerif is verifying the model..."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:138
+msgid "Verifying {count} file at the same time, one verifier each."
+msgid_plural "Verifying {count} files at the same time, one verifier each."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/Verifier.ts:142 src/app/controller/Verifier.ts:160
+msgid "File {name}: {description}"
+msgstr ""
+
+#: src/app/controller/Verifier.ts:235
+msgid "{count} goal: {proved} proved, {failed} false, {other} cannot be proved."
+msgid_plural "{count} goals: {proved} proved, {failed} false, {other} cannot be proved."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/Verifier.ts:236
+msgid "{count} goal: {proved} proved, {failed} false."
+msgid_plural "{count} goals: {proved} proved, {failed} false."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/Verifier.ts:239
+msgid "ProVerif stopped: {message}"
+msgstr ""
+
+#: src/app/controller/Verifier.ts:241
+msgid "ProVerif accepts the model; it has no security goals to verify (add a query)."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:245
+msgid "Stopped: the browser gave the engine no more memory, after {size} MB (WebAssembly can address at most 4 GB)."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:248
+msgid "Stopped: the verification reached its memory budget of {size} MB (Settings, Engine)."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:251
+msgid "Stopped: the verification reached its time limit of {seconds} s (Settings, Engine)."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:254
+msgid "Cancelled."
+msgstr ""
+
+#: src/app/controller/Verifier.ts:256
+msgid "The engine failed: {message}"
+msgstr ""
+
+#: src/app/controller/Verifier.ts:318
+msgid "Stop"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:45
+msgid "A new model. Add declarations with the + of the panel on the left, parties with the + of Parties, and actions by dragging them from the palette onto a party."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:239
+msgid "Opened {file}: {count} problem to fix."
+msgid_plural "Opened {file}: {count} problems to fix."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/PieStudio.ts:240
+msgid "Opened {file}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:407
+msgid "{message}: PieStudio verifies and exports these goals as separate files."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:441
+msgid "The model needs the library {name} (@library): open it with File, Open a library, or choose it with the model."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:449
+msgid "{library}, line {line}: {message}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:488
+msgid "Passive attacker: listens only. Click to change."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:488
+msgid "Active attacker: reads, writes and blocks public channels. Click to change."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:489
+msgid "passive attacker"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:509
+msgid "Start: {file}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:811
+msgid "Hints of {file} applied to the model."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:816
+msgid "Choose a ProVerif model (.pv), and possibly its hints (.pp)."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:837
+msgid "Opened the model of the link."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:851
+msgid "Unsaved changes"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:851
+msgid "The changes to {file} are not saved. Replace the model anyway?"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:851
+msgid "Replace"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:886
+msgid "Undid: {label}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:897
+msgid "Redid: {label}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:989
+msgid "Fix the syntax errors of the code first: the diagram shows the last version that parsed."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1015
+msgid "Edit {kind}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1070
+msgid "Nothing to rewrite: the new names and the lets that can be are written as in {style}."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1073
+msgid "Write new and let as in {style}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1074
+msgid "{count} new name or let written as in {style}."
+msgid_plural "{count} new names and lets written as in {style}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/PieStudio.ts:1084
+msgid "Move an action"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1106
+msgid "Remove the else branch"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1106 src/app/controller/PieStudio.ts:1108
+msgid "Add an else branch"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1108
+msgid "Remove an else branch"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1112
+msgid "Remove the replication"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1112
+msgid "Replicate (!)"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1113
+msgid "Replication"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1114
+msgid "Run in parallel with another process"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1115
+msgid "Parallel composition"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1117
+msgid "Show as code"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1117
+msgid "Show as a formula"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1120 src/app/controller/PieStudio.ts:1279
+msgid "Delete"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1134
+msgid "Delete {kind}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1183 src/app/controller/PieStudio.ts:1185
+msgid "Show {party} once"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1189
+msgid "Show {party} as symmetric"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1227
+msgid "Edit the party {name}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1231
+msgid "Edit a declaration"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1254
+msgid "Add the party {name}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1256
+msgid "Add a declaration"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1276
+msgid "Move up"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1277
+msgid "Move down"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1291
+msgid "Move a declaration"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1304
+msgid "Delete a declaration"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1330
+msgid "This declaration has no name to rename."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1342
+msgid "Fix the syntax errors first."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1347
+msgid "Put the caret on a name to rename it."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1352
+msgid "Rename {name}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1353
+msgid "New name of the {kind} {name} ({count} occurrence)"
+msgid_plural "New name of the {kind} {name} ({count} occurrences)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/PieStudio.ts:1365
+msgid "Rename {name} to {to}"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1366
+msgid "Renamed {name} to {to} ({count} occurrence)."
+msgid_plural "Renamed {name} to {to} ({count} occurrences)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/PieStudio.ts:1440
+msgid "Active attacker"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1440
+msgid "Passive attacker"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1487
+msgid "Settings saved."
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1507
+msgid "ProVerif cannot verify these goals in one run ({reason}): the model is exported as {count} file, valid on its own."
+msgid_plural "ProVerif cannot verify these goals in one run ({reason}): the model is exported as {count} files, each valid on its own."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/controller/PieStudio.ts:1509
+msgid "incompatible goals"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1520
+msgid "Export for ProVerif"
+msgstr ""
+
+#: src/app/controller/PieStudio.ts:1526
+msgid "Download all (.zip)"
+msgstr ""

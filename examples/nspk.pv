@@ -1,0 +1,78 @@
+(* Needham-Schroeder public-key protocol and Lowe's man-in-the-middle attack.
+     A -> B : {Na, A}pkB
+     B -> A : {Na, Nb}pkA
+     A -> B : {Nb}pkB
+   Keys are registered in a table; the attacker may register keys for
+   dishonest hosts. *)
+
+free c: channel.
+
+type host.
+type nonce.
+type pkey.
+type skey.
+
+fun pk(skey): pkey.
+fun aenc(bitstring, pkey): bitstring.
+reduc forall m: bitstring, k: skey; adec(aenc(m, pk(k)), k) = m.
+fun nonce2b(nonce): bitstring [data, typeConverter].
+fun senc(bitstring, nonce): bitstring.
+reduc forall m: bitstring, k: nonce; sdec(senc(m, k), k) = m.
+
+free A, B: host.
+table keys(host, pkey).
+
+free secretANa, secretANb, secretBNa, secretBNb: bitstring [private].
+
+event beginBparam(host, host).
+event endBparam(host, host).
+event beginAparam(host, host).
+event endAparam(host, host).
+
+query attacker(secretANa); attacker(secretANb); attacker(secretBNa); attacker(secretBNb).
+query x: host, y: host; inj-event(endBparam(x, y)) ==> inj-event(beginBparam(x, y)).
+query x: host, y: host; inj-event(endAparam(x, y)) ==> inj-event(beginAparam(x, y)).
+
+let initiator(pkA: pkey, skA: skey) =
+  in(c, hostX: host);
+  get keys(=hostX, pkX) in
+  event beginBparam(A, hostX);
+  new Na: nonce;
+  out(c, aenc((Na, A), pkX));
+  in(c, m2: bitstring);
+  let (=Na, Nb: nonce) = adec(m2, skA) in
+  out(c, aenc(nonce2b(Nb), pkX));
+  if hostX = B then
+  event endAparam(A, hostX);
+  out(c, senc(secretANa, Na));
+  out(c, senc(secretANb, Nb)).
+
+let responder(pkB: pkey, skB: skey) =
+  in(c, m1: bitstring);
+  let (NX: nonce, hostY: host) = adec(m1, skB) in
+  get keys(=hostY, pkY) in
+  event beginAparam(hostY, B);
+  new Nb: nonce;
+  out(c, aenc((NX, Nb), pkY));
+  in(c, m3: bitstring);
+  if nonce2b(Nb) = adec(m3, skB) then
+  if hostY = A then
+  event endBparam(hostY, B);
+  out(c, senc(secretBNa, NX));
+  out(c, senc(secretBNb, Nb)).
+
+let keyRegistration =
+  in(c, (h: host, k: pkey));
+  if h <> A && h <> B then
+  insert keys(h, k).
+
+process
+  new skA: skey;
+  let pkA = pk(skA) in
+  out(c, pkA);
+  insert keys(A, pkA);
+  new skB: skey;
+  let pkB = pk(skB) in
+  out(c, pkB);
+  insert keys(B, pkB);
+  ( !initiator(pkA, skA) | !responder(pkB, skB) | !keyRegistration )

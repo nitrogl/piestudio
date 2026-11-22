@@ -1,0 +1,219 @@
+Process 0 (that is, the initial process):
+{1}new skB: skey;
+{2}let pkB: pkey = pk(skB) in
+{3}insert keys(pkB);
+{4}out(c, pkB);
+(
+    {5}!
+    {6}in(c, pkB_1: pkey);
+    {11}get keys(=pkB_1) in
+    {7}new n: nonce;
+    {8}event sent(pkB_1,n);
+    {9}let m: bitstring = aenc((n,pkB_1),pkB_1) in
+    {10}out(c, m)
+) | (
+    {12}!
+    {13}let skB_1: skey = skB in
+    {14}in(c, x: bitstring);
+    {15}let (y: nonce,=pk(skB_1)) = adec(x,skB_1) in
+    {16}event received(pk(skB_1),y)
+)
+
+-- Query secret n [real_or_random] encoded as equivalence in biprocess 1 (that is, process 0, encoded for secret n [real_or_random], with let moved downwards):
+{1}new skB: skey;
+{2}let pkB: pkey = pk(skB) in
+{3}insert keys(pkB);
+{4}out(c, pkB);
+(
+    {5}!
+    {6}in(c, pkB_1: pkey);
+    {7}get keys(=pkB_1) in
+    {8}new n: nonce;
+    {9}new rand: nonce;
+    {10}out(pub_ch, choice[n,rand]);
+    {11}event sent(pkB_1,n);
+    {12}let m: bitstring = aenc((n,pkB_1),pkB_1) in
+    {13}out(c, m)
+) | (
+    {14}!
+    {16}in(c, x: bitstring);
+    {15}let skB_1: skey = skB in
+    {17}let (y: nonce,=pk(skB_1)) = adec(x,skB_1) in
+    {18}event received(pk(skB_1),y)
+)
+
+Translating the process into Horn clauses...
+Termination warning: v ≠ v_1 && attacker2(v_2,v) && attacker2(v_2,v_1) -> bad
+Selecting 0
+Termination warning: v ≠ v_1 && attacker2(v,v_2) && attacker2(v_1,v_2) -> bad
+Selecting 0
+Completing...
+Termination warning: v ≠ v_1 && attacker2(v_2,v) && attacker2(v_2,v_1) -> bad
+Selecting 0
+Termination warning: v ≠ v_1 && attacker2(v,v_2) && attacker2(v_1,v_2) -> bad
+Selecting 0
+goal reachable: bad
+
+Derivation:
+Abbreviations:
+n_1 = n[pkB_1 = choice[pk(skB[]),pk(skB[])],!1 = @sid]
+rand_1 = rand[pkB_1 = choice[pk(skB[]),pk(skB[])],!1 = @sid]
+
+1. The message pk(skB[]) (resp. pk(skB[])) may be sent to the attacker at output {4}.
+attacker2(pk(skB[]),pk(skB[])).
+
+2. The entry keys(pk(skB[])) (resp. keys(pk(skB[]))) may be inserted in a table at insert {3}.
+table2(keys(pk(skB[])),keys(pk(skB[]))).
+
+3. The message pk(skB[]) (resp. pk(skB[])) that the attacker may have by 1 may be received at input {6}.
+The entry keys(pk(skB[])) (resp. keys(pk(skB[]))) that may be in a table by 2 may be read at get {7}.
+So the message aenc((n_1,pk(skB[])),pk(skB[])) (resp. aenc((n_1,pk(skB[])),pk(skB[]))) may be sent to the attacker at output {13}.
+attacker2(aenc((n_1,pk(skB[])),pk(skB[])),aenc((n_1,pk(skB[])),pk(skB[]))).
+
+4. The message pk(skB[]) (resp. pk(skB[])) that the attacker may have by 1 may be received at input {6}.
+The entry keys(pk(skB[])) (resp. keys(pk(skB[]))) that may be in a table by 2 may be read at get {7}.
+So the message n_1 (resp. rand_1) may be sent to the attacker at output {10}.
+attacker2(n_1,rand_1).
+
+5. By 4, the attacker may know n_1 (resp. rand_1).
+By 1, the attacker may know pk(skB[]) (resp. pk(skB[])).
+Using the function 2-tuple the attacker may obtain (n_1,pk(skB[])) (resp. (rand_1,pk(skB[]))).
+attacker2((n_1,pk(skB[])),(rand_1,pk(skB[]))).
+
+6. By 5, the attacker may know (n_1,pk(skB[])) (resp. (rand_1,pk(skB[]))).
+By 1, the attacker may know pk(skB[]) (resp. pk(skB[])).
+Using the function aenc the attacker may obtain aenc((n_1,pk(skB[])),pk(skB[])) (resp. aenc((rand_1,pk(skB[])),pk(skB[]))).
+attacker2(aenc((n_1,pk(skB[])),pk(skB[])),aenc((rand_1,pk(skB[])),pk(skB[]))).
+
+7. By 6, the attacker may know aenc((n_1,pk(skB[])),pk(skB[])) (resp. aenc((rand_1,pk(skB[])),pk(skB[]))).
+By 3, the attacker may know aenc((n_1,pk(skB[])),pk(skB[])) (resp. aenc((n_1,pk(skB[])),pk(skB[]))).
+We have aenc((rand_1,pk(skB[])),pk(skB[])) ≠ aenc((n_1,pk(skB[])),pk(skB[])).
+The attacker tests equality between the two terms he knows, which may allow it to distinguish cases.
+bad.
+
+
+A more detailed output of the traces is available with
+  set traceDisplay = long.
+
+new skB: skey creating skB_2 at {1}
+
+insert keys(pk(skB_2)) at {3}
+
+out(c, ~M) with ~M = pk(skB_2) at {4}
+
+in(c, ~M) with ~M = pk(skB_2) at {6} in copy a
+
+get keys(pk(skB_2)) at {7} in copy a
+
+new n: nonce creating n_2 at {8} in copy a
+
+new rand: nonce creating rand_2 at {9} in copy a
+
+out(pub_ch, ~M_1) with ~M_1 = choice[n_2,rand_2] at {10} in copy a
+
+event sent(pk(skB_2),n_2) at {11} in copy a
+
+out(c, ~M_2) with ~M_2 = aenc((n_2,pk(skB_2)),pk(skB_2)) at {13} in copy a
+
+The attacker tests whether
+aenc((~M_1,~M),~M) = aenc((choice[n_2,rand_2],pk(skB_2)),pk(skB_2))
+is equal to
+~M_2 = aenc((n_2,pk(skB_2)),pk(skB_2)).
+The result in the left-hand side is different from the result in the right-hand side.
+A trace has been found.
+RESULT Query secret n [real_or_random] encoded as equivalence cannot be proved.
+Looking for simplified processes ...
+No simplified process found.
+--  Process 2 (that is, process 0, encoded for secret n, with let moved downwards):
+{1}new skB: skey;
+{2}let pkB: pkey = pk(skB) in
+{3}insert keys(pkB);
+{4}out(c, pkB);
+(
+    {5}!
+    {6}in(c, pkB_1: pkey);
+    {7}get keys(=pkB_1) in
+    {8}new n: nonce;
+    {9}event n_contains(n);
+    {10}event sent(pkB_1,n);
+    {11}let m: bitstring = aenc((n,pkB_1),pkB_1) in
+    {12}out(c, m)
+) | (
+    {13}!
+    {15}in(c, x: bitstring);
+    {14}let skB_1: skey = skB in
+    {16}let (y: nonce,=pk(skB_1)) = adec(x,skB_1) in
+    {17}event received(pk(skB_1),y)
+)
+
+-- Query secret n encoded as not (event(n_contains(v)) && attacker(v)) in process 2.
+Translating the process into Horn clauses...
+Completing...
+Starting query secret n
+RESULT secret n is true.
+-- Query inj-event(received(k,x_1)) ==> inj-event(sent(k,x_1)) in process 2.
+Translating the process into Horn clauses...
+Completing...
+Starting query inj-event(received(k,x_1)) ==> inj-event(sent(k,x_1))
+goal reachable: attacker(x_1) -> inj-event(received(pk(skB[]),x_1),@occ17_1)
+Abbreviations:
+@occ17_1 = @occ17[x = aenc((x_1,pk(skB[])),pk(skB[])),!1 = @sid]
+
+Derivation:
+Abbreviations:
+@occ17_1 = @occ17[x = aenc((x_1,pk(skB[])),pk(skB[])),!1 = @sid]
+
+1. The message pk(skB[]) may be sent to the attacker at output {4}.
+attacker(pk(skB[])).
+
+2. We assume as hypothesis that
+attacker(x_1).
+
+3. By 2, the attacker may know x_1.
+By 1, the attacker may know pk(skB[]).
+Using the function 2-tuple the attacker may obtain (x_1,pk(skB[])).
+attacker((x_1,pk(skB[]))).
+
+4. By 3, the attacker may know (x_1,pk(skB[])).
+By 1, the attacker may know pk(skB[]).
+Using the function aenc the attacker may obtain aenc((x_1,pk(skB[])),pk(skB[])).
+attacker(aenc((x_1,pk(skB[])),pk(skB[]))).
+
+5. The message aenc((x_1,pk(skB[])),pk(skB[])) that the attacker may have by 4 may be received at input {15}.
+So event received(pk(skB[]),x_1) may be executed at {17} in session @sid.
+inj-event(received(pk(skB[]),x_1),@occ17_1).
+
+6. By 5, inj-event(received(pk(skB[]),x_1),@occ17_1).
+The goal is reached, represented in the following fact:
+inj-event(received(pk(skB[]),x_1),@occ17_1).
+
+
+A more detailed output of the traces is available with
+  set traceDisplay = long.
+
+new skB: skey creating skB_2 at {1}
+
+insert keys(pk(skB_2)) at {3}
+
+out(c, ~M) with ~M = pk(skB_2) at {4}
+
+in(c, aenc((a,~M),~M)) with aenc((a,~M),~M) = aenc((a,pk(skB_2)),pk(skB_2)) at {15} in copy a_1
+
+event received(pk(skB_2),a) at {17} in copy a_1 (goal)
+
+The event received(pk(skB_2),a) is executed at {17} in copy a_1.
+A trace has been found.
+RESULT inj-event(received(k,x_1)) ==> inj-event(sent(k,x_1)) is false.
+RESULT (even event(received(k,x_1)) ==> event(sent(k,x_1)) is false.)
+
+--------------------------------------------------------------
+Verification summary:
+
+Query secret n [real_or_random] cannot be proved.
+
+Query secret n is true.
+
+Query inj-event(received(k,x_1)) ==> inj-event(sent(k,x_1)) is false.
+
+--------------------------------------------------------------
+

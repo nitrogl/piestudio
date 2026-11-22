@@ -1,0 +1,96 @@
+(* Signed Diffie-Hellman, in the notation of a paper.
+   The hints are ProVerif comments, so ProVerif reads this file as it is.
+   In the Design mode the diagram writes exp(g, a) as g^a, senc(m, k) as
+   {m}_k and concat(x, y) as x || y. A hint just before a declaration or an
+   action applies to it; the hints that name their symbol are at the end of
+   this file and in notation.pp, which the studio opens with the example.
+   The hints before the outputs and the inputs name the three messages,
+   which the arrows join.
+   Bob signs both halves of the key, so the payload stays secret; but he never
+   learns who sent g^a, so the attacker can talk to him in Alice's name. *)
+
+free c: channel.
+
+type G.
+type exponent.
+type skey.
+type pkey.
+type key.
+
+const g: G [data].
+
+(* @notation '{#1}^{#2}' *)
+fun exp(G, exponent): G.
+equation forall x: exponent, y: exponent; exp(exp(g, x), y) = exp(exp(g, y), x).
+
+(* @notation 'H(#1)' *)
+fun h(G): key.
+
+fun pk(skey): pkey.
+(* @notation '\mathsf{sig}_{#2}(#1)' *)
+fun sign(bitstring, skey): bitstring.
+reduc forall m: bitstring, k: skey; checksign(sign(m, k), pk(k)) = m.
+
+(* @notation '\{#1\}_{#2}' *)
+fun senc(bitstring, key): bitstring.
+reduc forall m: bitstring, k: key; sdec(senc(m, k), k) = m.
+
+(* @infix '\|' *)
+fun concat(bitstring, bitstring): bitstring.
+(* @notation '\left. #1 \right|_1' *)
+reduc forall a: bitstring, b: bitstring; fst(concat(a, b)) = a.
+(* @notation '\left. #1 \right|_2' *)
+reduc forall a: bitstring, b: bitstring; snd(concat(a, b)) = b.
+
+free idA: bitstring.
+free payload: bitstring [private].
+
+event sent(bitstring, G, G).
+event received(bitstring, G, G).
+
+(* @label 'the payload stays secret' *)
+query attacker(payload).
+(* @label 'Bob accepts only what Alice sent' *)
+query x: bitstring, ga: G, gb: G; event(received(x, ga, gb)) ==> event(sent(x, ga, gb)).
+
+(* @label 'Alice' *)
+let Alice(skA: skey, pkB: pkey) =
+  new a: exponent;
+  (* @inout m1 *)
+  out(c, exp(g, a));
+  (* @inout m2 *)
+  in(c, (gb: G, s: bitstring));
+  let (=exp(g, a), =gb) = checksign(s, pkB) in
+  (* @notation 'k \leftarrow H(g^{ab})' *)
+  let k = h(exp(gb, a)) in
+  event sent(payload, exp(g, a), gb);
+  (* @inout m3 *)
+  out(c, senc(concat(idA, payload), k)).
+
+(* @label 'Bob' *)
+let Bob(skB: skey, pkA: pkey) =
+  (* @label 'nobody vouches for $g^a$' @color '#c62828' @inout m1 *)
+  in(c, ga: G);
+  new b: exponent;
+  (* @inout m2 *)
+  out(c, (exp(g, b), sign((ga, exp(g, b)), skB)));
+  (* @inout m3 *)
+  in(c, m: bitstring);
+  let k = h(exp(ga, b)) in
+  let x = sdec(m, k) in
+  if fst(x) = idA then
+  event received(snd(x), ga, exp(g, b)).
+
+process
+  new skA: skey;
+  new skB: skey;
+  out(c, pk(skA));
+  out(c, pk(skB));
+  ( !Alice(skA, pk(skB)) | !Bob(skB, pk(skA)) )
+
+(**
+ * Deferred hints: they name their symbol, so they can be anywhere.
+ * @notation '\mathsf{vk}(#1)' pk
+ * @notation 'M' payload
+ * @notation '\mathit{id}_A' idA
+ *)

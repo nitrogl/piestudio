@@ -1,0 +1,3178 @@
+# PieStudio in Italiano (it).
+#
+# For each message, msgid is the English text and msgstr its translation:
+# write the translation between the quotes of msgstr, and leave msgid as
+# it is. Keep the placeholders in braces, such as {count}, which the
+# studio fills in, and the tags of the messages that have some, such as
+# <b>...</b>. A message left empty, '', shows in English.
+#
+# In the header below, write the code of the language after Language
+# (zh for Chinese, fr for French, es for Spanish...), its name in the
+# language itself after X-Language-Name, and its plural forms after
+# Plural-Forms, for instance:
+#   Chinese, Japanese, Korean, Vietnamese    nplurals=1; plural=0;
+#   English, German, Italian, Spanish        nplurals=2; plural=(n != 1);
+#   French, Portuguese of Brazil             nplurals=2; plural=(n > 1);
+#  (see https://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html)
+# A message with a plural (msgid_plural) has a msgstr[0], msgstr[1]... for
+# each form. Poedit (poedit.net) does all of this with a form.
+#
+# Load the file in PieStudio (View, Language, Load a translation) to see the
+# interface in the new language at once, as often as needed. Then send
+# it to whoever maintains PieStudio: they load it in the same way, and put it
+# in the folder lang/, next to the page, with the languages.js that PieStudio
+# then gives, and the language is there for everyone.
+msgid ""
+msgstr ""
+"Project-Id-Version: PieStudio 0.1.0\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language-Name: Italiano\n"
+
+#: index.html:20 index.html:82 src/app/controller/PieStudio.ts:1540
+msgid "About PieStudio"
+msgstr "Informazioni su PieStudio"
+
+#: index.html:23
+msgid "Model file"
+msgstr "File del modello"
+
+#: index.html:27 src/app/model/ReportWriter.ts:46
+#: src/app/view/BottomPanel.ts:170
+msgid "File"
+msgstr "File"
+
+#: index.html:29
+msgid "New model"
+msgstr "Nuovo modello"
+
+#: index.html:30
+msgid "Open a model (.pv, .pp)..."
+msgstr "Apri un modello (.pv, .pp)..."
+
+#: index.html:30
+msgid "Ctrl+O"
+msgstr "Ctrl+O"
+
+#: index.html:31
+msgid "Save the model (.pv)"
+msgstr "Salva il modello (.pv)"
+
+#: index.html:31
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: index.html:32
+msgid "Export for ProVerif..."
+msgstr "Esporta per ProVerif..."
+
+#: index.html:32
+msgid "Ctrl+E"
+msgstr "Ctrl+E"
+
+#: index.html:33 src/app/view/DeclarationsPanel.ts:242
+msgid "Open a library (.pvl)..."
+msgstr "Apri una libreria (.pvl)..."
+
+#: index.html:34
+msgid "LaTeX of the protocol (TikZ)..."
+msgstr "LaTeX del protocollo (TikZ)..."
+
+#: index.html:36
+msgid "Examples"
+msgstr "Esempi"
+
+#: index.html:41 studio-core/src/text/EditHistory.ts:57
+#: src/app/controller/PieStudio.ts:1102 src/app/controller/PieStudio.ts:1274
+msgid "Edit"
+msgstr "Modifica"
+
+#: index.html:43
+msgid "Undo"
+msgstr "Annulla"
+
+#: index.html:43
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: index.html:44
+msgid "Redo"
+msgstr "Ripeti"
+
+#: index.html:44
+msgid "Ctrl+Shift+Z"
+msgstr "Ctrl+Maiusc+Z"
+
+#: index.html:46
+msgid "Add a party"
+msgstr "Aggiungi un partecipante"
+
+#: index.html:47 index.html:226 src/app/controller/PieStudio.ts:1275
+msgid "Rename everywhere"
+msgstr "Rinomina ovunque"
+
+#: index.html:48
+msgid "Refactor in the selection..."
+msgstr "Refactoring nella selezione..."
+
+#: index.html:48
+msgid "Shift+F2"
+msgstr "Maiusc+F2"
+
+#: index.html:49
+msgid "Write new and let as in CryptoVerif"
+msgstr "Scrivi new e let come in CryptoVerif"
+
+#: index.html:49
+msgid "k <-R key; and x <- M;"
+msgstr "k <-R key; e x <- M;"
+
+#: index.html:50
+msgid "Write new and let as in ProVerif"
+msgstr "Scrivi new e let come in ProVerif"
+
+#: index.html:50
+msgid "new k: key; and let x = M in"
+msgstr "new k: key; e let x = M in"
+
+#: index.html:51 index.html:225
+msgid "Delete the selection"
+msgstr "Elimina la selezione"
+
+#: index.html:51 index.html:225 src/app/controller/PieStudio.ts:1120
+#: src/app/controller/PieStudio.ts:1279
+msgid "Del"
+msgstr "Canc"
+
+#: index.html:53
+msgid "Active or passive attacker"
+msgstr "Attaccante attivo o passivo"
+
+#: index.html:57 index.html:97
+msgid "View"
+msgstr "Visualizza"
+
+#: index.html:59
+msgid "Design mode (formulas)"
+msgstr "Modalità Design (formule)"
+
+#: index.html:60
+msgid "Expert mode (ProVerif)"
+msgstr "Modalità Esperto (ProVerif)"
+
+#: index.html:62 index.html:98 index.html:136
+msgid "Diagram"
+msgstr "Diagramma"
+
+#: index.html:63 index.html:99
+msgid "Diagram and code"
+msgstr "Diagramma e codice"
+
+#: index.html:64 index.html:100 index.html:153
+#: src/app/view/SettingsDialog.ts:234
+msgid "Code"
+msgstr "Codice"
+
+#: index.html:66 index.html:141
+msgid "Zoom in"
+msgstr "Ingrandisci"
+
+#: index.html:67 index.html:140
+msgid "Zoom out"
+msgstr "Riduci"
+
+#: index.html:68
+msgid "Actual size"
+msgstr "Dimensioni reali"
+
+#: index.html:70
+msgid "Light or dark theme"
+msgstr "Tema chiaro o scuro"
+
+#: index.html:71
+msgid "Notation..."
+msgstr "Notazione..."
+
+#: index.html:72
+msgid "Theme..."
+msgstr "Tema..."
+
+#: index.html:73
+msgid "Language..."
+msgstr "Lingua..."
+
+#: index.html:77
+msgid "Help"
+msgstr "Aiuto"
+
+#: index.html:79
+msgid "User guide"
+msgstr "Guida per l'utente"
+
+#: index.html:80 src/app/controller/PieStudio.ts:1547
+msgid "Keyboard shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: index.html:81
+msgid "ProVerif manual (online)"
+msgstr "Manuale di ProVerif (online)"
+
+#: index.html:88
+msgid "Undo (Ctrl+Z)"
+msgstr "Annulla (Ctrl+Z)"
+
+#: index.html:89
+msgid "Redo (Ctrl+Shift+Z)"
+msgstr "Ripeti (Ctrl+Maiusc+Z)"
+
+#: index.html:93
+msgid "Mode"
+msgstr "Modalità"
+
+#: index.html:94
+msgid "Design mode: blocks as formulas (F9)"
+msgstr "Modalità Design: blocchi come formule (F9)"
+
+#: index.html:94
+msgid "Design"
+msgstr "Design"
+
+#: index.html:95
+msgid "Expert mode: blocks as ProVerif code (F9)"
+msgstr "Modalità Esperto: blocchi come codice ProVerif (F9)"
+
+#: index.html:95
+msgid "Expert"
+msgstr "Esperto"
+
+#: index.html:103
+msgid "Verify with ProVerif 2.05 (F5)"
+msgstr "Verifica con ProVerif 2.05 (F5)"
+
+#: index.html:103 index.html:106 src/app/controller/Verifier.ts:318
+msgid "Verify"
+msgstr "Verifica"
+
+#: index.html:104
+msgid "Verification options"
+msgstr "Opzioni della verifica"
+
+#: index.html:107
+msgid "Stop the verification"
+msgstr "Ferma la verifica"
+
+#: index.html:108
+msgid "Verify as I edit"
+msgstr "Verifica mentre modifico"
+
+#: index.html:109
+msgid "Report of the verification (HTML)"
+msgstr "Rapporto della verifica (HTML)"
+
+#: index.html:111
+msgid "Engine settings (memory, time)..."
+msgstr "Impostazioni del motore (memoria, tempo)..."
+
+#: index.html:121
+msgid "Declarations"
+msgstr "Dichiarazioni"
+
+#: index.html:126
+msgid "Filter declarations"
+msgstr "Filtra le dichiarazioni"
+
+#: index.html:137
+msgid "Add a party (a process macro)"
+msgstr "Aggiungi un partecipante (una macro di processo)"
+
+#: index.html:139 src/app/controller/PieStudio.ts:489
+msgid "active attacker"
+msgstr "attaccante attivo"
+
+#: index.html:143
+msgid "The code has syntax errors: the diagram and the declarations show the last version that parsed."
+msgstr "Il codice ha errori di sintassi: il diagramma e le dichiarazioni mostrano l'ultima versione senza errori."
+
+#: index.html:164
+msgid "Problems"
+msgstr "Problemi"
+
+#: index.html:165
+msgid "Results"
+msgstr "Risultati"
+
+#: index.html:166
+msgid "Attack trace"
+msgstr "Traccia d'attacco"
+
+#: index.html:167
+msgid "ProVerif output"
+msgstr "Output di ProVerif"
+
+#: index.html:168
+msgid "History"
+msgstr "Cronologia"
+
+#: index.html:170
+msgid "Hide or show the panel"
+msgstr "Nascondi o mostra il pannello"
+
+#: index.html:189 studio-core/src/view/Dialogs.ts:95
+#: studio-core/src/view/Toast.ts:33 src/app/controller/Toolbox.ts:337
+#: src/app/controller/PieStudio.ts:1525
+msgid "Close"
+msgstr "Chiudi"
+
+#: index.html:209
+msgid "The model never leaves your computer."
+msgstr "Il modello non lascia mai il tuo computer."
+
+#: index.html:212
+msgid "<b>PieStudio</b> is a visual editor for ProVerif models. Each block of the diagram is one construct of ProVerif's typed pi calculus; the diagram and the code are two views of the same model, and ProVerif 2.05 verifies it in your browser."
+msgstr "<b>PieStudio</b> è un editor visuale di modelli ProVerif. Ogni blocco del diagramma è un costrutto del pi-calcolo tipato di ProVerif; il diagramma e il codice sono due viste dello stesso modello, e ProVerif 2.05 lo verifica nel tuo browser."
+
+#: index.html:213
+msgid "Free software: you can redistribute it and modify it under the terms of the GNU General Public License, version 2 or (at your option) any later version (COPYING). Roberto Metere."
+msgstr "Software libero: puoi ridistribuirlo e modificarlo nei termini della GNU General Public License, versione 2 o (a tua scelta) qualsiasi versione successiva (COPYING). Roberto Metere."
+
+#: index.html:214
+msgid "The verifier is ProVerif 2.05 by Bruno Blanchet, Vincent Cheval and Marc Sylvestre (INRIA, CNRS), as ProVerif for WebAssembly: compiled with the OCaml 4.14 runtime to WebAssembly by Roberto Metere, and distributed under the GNU GPL v2 or later (engine/NOTICE, engine/COPYING; the OCaml runtime is under the LGPL 2.1 with the OCaml linking exception, engine/LICENSE-OCaml.txt, and the parts of Emscripten under the MIT licence, engine/LICENSE-Emscripten.txt). Studio Core, the parts that PieStudio shares with CryStudio, is by Roberto Metere under the MIT licence (studio-core/LICENSE). Bootstrap, jQuery, jQuery UI and KaTeX are under the MIT licence; Font Awesome Free under the SIL OFL (fonts) and MIT (code)."
+msgstr "Il verificatore è ProVerif 2.05 di Bruno Blanchet, Vincent Cheval e Marc Sylvestre (INRIA, CNRS), come ProVerif for WebAssembly: compilato in WebAssembly con il runtime di OCaml 4.14 da Roberto Metere, e distribuito sotto la GNU GPL v2 o successiva (engine/NOTICE, engine/COPYING; il runtime di OCaml è sotto la LGPL 2.1 con l'eccezione di linking di OCaml, engine/LICENSE-OCaml.txt, e le parti di Emscripten sotto la licenza MIT, engine/LICENSE-Emscripten.txt). Studio Core, le parti che PieStudio condivide con CryStudio, è di Roberto Metere con licenza MIT (studio-core/LICENSE). Bootstrap, jQuery, jQuery UI e KaTeX sono sotto la licenza MIT; Font Awesome Free sotto la SIL OFL (font) e la MIT (codice)."
+
+#: index.html:220
+msgid "Verify with ProVerif"
+msgstr "Verifica con ProVerif"
+
+#: index.html:221
+msgid "Design or Expert mode"
+msgstr "Modalità Design o Esperto"
+
+#: index.html:222 index.html:223 index.html:228
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: index.html:222 index.html:227
+msgid "Shift"
+msgstr "Maiusc"
+
+#: index.html:222
+msgid "Undo, redo (no limit)"
+msgstr "Annulla, ripeti (senza limite)"
+
+#: index.html:223
+msgid "Open, save, export"
+msgstr "Apri, salva, esporta"
+
+#: index.html:224 src/app/controller/PieStudio.ts:1102
+#: src/app/controller/PieStudio.ts:1274
+msgid "Enter"
+msgstr "Invio"
+
+#: index.html:224
+msgid "double click"
+msgstr "doppio clic"
+
+#: index.html:224
+msgid "Edit the selected block or declaration"
+msgstr "Modifica il blocco o la dichiarazione selezionati"
+
+#: index.html:227
+msgid "Refactor in the selection"
+msgstr "Refactoring nella selezione"
+
+#: index.html:228
+msgid "click"
+msgstr "clic"
+
+#: index.html:228
+msgid "Go to the declaration (in the code)"
+msgstr "Vai alla dichiarazione (nel codice)"
+
+#: index.html:229
+msgid "Right click"
+msgstr "Clic destro"
+
+#: index.html:229
+msgid "The menu of a block or a declaration"
+msgstr "Il menu di un blocco o di una dichiarazione"
+
+#: studio-core/src/text/I18n.ts:933
+msgid "The file does not say its language: write its code after Language, in its header (Language: zh for Chinese)."
+msgstr "Il file non dice la sua lingua: scrivine il codice dopo Language, nella sua intestazione (Language: zh per il cinese)."
+
+#: studio-core/src/text/I18n.ts:1006
+msgid "the translation leaves out {placeholders}"
+msgstr "la traduzione omette {placeholders}"
+
+#: studio-core/src/text/I18n.ts:1010
+msgid "the translation has {placeholders}, which the message does not have"
+msgstr "la traduzione contiene {placeholders}, che il messaggio non ha"
+
+#: studio-core/src/text/I18n.ts:1014
+msgid "the translation has tags or links that the message does not have"
+msgstr "la traduzione contiene tag o link che il messaggio non ha"
+
+#: studio-core/src/notation/Conventions.ts:65 src/app/language/PvLanguage.ts:64
+msgid "variables"
+msgstr "variabili"
+
+#: studio-core/src/notation/Conventions.ts:65
+msgid "formula"
+msgstr "formula"
+
+#: studio-core/src/notation/Conventions.ts:75 src/app/language/PvLanguage.ts:71
+msgid "Terms"
+msgstr "Termini"
+
+#: studio-core/src/notation/Conventions.ts:76
+msgid "Identifiers"
+msgstr "Identificatori"
+
+#: studio-core/src/notation/Conventions.ts:77 src/app/language/PvLanguage.ts:73
+#: src/app/view/SettingsDialog.ts:194
+msgid "Colours"
+msgstr "Colori"
+
+#: studio-core/src/notation/LatexLexer.ts:92
+msgid "a brace } closes no {"
+msgstr "una parentesi } non chiude alcuna {"
+
+#: studio-core/src/notation/LatexLexer.ts:97
+#: studio-core/src/notation/LatexLexer.ts:166
+msgid "a brace { is not closed"
+msgstr "una parentesi { non è chiusa"
+
+#: studio-core/src/notation/HintParser.ts:172
+msgid "@{kind}: the name of a convention is expected"
+msgstr "@{kind}: serve il nome di una convenzione"
+
+#: studio-core/src/notation/HintParser.ts:182
+msgid "@{kind}: a name is expected, the same on an output and on the inputs that receive it"
+msgstr "@{kind}: serve un nome, lo stesso su un output e sugli input che lo ricevono"
+
+#: studio-core/src/notation/HintParser.ts:194
+msgid "@{kind}: a quoted colour is expected"
+msgstr "@{kind}: serve un colore tra virgolette"
+
+#: studio-core/src/notation/HintParser.ts:194
+msgid "@{kind}: a quoted text is expected"
+msgstr "@{kind}: serve un testo tra virgolette"
+
+#: studio-core/src/notation/HintParser.ts:215
+msgid "@{kind}: the quote is not closed"
+msgstr "@{kind}: le virgolette non sono chiuse"
+
+#: studio-core/src/notation/NotationTable.ts:140
+msgid "@convention: unknown convention {name}"
+msgstr "@convention: la convenzione {name} non esiste"
+
+#: studio-core/src/notation/NotationTable.ts:162
+msgid "@{kind} in a .pp file needs an explicit target"
+msgstr "@{kind} in un file .pp deve dire esplicitamente a cosa si applica"
+
+#: studio-core/src/notation/NotationTable.ts:163
+msgid "@{kind}: I cannot tell what this hint applies to; name its target after it"
+msgstr "@{kind}: non so a cosa si applichi questa indicazione; scrivi dopo di essa il nome a cui si applica"
+
+#: studio-core/src/notation/NotationTable.ts:186
+msgid "@inout goes in a comment just before an output or an input"
+msgstr "@inout va in un commento subito prima di un output o di un input"
+
+#: studio-core/src/notation/NotationTable.ts:202
+msgid "@inout {name}: no input has this name"
+msgstr "@inout {name}: nessun input ha questo nome"
+
+#: studio-core/src/notation/NotationTable.ts:204
+msgid "@inout {name}: no output has this name"
+msgstr "@inout {name}: nessun output ha questo nome"
+
+#: studio-core/src/notation/NotationTable.ts:234
+msgid "@{kind}: {name} is not declared"
+msgstr "@{kind}: {name} non è dichiarato"
+
+#: studio-core/src/notation/NotationTable.ts:290
+msgid "@{kind}: {name} has {count} argument; an infix notation needs 2"
+msgid_plural "@{kind}: {name} has {count} arguments; an infix notation needs 2"
+msgstr[0] "@{kind}: {name} ha {count} argomento; una notazione infissa ne richiede 2"
+msgstr[1] "@{kind}: {name} ha {count} argomenti; una notazione infissa ne richiede 2"
+
+#: studio-core/src/notation/NotationTable.ts:297
+msgid "@{kind}: {name} has {count} argument; a prefix notation needs 1"
+msgid_plural "@{kind}: {name} has {count} arguments; a prefix notation needs 1"
+msgstr[0] "@{kind}: {name} ha {count} argomento; una notazione prefissa ne richiede 1"
+msgstr[1] "@{kind}: {name} ha {count} argomenti; una notazione prefissa ne richiede 1"
+
+#: studio-core/src/notation/NotationTable.ts:304
+msgid "@{kind}: {name} has {count} argument; a postfix notation needs 1"
+msgid_plural "@{kind}: {name} has {count} arguments; a postfix notation needs 1"
+msgstr[0] "@{kind}: {name} ha {count} argomento; una notazione postfissa ne richiede 1"
+msgstr[1] "@{kind}: {name} ha {count} argomenti; una notazione postfissa ne richiede 1"
+
+#: studio-core/src/notation/NotationTable.ts:320
+msgid "@notation: {name} has {count} argument but the notation uses #{hole}"
+msgid_plural "@notation: {name} has {count} arguments but the notation uses #{hole}"
+msgstr[0] "@notation: {name} ha {count} argomento, ma la notazione usa #{hole}"
+msgstr[1] "@notation: {name} ha {count} argomenti, ma la notazione usa #{hole}"
+
+#: studio-core/src/view/CodeView.ts:131
+msgid "{language} code of the model"
+msgstr "Codice {language} del modello"
+
+#: studio-core/src/view/CodeView.ts:730
+msgid "F2 renames, F12 goes to the declaration"
+msgstr "F2 rinomina, F12 va alla dichiarazione"
+
+#: studio-core/src/view/Dialogs.ts:207 studio-core/src/view/Dialogs.ts:260
+#: studio-core/src/view/FileEditor.ts:80 studio-core/src/view/RefactorBar.ts:70
+#: src/app/view/DeclarationDialog.ts:122 src/app/view/ActionDialog.ts:181
+#: src/app/view/SettingsDialog.ts:104
+msgid "Cancel"
+msgstr "Annulla"
+
+#: studio-core/src/view/Dialogs.ts:208 studio-core/src/view/Dialogs.ts:261
+#: src/app/controller/PieStudio.ts:497 src/app/controller/PieStudio.ts:499
+msgid "OK"
+msgstr "OK"
+
+#: studio-core/src/view/FileEditor.ts:60
+msgid "{count} error: {message}"
+msgid_plural "{count} errors, the first: {message}"
+msgstr[0] "{count} errore: {message}"
+msgstr[1] "{count} errori, il primo: {message}"
+
+#: studio-core/src/view/FileEditor.ts:61
+msgid "No problems in {name}."
+msgstr "Nessun problema in {name}."
+
+#: studio-core/src/view/FileEditor.ts:76
+msgid "Save the file"
+msgstr "Salva il file"
+
+#: studio-core/src/view/FileEditor.ts:81 studio-core/src/view/RefactorBar.ts:69
+#: src/app/view/DeclarationDialog.ts:123 src/app/view/ActionDialog.ts:182
+msgid "Apply"
+msgstr "Applica"
+
+#: studio-core/src/view/FileEditor.ts:88 src/app/controller/PieStudio.ts:921
+msgid "Edit the code"
+msgstr "Modifica il codice"
+
+#: studio-core/src/view/ThemeSettings.ts:20
+msgid "Studio (default)"
+msgstr "Studio (predefinito)"
+
+#: studio-core/src/view/ThemeSettings.ts:22
+msgid "Midnight"
+msgstr "Mezzanotte"
+
+#: studio-core/src/view/ThemeSettings.ts:27
+msgid "Paper (for printing and slides)"
+msgstr "Carta (per la stampa e le slide)"
+
+#: studio-core/src/view/ThemeSettings.ts:32
+msgid "High contrast"
+msgstr "Contrasto elevato"
+
+#: studio-core/src/view/ThemeSettings.ts:37
+msgid "Solarized light"
+msgstr "Solarized chiaro"
+
+#: studio-core/src/view/ThemeSettings.ts:50
+msgid "Accent"
+msgstr "Accento"
+
+#: studio-core/src/view/ThemeSettings.ts:51
+msgid "Background"
+msgstr "Sfondo"
+
+#: studio-core/src/view/ThemeSettings.ts:52
+msgid "Parties"
+msgstr "Partecipanti"
+
+#: studio-core/src/view/ThemeSettings.ts:58
+msgid "Calls"
+msgstr "Chiamate"
+
+#: studio-core/src/view/RefactorBar.ts:66
+msgid "Rename"
+msgstr "Rinomina"
+
+#: studio-core/src/view/RefactorBar.ts:66
+msgid "to"
+msgstr "in"
+
+#: studio-core/src/view/RefactorBar.ts:67
+msgid "all"
+msgstr "tutte"
+
+#: studio-core/src/view/RefactorBar.ts:68
+msgid "none"
+msgstr "nessuna"
+
+#: studio-core/src/view/RefactorBar.ts:100
+msgid "lines {from} to {to}"
+msgstr "righe da {from} a {to}"
+
+#: studio-core/src/view/RefactorBar.ts:101
+msgid "the whole model"
+msgstr "tutto il modello"
+
+#: studio-core/src/view/RefactorBar.ts:102
+msgid "{included} of {total} in {range}"
+msgstr "{included} di {total} in {range}"
+
+#: studio-core/src/view/RefactorBar.ts:106
+msgid "Type the new name: nothing changes until you apply it. Click an occurrence in the code to leave it out."
+msgstr "Scrivi il nuovo nome: nulla cambia finché non lo applichi. Fai clic su un'occorrenza nel codice per escluderla."
+
+#: studio-core/src/view/RefactorBar.ts:114 src/app/view/BottomPanel.ts:110
+msgid "line {number}"
+msgstr "riga {number}"
+
+#: studio-core/src/view/RefactorBar.ts:118
+msgid "and {count} more line"
+msgid_plural "and {count} more lines"
+msgstr[0] "e un'altra riga"
+msgstr[1] "e altre {count} righe"
+
+#: studio-core/src/view/DiagramView.ts:233
+msgid "Double click to edit the party"
+msgstr "Doppio clic per modificare il partecipante"
+
+#: studio-core/src/view/DiagramView.ts:242
+msgid "No process runs this party"
+msgstr "Nessun processo esegue questo partecipante"
+
+#: studio-core/src/view/DiagramView.ts:242
+msgid "unused"
+msgstr "non usato"
+
+#: studio-core/src/view/DiagramView.ts:247
+msgid "Symmetric role: shown with its mirrored copy. Click to show it once."
+msgstr "Ruolo simmetrico: mostrato con la sua copia speculare. Fai clic per mostrarlo una volta sola."
+
+#: studio-core/src/view/DiagramView.ts:247
+msgid "Symmetric role? Show it with a mirrored copy"
+msgstr "Ruolo simmetrico? Mostralo con una copia speculare"
+
+#: studio-core/src/view/DiagramView.ts:252
+msgid "Show this party as code"
+msgstr "Mostra questo partecipante come codice"
+
+#: studio-core/src/view/DiagramView.ts:252
+msgid "Show this party as formulas"
+msgstr "Mostra questo partecipante come formule"
+
+#: studio-core/src/view/DiagramView.ts:285
+msgid "Add an action here"
+msgstr "Aggiungi un'azione qui"
+
+#: studio-core/src/view/DiagramView.ts:308
+msgid "End of the process"
+msgstr "Fine del processo"
+
+#: studio-core/src/view/DiagramView.ts:327
+msgid "Show the other way"
+msgstr "Mostra nell'altro modo"
+
+#: studio-core/src/view/DiagramView.ts:370
+msgid "runs process {number}"
+msgstr "esegue il processo {number}"
+
+#: studio-core/src/view/DiagramView.ts:370
+msgid "runs {name}"
+msgstr "esegue {name}"
+
+#: studio-core/src/view/DiagramView.ts:385
+msgid "any number of copies"
+msgstr "un numero qualsiasi di copie"
+
+#: studio-core/src/view/DiagramView.ts:387
+msgid "{count} process in parallel"
+msgid_plural "{count} processes in parallel"
+msgstr[0] "{count} processo in parallelo"
+msgstr[1] "{count} processi in parallelo"
+
+#: studio-core/src/view/DiagramView.ts:740
+msgid "Message {name} on {channel} (private channel)"
+msgstr "Messaggio {name} su {channel} (canale privato)"
+
+#: studio-core/src/view/DiagramView.ts:740
+msgid "Message {name} on {channel}"
+msgstr "Messaggio {name} su {channel}"
+
+#: studio-core/src/view/DiagramView.ts:743
+msgid "Message {name}"
+msgstr "Messaggio {name}"
+
+#: studio-core/src/view/DiagramView.ts:746
+msgid "Message on {channel} (private channel)"
+msgstr "Messaggio su {channel} (canale privato)"
+
+#: studio-core/src/view/DiagramView.ts:746
+msgid "Message on {channel}"
+msgstr "Messaggio su {channel}"
+
+#: studio-core/src/view/DiagramView.ts:748 src/app/view/ActionDialog.ts:30
+msgid "Message"
+msgstr "Messaggio"
+
+#: studio-core/src/view/LanguagePane.ts:82
+msgid "Load a translation (.po)..."
+msgstr "Carica una traduzione (.po)..."
+
+#: studio-core/src/view/LanguagePane.ts:86
+msgid "Download the file to translate (.pot)"
+msgstr "Scarica il file da tradurre (.pot)"
+
+#: studio-core/src/view/LanguagePane.ts:99
+msgid "Download languages.js"
+msgstr "Scarica languages.js"
+
+#: studio-core/src/view/LanguagePane.ts:103
+msgid "Language of the interface"
+msgstr "Lingua dell'interfaccia"
+
+#: studio-core/src/view/LanguagePane.ts:104
+msgid "When the settings are saved, the page loads again in the language chosen, with the model and the history of its changes."
+msgstr "Quando salvi le impostazioni, la pagina si ricarica nella lingua scelta, con il modello e la cronologia delle sue modifiche."
+
+#: studio-core/src/view/LanguagePane.ts:106
+msgid "Translate {app}"
+msgstr "Traduci {app}"
+
+#: studio-core/src/view/LanguagePane.ts:107
+msgid "Hand the file to translate to whoever knows another language: they write the translation of each message after msgstr, with a text editor or with Poedit, and load the file here to see it at once."
+msgstr "Dai il file da tradurre a chi conosce un'altra lingua: scrive la traduzione di ogni messaggio dopo msgstr, con un editor di testo o con Poedit, e carica qui il file per vederla subito."
+
+#: studio-core/src/view/LanguagePane.ts:108
+msgid "To give a translation to everyone who opens {app}, load it here, then put the languages.js that this pane gives in the folder lang/, next to the page, in place of the one there. Keep the translation in lang/ too, for later changes."
+msgstr "Per dare una traduzione a chiunque apra {app}, caricala qui, poi metti il languages.js che questo pannello fornisce nella cartella lang/, accanto alla pagina, al posto di quello che c'è. Tieni anche la traduzione in lang/, per le modifiche future."
+
+#: studio-core/src/view/LanguagePane.ts:124
+msgid "Automatic: the language of the browser ({name})"
+msgstr "Automatica: la lingua del browser ({name})"
+
+#: studio-core/src/view/LanguagePane.ts:127
+msgid "{name} (loaded)"
+msgstr "{name} (caricata)"
+
+#: studio-core/src/view/LanguagePane.ts:137
+msgid "Loaded by you: {name} ({code})"
+msgstr "Caricata da te: {name} ({code})"
+
+#: studio-core/src/view/LanguagePane.ts:138 src/app/view/FormBuilder.ts:306
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: studio-core/src/view/LanguagePane.ts:168
+msgid "The messages of {app} are written in English."
+msgstr "I messaggi di {app} sono scritti in inglese."
+
+#: studio-core/src/view/LanguagePane.ts:176
+msgid "All {total} messages are translated."
+msgstr "Tutti i {total} messaggi sono tradotti."
+
+#: studio-core/src/view/LanguagePane.ts:177
+msgid "{translated} of {total} messages are translated; the others show in English."
+msgstr "Messaggi tradotti: {translated} su {total}; gli altri appaiono in inglese."
+
+#: studio-core/src/view/LanguagePane.ts:178
+msgid "Download {name} to improve it (.po)"
+msgstr "Scarica la traduzione: {name} (.po)"
+
+#: studio-core/src/view/LanguagePane.ts:206
+msgid "Loaded {file}: {name} ({code}), {translated} of {total} messages. Save the settings to see it."
+msgstr "Hai caricato {file}: {name} ({code}), messaggi tradotti: {translated} su {total}. Salva le impostazioni per vedere la traduzione."
+
+#: studio-core/src/view/LanguagePane.ts:216
+msgid "{count} line could not be read: {lines}"
+msgid_plural "{count} lines could not be read: {lines}"
+msgstr[0] "Non è stato possibile leggere {count} riga: {lines}"
+msgstr[1] "Non è stato possibile leggere {count} righe: {lines}"
+
+#: studio-core/src/view/LanguagePane.ts:222
+msgid "The file does not give the plural forms of the language: write them after Plural-Forms, in its header (see the comments at its top). Until then, plurals show as in English."
+msgstr "Il file non indica le forme plurali della lingua: scrivile dopo Plural-Forms, nella sua intestazione (vedi i commenti in cima al file). Fino ad allora, i plurali appaiono come in inglese."
+
+#: studio-core/src/view/LanguagePane.ts:228
+msgid "Line {line}: {reason}; the message shows in English."
+msgstr "Riga {line}: {reason}; il messaggio appare in inglese."
+
+#: studio-core/src/view/LanguagePane.ts:231
+msgid "And {count} more."
+msgid_plural "And {count} more."
+msgstr[0] "E un altro."
+msgstr[1] "E altri {count}."
+
+#: src/app/language/PvSettings.ts:24
+msgid "An active attacker reads, writes and blocks public channels; a passive one only listens."
+msgstr "Un attaccante attivo legge, scrive e blocca i canali pubblici; uno passivo si limita ad ascoltare."
+
+#: src/app/language/PvSettings.ts:25
+msgid "Compromise of session keys of other sessions."
+msgstr "Compromissione delle chiavi di sessione di altre sessioni."
+
+#: src/app/language/PvSettings.ts:26
+msgid "Allow private communications on public terms."
+msgstr "Permette comunicazioni private su termini pubblici."
+
+#: src/app/language/PvSettings.ts:27
+msgid "Allow choice/diff inside patterns."
+msgstr "Permette choice/diff dentro i pattern."
+
+#: src/app/language/PvSettings.ts:28
+msgid "Make every input, get and let...suchthat precise."
+msgstr "Rende precisi ogni input, get e let...suchthat."
+
+#: src/app/language/PvSettings.ts:29
+msgid "Ignore types during verification (types are still checked when parsing)."
+msgstr "Ignora i tipi durante la verifica (i tipi vengono comunque controllati durante l'analisi sintattica)."
+
+#: src/app/language/PvSettings.ts:30
+msgid "Move restrictions downwards before translating to clauses."
+msgstr "Sposta le restrizioni verso il basso prima della traduzione in clausole."
+
+#: src/app/language/PvSettings.ts:31
+msgid "Move let bindings downwards before translating to clauses."
+msgstr "Sposta i legami let verso il basso prima della traduzione in clausole."
+
+#: src/app/language/PvSettings.ts:32
+msgid "Include terms of the equational theory in the arguments of names."
+msgstr "Include i termini della teoria equazionale negli argomenti dei nomi."
+
+#: src/app/language/PvSettings.ts:33
+msgid "Expand let terms precisely."
+msgstr "Espande con precisione i termini let."
+
+#: src/app/language/PvSettings.ts:34
+msgid "Prove lemmas by induction by default."
+msgstr "Dimostra i lemmi per induzione, per impostazione predefinita."
+
+#: src/app/language/PvSettings.ts:35
+msgid "Prove queries by induction by default."
+msgstr "Dimostra le query per induzione, per impostazione predefinita."
+
+#: src/app/language/PvSettings.ts:36
+msgid "Remove events that are only used by lemmas."
+msgstr "Rimuove gli eventi usati solo dai lemmi."
+
+#: src/app/language/PvSettings.ts:37
+msgid "How lemmas are applied during saturation."
+msgstr "Come si applicano i lemmi durante la saturazione."
+
+#: src/app/language/PvSettings.ts:38
+msgid "How lemmas are applied during verification."
+msgstr "Come si applicano i lemmi durante la verifica."
+
+#: src/app/language/PvSettings.ts:39
+msgid "Display the application of lemmas."
+msgstr "Mostra l'applicazione dei lemmi."
+
+#: src/app/language/PvSettings.ts:40
+msgid "Ignore nounif declarations a few times."
+msgstr "Ignora alcune volte le dichiarazioni nounif."
+
+#: src/app/language/PvSettings.ts:41
+msgid "How many times nounif declarations are ignored."
+msgstr "Quante volte si ignorano le dichiarazioni nounif."
+
+#: src/app/language/PvSettings.ts:42
+msgid "Selection function of the resolution."
+msgstr "Funzione di selezione della risoluzione."
+
+#: src/app/language/PvSettings.ts:43
+msgid "Stop when the resolution may not terminate."
+msgstr "Si ferma quando la risoluzione potrebbe non terminare."
+
+#: src/app/language/PvSettings.ts:44
+msgid "Elimination of redundant clauses."
+msgstr "Eliminazione delle clausole ridondanti."
+
+#: src/app/language/PvSettings.ts:45
+msgid "Elimination of redundant hypotheses."
+msgstr "Eliminazione delle ipotesi ridondanti."
+
+#: src/app/language/PvSettings.ts:46
+msgid "Maximum depth of terms in clauses (an approximation)."
+msgstr "Profondità massima dei termini nelle clausole (un'approssimazione)."
+
+#: src/app/language/PvSettings.ts:47
+msgid "Maximum number of hypotheses of clauses (an approximation)."
+msgstr "Numero massimo di ipotesi delle clausole (un'approssimazione)."
+
+#: src/app/language/PvSettings.ts:48
+msgid "Maximum length of chains of inequalities."
+msgstr "Lunghezza massima delle catene di disuguaglianze."
+
+#: src/app/language/PvSettings.ts:49
+msgid "Simplify equalities at the end of saturation."
+msgstr "Semplifica le uguaglianze alla fine della saturazione."
+
+#: src/app/language/PvSettings.ts:50
+msgid "Check that all terms of clauses are in normal form."
+msgstr "Controlla che tutti i termini delle clausole siano in forma normale."
+
+#: src/app/language/PvSettings.ts:51
+msgid "Treatment of equations."
+msgstr "Trattamento delle equazioni."
+
+#: src/app/language/PvSettings.ts:52
+msgid "Ordering of function symbols for the termination of equations."
+msgstr "Ordinamento dei simboli di funzione per la terminazione delle equazioni."
+
+#: src/app/language/PvSettings.ts:53
+msgid "Check that predicates can be implemented."
+msgstr "Controlla che i predicati si possano implementare."
+
+#: src/app/language/PvSettings.ts:54
+msgid "Threshold for cleaning up the clause database (percent)."
+msgstr "Soglia per ripulire la base di clausole (in percentuale)."
+
+#: src/app/language/PvSettings.ts:55
+msgid "Maximum depth of the unification index."
+msgstr "Profondità massima dell'indice di unificazione."
+
+#: src/app/language/PvSettings.ts:56
+msgid "Reconstruct attack traces (yes, no, or the number of attempts)."
+msgstr "Ricostruisce le tracce d'attacco (yes, no, o il numero di tentativi)."
+
+#: src/app/language/PvSettings.ts:57
+msgid "Backtrack when reconstructing traces."
+msgstr "Torna indietro (backtracking) durante la ricostruzione delle tracce."
+
+#: src/app/language/PvSettings.ts:58
+msgid "Unify derivations to help trace reconstruction."
+msgstr "Unifica le derivazioni per aiutare la ricostruzione delle tracce."
+
+#: src/app/language/PvSettings.ts:59
+msgid "Reconstruct derivations."
+msgstr "Ricostruisce le derivazioni."
+
+#: src/app/language/PvSettings.ts:60
+msgid "Simplify derivations."
+msgstr "Semplifica le derivazioni."
+
+#: src/app/language/PvSettings.ts:61
+msgid "Explain derivations in English."
+msgstr "Spiega le derivazioni in inglese."
+
+#: src/app/language/PvSettings.ts:62
+msgid "Display derivations."
+msgstr "Mostra le derivazioni."
+
+#: src/app/language/PvSettings.ts:63
+msgid "Abbreviate names in derivations."
+msgstr "Abbrevia i nomi nelle derivazioni."
+
+#: src/app/language/PvSettings.ts:64
+msgid "How attack traces are displayed."
+msgstr "Come si mostrano le tracce d'attacco."
+
+#: src/app/language/PvSettings.ts:65
+msgid "Display the generated clauses."
+msgstr "Mostra le clausole generate."
+
+#: src/app/language/PvSettings.ts:66
+msgid "Remove subsumed clauses before displaying them."
+msgstr "Rimuove le clausole sussunte prima di mostrarle."
+
+#: src/app/language/PvSettings.ts:67
+msgid "Abbreviate clauses when displaying them."
+msgstr "Abbrevia le clausole quando le mostra."
+
+#: src/app/language/PvSettings.ts:68
+msgid "Use ANSI colours in the output."
+msgstr "Usa i colori ANSI nell'output."
+
+#: src/app/language/PvSettings.ts:69
+msgid "Display the clause database."
+msgstr "Mostra la base di clausole."
+
+#: src/app/language/PvSettings.ts:70
+msgid "Display statistics while saturating."
+msgstr "Mostra le statistiche durante la saturazione."
+
+#: src/app/language/PvSettings.ts:71
+msgid "Display \"goal reachable\" clauses."
+msgstr "Mostra le clausole \"goal reachable\"."
+
+#: src/app/language/PvSettings.ts:72
+msgid "Display rules."
+msgstr "Mostra le regole."
+
+#: src/app/language/PvSettings.ts:73
+msgid "Display redundant clauses."
+msgstr "Mostra le clausole ridondanti."
+
+#: src/app/language/PvSettings.ts:74
+msgid "Display completed clauses."
+msgstr "Mostra le clausole completate."
+
+#: src/app/language/PvSettings.ts:75
+msgid "Display information on equations."
+msgstr "Mostra informazioni sulle equazioni."
+
+#: src/app/language/PvSettings.ts:76
+msgid "Display termination warnings."
+msgstr "Mostra gli avvisi di terminazione."
+
+#: src/app/language/PvSettings.ts:77
+msgid "Display information on destructors."
+msgstr "Mostra informazioni sui distruttori."
+
+#: src/app/language/PvSettings.ts:78
+msgid "Simplify biprocesses before proving equivalences."
+msgstr "Semplifica i biprocessi prima di dimostrare le equivalenze."
+
+#: src/app/language/PvSettings.ts:79
+msgid "Reject simplified processes containing choice[true, false]."
+msgstr "Rifiuta i processi semplificati che contengono choice[true, false]."
+
+#: src/app/language/PvSettings.ts:80
+msgid "Reject processes that cannot be simplified."
+msgstr "Rifiuta i processi che non si possono semplificare."
+
+#: src/app/language/PvSettings.ts:81
+msgid "Simplify tests on constants when expanding terms."
+msgstr "Semplifica i test sulle costanti durante l'espansione dei termini."
+
+#: src/app/language/PvSettings.ts:82
+msgid "Deprecated."
+msgstr "Deprecato."
+
+#: src/app/language/PvSettings.ts:83
+msgid "Choose swappings of synchronisations interactively."
+msgstr "Sceglie in modo interattivo gli scambi delle sincronizzazioni."
+
+#: src/app/language/PvSettings.ts:84
+msgid "Swapping of synchronisations, e.g. \"tag1 -> tag2\"."
+msgstr "Scambio delle sincronizzazioni, per esempio \"tag1 -> tag2\"."
+
+#: src/app/language/PvSettings.ts:85
+msgid "Record features of clauses."
+msgstr "Registra le caratteristiche delle clausole."
+
+#: src/app/language/PvSettings.ts:86
+msgid "Record function symbols as features."
+msgstr "Registra i simboli di funzione come caratteristiche."
+
+#: src/app/language/PvSettings.ts:87
+msgid "Record names as features."
+msgstr "Registra i nomi come caratteristiche."
+
+#: src/app/language/PvSettings.ts:88
+msgid "Record predicates as features."
+msgstr "Registra i predicati come caratteristiche."
+
+#: src/app/language/PvSettings.ts:89
+msgid "Record events as features."
+msgstr "Registra gli eventi come caratteristiche."
+
+#: src/app/language/PvSettings.ts:90
+msgid "Record tables as features."
+msgstr "Registra le tabelle come caratteristiche."
+
+#: src/app/language/PvSettings.ts:91
+msgid "Record the depth of terms as a feature."
+msgstr "Registra la profondità dei termini come caratteristica."
+
+#: src/app/language/PvSettings.ts:92
+msgid "Record the width of terms as a feature."
+msgstr "Registra l'ampiezza dei termini come caratteristica."
+
+#: src/app/language/PvSettings.ts:101
+msgid "Attacker model"
+msgstr "Modello dell'attaccante"
+
+#: src/app/language/PvSettings.ts:101
+msgid "Syntax"
+msgstr "Sintassi"
+
+#: src/app/language/PvSettings.ts:101
+msgid "Precision"
+msgstr "Precisione"
+
+#: src/app/language/PvSettings.ts:101
+msgid "Lemmas"
+msgstr "Lemmi"
+
+#: src/app/language/PvSettings.ts:101
+msgid "Attack reconstruction"
+msgstr "Ricostruzione degli attacchi"
+
+#: src/app/language/PvSettings.ts:102
+msgid "Resolution"
+msgstr "Risoluzione"
+
+#: src/app/language/PvSettings.ts:102
+msgid "Process simplification"
+msgstr "Semplificazione dei processi"
+
+#: src/app/language/PvSettings.ts:102
+msgid "Display"
+msgstr "Visualizzazione"
+
+#: src/app/language/PvSettings.ts:102
+msgid "Features"
+msgstr "Caratteristiche"
+
+#: src/app/language/PvExplain.ts:16
+msgid "Declares a type, for names, variables and the arguments of functions."
+msgstr "Dichiara un tipo, per nomi, variabili e argomenti delle funzioni."
+
+#: src/app/language/PvExplain.ts:17
+msgid "Declares free names, which the attacker knows unless they are [private]: public channels, or secrets."
+msgstr "Dichiara nomi liberi, che l'attaccante conosce a meno che non siano [private]: canali pubblici o segreti."
+
+#: src/app/language/PvExplain.ts:18
+msgid "Declares constants: functions without arguments."
+msgstr "Dichiara costanti: funzioni senza argomenti."
+
+#: src/app/language/PvExplain.ts:19
+msgid "Declares a constructor, a function that builds terms such as encryptions; the attacker can apply it unless it is [private]."
+msgstr "Dichiara un costruttore, una funzione che costruisce termini come le cifrature; l'attaccante può applicarlo a meno che non sia [private]."
+
+#: src/app/language/PvExplain.ts:20
+msgid "Declares a destructor by rewrite rules, such as decryption: sdec(senc(m, k), k) = m. When no rule applies, it fails."
+msgstr "Dichiara un distruttore con regole di riscrittura, come la decifratura: sdec(senc(m, k), k) = m. Quando nessuna regola si applica, fallisce."
+
+#: src/app/language/PvExplain.ts:21
+msgid "Declares equations between terms, such as the commutativity of exponentiation in Diffie-Hellman."
+msgstr "Dichiara equazioni tra termini, come la commutatività dell'esponenziazione in Diffie-Hellman."
+
+#: src/app/language/PvExplain.ts:22
+msgid "Declares a predicate, for clauses and for the conditions of queries."
+msgstr "Dichiara un predicato, per le clausole e per le condizioni delle query."
+
+#: src/app/language/PvExplain.ts:23
+msgid "Declares a table: processes insert rows into it and look them up with get; the attacker cannot read it."
+msgstr "Dichiara una tabella: i processi vi inseriscono righe e le cercano con get; l'attaccante non può leggerla."
+
+#: src/app/language/PvExplain.ts:24
+msgid "Declares or executes an event: events mark points of the protocol, for correspondence queries."
+msgstr "Dichiara o esegue un evento: gli eventi segnano punti del protocollo, per le query di corrispondenza."
+
+#: src/app/language/PvExplain.ts:25
+msgid "Asks a security property: the secrecy of a term (attacker(s)), or a correspondence between events (==>)."
+msgstr "Chiede una proprietà di sicurezza: la segretezza di un termine (attacker(s)) o una corrispondenza tra eventi (==>)."
+
+#: src/app/language/PvExplain.ts:26
+msgid "States a property that ProVerif proves first, then uses to prove the queries."
+msgstr "Enuncia una proprietà che ProVerif dimostra per prima, poi usa per dimostrare le query."
+
+#: src/app/language/PvExplain.ts:27
+msgid "States a property that ProVerif assumes without proof, to help prove the queries."
+msgstr "Enuncia una proprietà che ProVerif assume senza dimostrarla, per aiutare a dimostrare le query."
+
+#: src/app/language/PvExplain.ts:28
+msgid "Restricts the traces to those that satisfy a property."
+msgstr "Restringe le tracce a quelle che soddisfano una proprietà."
+
+#: src/app/language/PvExplain.ts:29
+msgid "Asks for strong secrecy: the attacker cannot tell runs apart when the given names change value."
+msgstr "Chiede la segretezza forte: l'attaccante non distingue le esecuzioni quando i nomi indicati cambiano valore."
+
+#: src/app/language/PvExplain.ts:30
+msgid "Asks whether a weak secret, such as a password, resists offline guessing."
+msgstr "Chiede se un segreto debole, come una password, resiste agli attacchi a tentativi offline."
+
+#: src/app/language/PvExplain.ts:31
+msgid "A secrecy assumption: a fact that never holds. ProVerif checks it, and uses it to speed up the proof."
+msgstr "Un'ipotesi di segretezza: un fatto che non vale mai. ProVerif la verifica e la usa per accelerare la dimostrazione."
+
+#: src/app/language/PvExplain.ts:32
+msgid "A hint for the resolution: do not resolve on facts of this form. It changes speed and termination, not soundness."
+msgstr "Un suggerimento per la risoluzione: non risolvere su fatti di questa forma. Cambia velocità e terminazione, non la correttezza."
+
+#: src/app/language/PvExplain.ts:33
+msgid "A hint for the resolution: resolve on facts of this form first."
+msgstr "Un suggerimento per la risoluzione: risolvi prima su fatti di questa forma."
+
+#: src/app/language/PvExplain.ts:34
+msgid "Defines a function by a term, expanded where it is used."
+msgstr "Definisce una funzione con un termine, espanso dove viene usato."
+
+#: src/app/language/PvExplain.ts:35
+msgid "Binds a variable or matches a pattern: let x = M in P. It also defines a process macro: let P(x: T) = ..."
+msgstr "Lega una variabile o confronta un pattern: let x = M in P. Definisce anche una macro di processo: let P(x: T) = ..."
+
+#: src/app/language/PvExplain.ts:36
+msgid "Starts the main process: the roles of the protocol, usually in parallel and replicated."
+msgstr "Inizia il processo principale: i ruoli del protocollo, di solito in parallelo e replicati."
+
+#: src/app/language/PvExplain.ts:37
+msgid "Creates a fresh name that the attacker does not know: a nonce or a key."
+msgstr "Crea un nome nuovo che l'attaccante non conosce: un nonce o una chiave."
+
+#: src/app/language/PvExplain.ts:38
+msgid "Receives a message on a channel: in(c, x: T); on a public channel it comes from the attacker. Also ends a let: let x = M in P."
+msgstr "Riceve un messaggio su un canale: in(c, x: T); su un canale pubblico arriva dall'attaccante. Chiude anche un let: let x = M in P."
+
+#: src/app/language/PvExplain.ts:39
+msgid "Sends a message on a channel: out(c, M); on a public channel the attacker gets it."
+msgstr "Invia un messaggio su un canale: out(c, M); su un canale pubblico l'attaccante lo riceve."
+
+#: src/app/language/PvExplain.ts:40
+msgid "A test: if M then P else Q."
+msgstr "Un test: if M then P else Q."
+
+#: src/app/language/PvExplain.ts:41
+msgid "What runs when the test, the match or the lookup succeeds."
+msgstr "Ciò che viene eseguito quando il test, il confronto o la ricerca riesce."
+
+#: src/app/language/PvExplain.ts:42
+msgid "What runs when the test, the match or the lookup fails."
+msgstr "Ciò che viene eseguito quando il test, il confronto o la ricerca fallisce."
+
+#: src/app/language/PvExplain.ts:43
+msgid "Inserts a row into a table: insert t(M1, ..., Mn)."
+msgstr "Inserisce una riga in una tabella: insert t(M1, ..., Mn)."
+
+#: src/app/language/PvExplain.ts:44
+msgid "Looks up a row of a table that matches a pattern: get t(=M, x) in P else Q."
+msgstr "Cerca una riga di una tabella che corrisponde a un pattern: get t(=M, x) in P else Q."
+
+#: src/app/language/PvExplain.ts:45
+msgid "A condition: get ... suchthat M, or let x suchthat p(x), which picks any value that satisfies it."
+msgstr "Una condizione: get ... suchthat M, oppure let x suchthat p(x), che sceglie un valore qualsiasi che la soddisfa."
+
+#: src/app/language/PvExplain.ts:46
+msgid "Starts a new phase: earlier processes stop, and the attacker keeps what it knows. Used for forward secrecy."
+msgstr "Inizia una nuova fase: i processi precedenti si fermano e l'attaccante conserva ciò che sa. Si usa per la forward secrecy."
+
+#: src/app/language/PvExplain.ts:47
+msgid "A synchronisation barrier: processes wait for each other at sync n."
+msgstr "Una barriera di sincronizzazione: i processi si attendono a vicenda in sync n."
+
+#: src/app/language/PvExplain.ts:48
+msgid "A biprocess: choice[M, N] is M on the left and N on the right; ProVerif proves the two sides equivalent."
+msgstr "Un biprocesso: choice[M, N] è M a sinistra e N a destra; ProVerif dimostra che i due lati sono equivalenti."
+
+#: src/app/language/PvExplain.ts:49
+msgid "A biprocess: diff[M, N] is M on the left and N on the right; ProVerif proves the two sides equivalent."
+msgstr "Un biprocesso: diff[M, N] è M a sinistra e N a destra; ProVerif dimostra che i due lati sono equivalenti."
+
+#: src/app/language/PvExplain.ts:50
+msgid "The failure of a computation, such as a destructor that does not apply."
+msgstr "Il fallimento di un calcolo, come un distruttore che non si applica."
+
+#: src/app/language/PvExplain.ts:51
+msgid "Declares the variables of a rewrite rule, an equation, a clause or a query."
+msgstr "Dichiara le variabili di una regola di riscrittura, di un'equazione, di una clausola o di una query."
+
+#: src/app/language/PvExplain.ts:52
+msgid "Adds rules to a destructor that apply when the rules before them do not."
+msgstr "Aggiunge a un distruttore regole che si applicano quando quelle precedenti non si applicano."
+
+#: src/app/language/PvExplain.ts:53
+msgid "Defines a macro of declarations, which expand instantiates."
+msgstr "Definisce una macro di dichiarazioni, che expand istanzia."
+
+#: src/app/language/PvExplain.ts:54
+msgid "Expands a macro of declarations defined with def, with its arguments."
+msgstr "Espande una macro di dichiarazioni definita con def, con i suoi argomenti."
+
+#: src/app/language/PvExplain.ts:55
+msgid "Sets an option of ProVerif, such as set attacker = passive."
+msgstr "Imposta un'opzione di ProVerif, come set attacker = passive."
+
+#: src/app/language/PvExplain.ts:56
+msgid "Declares channels: free names of type channel."
+msgstr "Dichiara canali: nomi liberi di tipo channel."
+
+#: src/app/language/PvExplain.ts:57
+msgid "The end of a process, as 0, in the syntax of CryptoVerif."
+msgstr "La fine di un processo, come 0, nella sintassi di CryptoVerif."
+
+#: src/app/language/PvExplain.ts:58
+msgid "Declares Horn clauses directly, for the attacker or for predicates."
+msgstr "Dichiara direttamente clausole di Horn, per l'attaccante o per i predicati."
+
+#: src/app/language/PvExplain.ts:59
+msgid "Declares a fact that always holds, to simplify the clauses."
+msgstr "Dichiara un fatto che vale sempre, per semplificare le clausole."
+
+#: src/app/language/PvExplain.ts:60
+msgid "Asks whether two processes are observationally equivalent."
+msgstr "Chiede se due processi sono osservazionalmente equivalenti."
+
+#: src/app/language/PvExplain.ts:61
+msgid "In noninterf: the values that a secret ranges over."
+msgstr "In noninterf: i valori che un segreto può assumere."
+
+#: src/app/language/PvExplain.ts:62
+msgid "An injective event in a query: each occurrence matches a distinct occurrence of the events before it."
+msgstr "Un evento iniettivo in una query: ogni occorrenza corrisponde a un'occorrenza distinta degli eventi che lo precedono."
+
+#: src/app/language/PvExplain.ts:63
+msgid "attacker(M): the attacker knows M. query attacker(s) asks whether s stays secret."
+msgstr "attacker(M): l'attaccante conosce M. query attacker(s) chiede se s resta segreto."
+
+#: src/app/language/PvExplain.ts:64
+msgid "mess(c, M): the message M is on channel c."
+msgstr "mess(c, M): il messaggio M è sul canale c."
+
+#: src/app/language/PvExplain.ts:78
+msgid "Picks any values that satisfy a condition: let x suchthat p(x) in P."
+msgstr "Sceglie valori qualsiasi che soddisfano una condizione: let x suchthat p(x) in P."
+
+#: src/app/language/PvExplain.ts:83
+msgid "Runs a process macro, defined with let, with its arguments."
+msgstr "Esegue una macro di processo, definita con let, con i suoi argomenti."
+
+#: src/app/language/PvExplain.ts:86
+msgid "Replication: unboundedly many copies of the process run in parallel, one per session."
+msgstr "Replicazione: un numero illimitato di copie del processo eseguite in parallelo, una per sessione."
+
+#: src/app/language/PvExplain.ts:87
+msgid "Parallel composition: the processes run at the same time."
+msgstr "Composizione parallela: i processi vengono eseguiti contemporaneamente."
+
+#: src/app/language/PvExplain.ts:88
+msgid "The end of a process: it does nothing more."
+msgstr "La fine di un processo: non fa altro."
+
+#: src/app/language/PvExplain.ts:89
+msgid "branch"
+msgstr "ramo"
+
+#: src/app/language/PvExplain.ts:89
+msgid "A branch: what runs after a test, a match, or in a parallel composition."
+msgstr "Un ramo: ciò che viene eseguito dopo un test, un confronto o in una composizione parallela."
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:105
+#: src/app/model/ProcessEditor.ts:126
+msgid "name"
+msgstr "nome"
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:104
+#: src/app/model/ProcessEditor.ts:126 src/app/model/ProcessEditor.ts:172
+msgid "type"
+msgstr "tipo"
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:65
+#: src/app/model/ProcessEditor.ts:130 src/app/model/ProcessEditor.ts:162
+msgid "pattern"
+msgstr "pattern"
+
+#: src/app/language/PvLanguage.ts:64 src/app/model/ProcessEditor.ts:163
+msgid "value"
+msgstr "valore"
+
+#: src/app/language/PvLanguage.ts:64 src/app/language/PvLanguage.ts:66
+#: src/app/model/ProcessEditor.ts:177 src/app/model/ProcessEditor.ts:181
+#: src/app/model/ProcessEditor.ts:184
+msgid "condition"
+msgstr "condizione"
+
+#: src/app/language/PvLanguage.ts:65 src/app/model/ProcessEditor.ts:130
+#: src/app/model/ProcessEditor.ts:133
+msgid "channel"
+msgstr "canale"
+
+#: src/app/language/PvLanguage.ts:65 src/app/model/ProcessEditor.ts:133
+msgid "message"
+msgstr "messaggio"
+
+#: src/app/language/PvLanguage.ts:65 src/app/language/PvLanguage.ts:107
+#: src/app/model/ProcessEditor.ts:137
+msgid "event"
+msgstr "evento"
+
+#: src/app/language/PvLanguage.ts:65 src/app/language/PvLanguage.ts:66
+msgid "row"
+msgstr "riga"
+
+#: src/app/language/PvLanguage.ts:66 src/app/language/PvLanguage.ts:67
+msgid "number"
+msgstr "numero"
+
+#: src/app/language/PvLanguage.ts:67
+msgid "call"
+msgstr "chiamata"
+
+#: src/app/language/PvLanguage.ts:67
+msgid "left"
+msgstr "sinistra"
+
+#: src/app/language/PvLanguage.ts:67
+msgid "right"
+msgstr "destra"
+
+#: src/app/language/PvLanguage.ts:70
+msgid "Actions"
+msgstr "Azioni"
+
+#: src/app/language/PvLanguage.ts:72
+msgid "Builtin types"
+msgstr "Tipi predefiniti"
+
+#: src/app/language/PvLanguage.ts:85
+msgid "A fresh name: new k: key, or k <-R key as in CryptoVerif"
+msgstr "Un nome fresco: new k: key, oppure k <-R key come in CryptoVerif"
+
+#: src/app/language/PvLanguage.ts:86
+msgid "Send a message: out(c, M)"
+msgstr "Invia un messaggio: out(c, M)"
+
+#: src/app/language/PvLanguage.ts:87
+msgid "Receive a message: in(c, x: T)"
+msgstr "Ricevi un messaggio: in(c, x: T)"
+
+#: src/app/language/PvLanguage.ts:88
+msgid "Compute or match: let x = M in, or x <- M; as in CryptoVerif"
+msgstr "Calcola o confronta: let x = M in, oppure x <- M; come in CryptoVerif"
+
+#: src/app/language/PvLanguage.ts:89
+msgid "A test: if M then ... else ..."
+msgstr "Un test: if M then ... else ..."
+
+#: src/app/language/PvLanguage.ts:90
+msgid "An event, for correspondence queries"
+msgstr "Un evento, per le query di corrispondenza"
+
+#: src/app/language/PvLanguage.ts:91
+msgid "Insert a row into a table"
+msgstr "Inserisci una riga in una tabella"
+
+#: src/app/language/PvLanguage.ts:92
+msgid "Look up a row of a table"
+msgstr "Cerca una riga di una tabella"
+
+#: src/app/language/PvLanguage.ts:93
+msgid "Run a process macro: P(args)"
+msgstr "Esegui una macro di processo: P(args)"
+
+#: src/app/language/PvLanguage.ts:94
+msgid "Start a new phase"
+msgstr "Inizia una nuova fase"
+
+#: src/app/language/PvLanguage.ts:106
+msgid "function"
+msgstr "funzione"
+
+#: src/app/language/PvLanguage.ts:108 src/app/model/ProcessEditor.ts:141
+#: src/app/model/ProcessEditor.ts:184
+msgid "table"
+msgstr "tabella"
+
+#: src/app/language/PvLanguage.ts:109
+msgid "predicate"
+msgstr "predicato"
+
+#: src/app/language/PvLanguage.ts:110 src/app/model/ProcessEditor.ts:188
+msgid "process"
+msgstr "processo"
+
+#: src/app/language/PvLanguage.ts:111
+msgid "function (letfun)"
+msgstr "funzione (letfun)"
+
+#: src/app/language/PvLanguage.ts:112 src/app/language/PvLanguage.ts:113
+#: src/app/model/ProcessEditor.ts:172
+msgid "variable"
+msgstr "variabile"
+
+#: src/app/language/PvLanguage.ts:114
+msgid "keyword"
+msgstr "parola chiave"
+
+#: src/app/model/Analysis.ts:71
+msgid "internal error of the checker: {message}"
+msgstr "errore interno del controllore: {message}"
+
+#: src/app/model/ModelEditor.ts:69
+msgid "Identifiers start with a letter and contain letters, digits, _ and '"
+msgstr "Gli identificatori iniziano con una lettera e contengono lettere, cifre, _ e '"
+
+#: src/app/model/ModelEditor.ts:72
+msgid "{name} is a ProVerif keyword"
+msgstr "{name} è una parola chiave di ProVerif"
+
+#: src/app/model/ModelEditor.ts:306
+msgid "Unknown symbol"
+msgstr "Simbolo sconosciuto"
+
+#: src/app/model/ModelEditor.ts:309
+msgid "{name} is built in and cannot be renamed"
+msgstr "{name} è predefinito e non si può rinominare"
+
+#: src/app/model/ModelEditor.ts:317
+msgid "{name} is already declared ({kind})"
+msgstr "{name} è già dichiarato ({kind})"
+
+#: src/app/model/ModelEditor.ts:550
+msgid "not a process declaration"
+msgstr "non è la dichiarazione di un processo"
+
+#: src/app/model/ModelEditor.ts:556 src/app/model/ModelEditor.ts:690
+msgid "parameters"
+msgstr "parametri"
+
+#: src/app/model/ModelEditor.ts:563
+msgid "cannot locate the header of this process"
+msgstr "non trovo l'intestazione di questo processo"
+
+#: src/app/model/ModelEditor.ts:571
+msgid "cannot rename this process"
+msgstr "non si può rinominare questo processo"
+
+#: src/app/model/ModelEditor.ts:633
+msgid "this declaration has no options"
+msgstr "questa dichiarazione non ha opzioni"
+
+#: src/app/model/ModelEditor.ts:685
+msgid "{name} is already declared"
+msgstr "{name} è già dichiarato"
+
+#: src/app/model/ProcessEditor.ts:79
+msgid "empty"
+msgstr "vuoto"
+
+#: src/app/model/ProcessEditor.ts:124
+msgid "argument of the name"
+msgstr "argomento del nome"
+
+#: src/app/model/ProcessEditor.ts:137 src/app/model/ProcessEditor.ts:141
+#: src/app/model/ProcessEditor.ts:188
+msgid "arguments"
+msgstr "argomenti"
+
+#: src/app/model/ProcessEditor.ts:146
+msgid "phase: a positive integer is expected"
+msgstr "fase: serve un intero positivo"
+
+#: src/app/model/ProcessEditor.ts:154
+msgid "sync: a positive integer is expected"
+msgstr "sync: serve un intero positivo"
+
+#: src/app/model/ProcessEditor.ts:156
+msgid "tag"
+msgstr "etichetta"
+
+#: src/app/model/ProcessEditor.ts:170
+msgid "variables: x: type is expected, not {text}"
+msgstr "variabili: serve x: tipo, non {text}"
+
+#: src/app/model/ProcessEditor.ts:175
+msgid "variables: at least one typed variable is required"
+msgstr "variabili: serve almeno una variabile con il suo tipo"
+
+#: src/app/model/ProcessEditor.ts:184
+msgid "patterns"
+msgstr "pattern"
+
+#: src/app/model/ProcessEditor.ts:201
+msgid "unknown action {kind}"
+msgstr "azione sconosciuta {kind}"
+
+#: src/app/model/ProcessEditor.ts:279 src/app/model/ProcessEditor.ts:329
+#: src/app/model/ProcessEditor.ts:423 src/app/model/ProcessEditor.ts:519
+msgid "no such node"
+msgstr "nodo inesistente"
+
+#: src/app/model/ProcessEditor.ts:334
+msgid "only actions followed by a continuation can change kind"
+msgstr "solo le azioni seguite da una continuazione possono cambiare genere"
+
+#: src/app/model/ProcessEditor.ts:347
+msgid "this action has an else branch: remove the branch first, or keep a conditional"
+msgstr "questa azione ha un ramo else: prima rimuovi il ramo, oppure tieni un condizionale"
+
+#: src/app/model/ProcessEditor.ts:364
+msgid "this action has no options"
+msgstr "questa azione non ha opzioni"
+
+#: src/app/model/ProcessEditor.ts:382
+msgid "insertion point is not a process"
+msgstr "il punto di inserimento non è un processo"
+
+#: src/app/model/ProcessEditor.ts:523
+msgid "only sequential actions and conditionals can be moved"
+msgstr "si possono spostare solo le azioni sequenziali e i condizionali"
+
+#: src/app/model/ProcessEditor.ts:526
+msgid "cannot move a conditional into its own else branch"
+msgstr "non si può spostare un condizionale nel suo stesso ramo else"
+
+#: src/app/model/ProcessEditor.ts:583
+msgid "only conditionals have an else branch"
+msgstr "solo i condizionali hanno un ramo else"
+
+#: src/app/model/ExportPlanner.ts:135
+msgid "Observational equivalence of the biprocess (choice)"
+msgstr "Equivalenza osservazionale del biprocesso (choice)"
+
+#: src/app/model/ExportPlanner.ts:138
+msgid "Observational equivalence of the two processes"
+msgstr "Equivalenza osservazionale dei due processi"
+
+#: src/app/model/ExportPlanner.ts:143
+msgid "Queries are incompatible with equivalence"
+msgstr "Le query sono incompatibili con l'equivalenza"
+
+#: src/app/model/ExportPlanner.ts:145
+msgid "Queries are incompatible with choice"
+msgstr "Le query sono incompatibili con choice"
+
+#: src/app/model/ExportPlanner.ts:219
+msgid "Generated by PieStudio; verify with: proverif <this file>"
+msgstr "Generato da PieStudio; verifica con: proverif <questo file>"
+
+#: src/app/model/ExportPlanner.ts:227
+msgid "reachability and correspondence queries"
+msgstr "query di raggiungibilità e di corrispondenza"
+
+#: src/app/model/ExportPlanner.ts:233
+msgid "queries"
+msgstr "query"
+
+#: src/app/model/ExportPlanner.ts:263
+msgid "all goals (no split needed)"
+msgstr "tutti gli obiettivi (nessuna divisione necessaria)"
+
+#: src/app/model/ExportPlanner.ts:268
+msgid "observational equivalence of the two processes"
+msgstr "equivalenza osservazionale dei due processi"
+
+#: src/app/model/ExportPlanner.ts:268
+msgid "observational equivalence (biprocess)"
+msgstr "equivalenza osservazionale (biprocesso)"
+
+#: src/app/model/ExportPlanner.ts:269
+msgid "biprocess (choice)"
+msgstr "biprocesso (choice)"
+
+#: src/app/model/ExportPlanner.ts:278
+msgid "first process of the equivalence"
+msgstr "primo processo dell'equivalenza"
+
+#: src/app/model/ExportPlanner.ts:278
+msgid "second process of the equivalence"
+msgstr "secondo processo dell'equivalenza"
+
+#: src/app/model/ExportPlanner.ts:284
+msgid "choice[,] projected on its left side"
+msgstr "choice[,] proiettato sul lato sinistro"
+
+#: src/app/model/ExportPlanner.ts:284
+msgid "choice[,] projected on its right side"
+msgstr "choice[,] proiettato sul lato destro"
+
+#: src/app/model/ExportPlanner.ts:298
+msgid "model"
+msgstr "modello"
+
+#: src/app/model/DeclSpecs.ts:183 src/app/model/DeclSpecs.ts:199
+#: src/app/model/DeclSpecs.ts:220 src/app/view/ActionDialog.ts:20
+msgid "Type"
+msgstr "Tipo"
+
+#: src/app/model/DeclSpecs.ts:184
+msgid "A type of messages. channel, bitstring, bool and nat are built in."
+msgstr "Un tipo di messaggi. channel, bitstring, bool e nat sono predefiniti."
+
+#: src/app/model/DeclSpecs.ts:186 src/app/model/DeclSpecs.ts:233
+#: src/app/model/DeclSpecs.ts:249 src/app/model/DeclSpecs.ts:298
+#: src/app/model/DeclSpecs.ts:310 src/app/model/DeclSpecs.ts:322
+#: src/app/model/DeclSpecs.ts:335 src/app/model/DeclSpecs.ts:347
+#: src/app/view/ActionDialog.ts:19
+msgid "Name"
+msgstr "Nome"
+
+#: src/app/model/DeclSpecs.ts:187
+msgid "Options (for CryptoVerif)"
+msgstr "Opzioni (per CryptoVerif)"
+
+#: src/app/model/DeclSpecs.ts:188 src/app/model/DeclSpecs.ts:201
+#: src/app/model/DeclSpecs.ts:223 src/app/model/DeclSpecs.ts:239
+#: src/app/model/DeclSpecs.ts:254 src/app/model/DeclSpecs.ts:300
+#: src/app/model/DeclSpecs.ts:312
+msgid "Notation (LaTeX)"
+msgstr "Notazione (LaTeX)"
+
+#: src/app/model/DeclSpecs.ts:195
+msgid "Free name"
+msgstr "Nome libero"
+
+#: src/app/model/DeclSpecs.ts:196
+msgid "Names known from the start: public channels and constants, or secrets unknown to the attacker ([private])."
+msgstr "Nomi noti fin dall'inizio: canali e costanti pubblici, o segreti sconosciuti all'attaccante ([private])."
+
+#: src/app/model/DeclSpecs.ts:198
+msgid "Names"
+msgstr "Nomi"
+
+#: src/app/model/DeclSpecs.ts:200
+msgid "unknown to the attacker (a private channel is drawn dotted)"
+msgstr "sconosciuto all'attaccante (un canale privato è disegnato a puntini)"
+
+#: src/app/model/DeclSpecs.ts:208 src/app/view/ActionDialog.ts:24
+#: src/app/view/ActionDialog.ts:29
+msgid "Channel"
+msgstr "Canale"
+
+#: src/app/model/DeclSpecs.ts:209
+msgid "Public channels (the same as free c: channel)."
+msgstr "Canali pubblici (come free c: channel)."
+
+#: src/app/model/DeclSpecs.ts:210
+msgid "Channels"
+msgstr "Canali"
+
+#: src/app/model/DeclSpecs.ts:216
+msgid "Constant"
+msgstr "Costante"
+
+#: src/app/model/DeclSpecs.ts:217
+msgid "Public constants of a type."
+msgstr "Costanti pubbliche di un tipo."
+
+#: src/app/model/DeclSpecs.ts:219
+msgid "Constants"
+msgstr "Costanti"
+
+#: src/app/model/DeclSpecs.ts:221
+msgid "unknown to the attacker"
+msgstr "sconosciuta all'attaccante"
+
+#: src/app/model/DeclSpecs.ts:222
+msgid "Other options"
+msgstr "Altre opzioni"
+
+#: src/app/model/DeclSpecs.ts:230
+msgid "Constructor"
+msgstr "Costruttore"
+
+#: src/app/model/DeclSpecs.ts:231
+msgid "A function symbol that builds messages (encryption, signature, hash, pairing). The attacker can apply it unless it is private."
+msgstr "Un simbolo di funzione che costruisce messaggi (cifratura, firma, hash, coppie). L'attaccante può applicarlo, a meno che non sia privato."
+
+#: src/app/model/DeclSpecs.ts:234 src/app/model/DeclSpecs.ts:250
+#: src/app/model/DeclSpecs.ts:299 src/app/model/DeclSpecs.ts:323
+msgid "Argument types"
+msgstr "Tipi degli argomenti"
+
+#: src/app/model/DeclSpecs.ts:235 src/app/model/DeclSpecs.ts:251
+msgid "Result type"
+msgstr "Tipo del risultato"
+
+#: src/app/model/DeclSpecs.ts:236 src/app/model/DeclSpecs.ts:253
+#: src/app/model/DeclSpecs.ts:265
+msgid "the attacker cannot apply it"
+msgstr "l'attaccante non può applicarlo"
+
+#: src/app/model/DeclSpecs.ts:237
+msgid "the attacker can also take it apart, like a tuple"
+msgstr "l'attaccante può anche scomporlo, come una tupla"
+
+#: src/app/model/DeclSpecs.ts:238
+msgid "the identity, changing the type"
+msgstr "l'identità, che cambia il tipo"
+
+#: src/app/model/DeclSpecs.ts:246
+msgid "Destructor (fun ... reduc)"
+msgstr "Distruttore (fun ... reduc)"
+
+#: src/app/model/DeclSpecs.ts:247
+msgid "A function defined by rewrite rules tried in order (otherwise). It fails when no rule applies."
+msgstr "Una funzione definita da regole di riscrittura provate in ordine (otherwise). Fallisce quando nessuna regola si applica."
+
+#: src/app/model/DeclSpecs.ts:252
+msgid "Rewrite rules (tried in order)"
+msgstr "Regole di riscrittura (provate in ordine)"
+
+#: src/app/model/DeclSpecs.ts:261
+msgid "Destructor (reduc)"
+msgstr "Distruttore (reduc)"
+
+#: src/app/model/DeclSpecs.ts:262
+msgid "Rewrite rules defining a destructor of constructors declared with fun, e.g. sdec(senc(x, k), k) = x."
+msgstr "Regole di riscrittura che definiscono un distruttore di costruttori dichiarati con fun, per esempio sdec(senc(x, k), k) = x."
+
+#: src/app/model/DeclSpecs.ts:264
+msgid "Rewrite rules"
+msgstr "Regole di riscrittura"
+
+#: src/app/model/DeclSpecs.ts:266
+msgid "Notation of the destructor (LaTeX)"
+msgstr "Notazione del distruttore (LaTeX)"
+
+#: src/app/model/DeclSpecs.ts:273
+msgid "Equation"
+msgstr "Equazione"
+
+#: src/app/model/DeclSpecs.ts:274
+msgid "Equational theory, e.g. Diffie-Hellman exp(exp(g, x), y) = exp(exp(g, y), x). A notation here is the one of the function on the left."
+msgstr "Teoria equazionale, per esempio Diffie-Hellman exp(exp(g, x), y) = exp(exp(g, y), x). Una notazione qui è quella della funzione a sinistra."
+
+#: src/app/model/DeclSpecs.ts:276
+msgid "Equations"
+msgstr "Equazioni"
+
+#: src/app/model/DeclSpecs.ts:277
+msgid "the equations form a convergent rewrite system"
+msgstr "le equazioni formano un sistema di riscrittura convergente"
+
+#: src/app/model/DeclSpecs.ts:278
+msgid "the equations are linear"
+msgstr "le equazioni sono lineari"
+
+#: src/app/model/DeclSpecs.ts:279
+msgid "Notation of the function on the left (LaTeX)"
+msgstr "Notazione della funzione a sinistra (LaTeX)"
+
+#: src/app/model/DeclSpecs.ts:295 src/app/view/ActionDialog.ts:49
+msgid "Event"
+msgstr "Evento"
+
+#: src/app/model/DeclSpecs.ts:296
+msgid "Events mark steps of the protocol; correspondence queries relate them (authentication). Drawn in green boxes."
+msgstr "Gli eventi segnano i passi del protocollo; le query di corrispondenza li mettono in relazione (autenticazione). Disegnati in riquadri verdi."
+
+#: src/app/model/DeclSpecs.ts:307 src/app/view/ActionDialog.ts:53
+#: src/app/view/ActionDialog.ts:57
+msgid "Table"
+msgstr "Tabella"
+
+#: src/app/model/DeclSpecs.ts:308
+msgid "Tables store rows private to the honest processes (insert and get), e.g. a key directory. Drawn in purple boxes."
+msgstr "Le tabelle conservano righe riservate ai processi onesti (insert e get), per esempio un elenco di chiavi. Disegnate in riquadri viola."
+
+#: src/app/model/DeclSpecs.ts:311
+msgid "Column types"
+msgstr "Tipi delle colonne"
+
+#: src/app/model/DeclSpecs.ts:319
+msgid "Predicate"
+msgstr "Predicato"
+
+#: src/app/model/DeclSpecs.ts:320
+msgid "Predicates defined by clauses, usable in let ... suchthat and in queries."
+msgstr "Predicati definiti da clausole, utilizzabili in let ... suchthat e nelle query."
+
+#: src/app/model/DeclSpecs.ts:324
+msgid "the predicate is not defined by clauses"
+msgstr "il predicato non è definito da clausole"
+
+#: src/app/model/DeclSpecs.ts:325
+msgid "optimise the membership predicate (arity 2)"
+msgstr "ottimizza il predicato di appartenenza (arietà 2)"
+
+#: src/app/model/DeclSpecs.ts:332
+msgid "Term macro (letfun)"
+msgstr "Macro di termine (letfun)"
+
+#: src/app/model/DeclSpecs.ts:333
+msgid "A macro for terms, expanded where it is used."
+msgstr "Una macro per i termini, espansa dove si usa."
+
+#: src/app/model/DeclSpecs.ts:336 src/app/model/DeclSpecs.ts:348
+msgid "Parameters"
+msgstr "Parametri"
+
+#: src/app/model/DeclSpecs.ts:337
+msgid "Definition"
+msgstr "Definizione"
+
+#: src/app/model/DeclSpecs.ts:344
+msgid "Process (party)"
+msgstr "Processo (partecipante)"
+
+#: src/app/model/DeclSpecs.ts:345
+msgid "A process macro: one party of the protocol. Its actions are edited in the diagram."
+msgstr "Una macro di processo: un partecipante del protocollo. Le sue azioni si modificano nel diagramma."
+
+#: src/app/model/DeclSpecs.ts:355
+msgid "Query"
+msgstr "Query"
+
+#: src/app/model/DeclSpecs.ts:356
+msgid "Security properties to verify: secrecy attacker(s), correspondences event(e1(x)) ==> event(e2(x)), injective ones with inj-event."
+msgstr "Proprietà di sicurezza da verificare: segretezza attacker(s), corrispondenze event(e1(x)) ==> event(e2(x)), quelle iniettive con inj-event."
+
+#: src/app/model/DeclSpecs.ts:358 src/app/model/DeclSpecs.ts:371
+#: src/app/view/ActionDialog.ts:39
+msgid "Variables"
+msgstr "Variabili"
+
+#: src/app/model/DeclSpecs.ts:358
+msgid "Types of the variables of the queries (Infer finds them from the events)."
+msgstr "Tipi delle variabili delle query (Deduci li trova dagli eventi)."
+
+#: src/app/model/DeclSpecs.ts:359
+msgid "Queries"
+msgstr "Query"
+
+#: src/app/model/DeclSpecs.ts:360 src/app/model/DeclSpecs.ts:373
+msgid "Options"
+msgstr "Opzioni"
+
+#: src/app/model/DeclSpecs.ts:367
+msgid "Lemma, axiom or restriction"
+msgstr "Lemma, assioma o restrizione"
+
+#: src/app/model/DeclSpecs.ts:368
+msgid "lemma: proved, then used to help other proofs; axiom: assumed; restriction: excludes traces."
+msgstr "lemma: dimostrato, poi usato per aiutare altre dimostrazioni; axiom: assunto; restriction: esclude delle tracce."
+
+#: src/app/model/DeclSpecs.ts:370
+msgid "Kind"
+msgstr "Genere"
+
+#: src/app/model/DeclSpecs.ts:372
+msgid "Statements"
+msgstr "Enunciati"
+
+#: src/app/model/DeclSpecs.ts:380
+msgid "Strong secrecy (noninterf)"
+msgstr "Segretezza forte (noninterf)"
+
+#: src/app/model/DeclSpecs.ts:381
+msgid "The attacker cannot distinguish runs with different values of these names (optionally among a set of terms)."
+msgstr "L'attaccante non può distinguere esecuzioni con valori diversi di questi nomi (eventualmente tra un insieme di termini)."
+
+#: src/app/model/DeclSpecs.ts:383
+msgid "Variables (for the among terms)"
+msgstr "Variabili (per i termini di among)"
+
+#: src/app/model/DeclSpecs.ts:384
+msgid "Secrets"
+msgstr "Segreti"
+
+#: src/app/model/DeclSpecs.ts:391
+msgid "Weak secret"
+msgstr "Segreto debole"
+
+#: src/app/model/DeclSpecs.ts:392
+msgid "Resistance to off-line guessing attacks on a low-entropy secret (a password)."
+msgstr "Resistenza agli attacchi off-line per tentativi su un segreto a bassa entropia (una password)."
+
+#: src/app/model/DeclSpecs.ts:393
+msgid "Secret"
+msgstr "Segreto"
+
+#: src/app/model/DeclSpecs.ts:399 src/app/model/DeclSpecs.ts:401
+msgid "Setting"
+msgstr "Impostazione"
+
+#: src/app/model/DeclSpecs.ts:400
+msgid "ProVerif settings, e.g. set attacker = passive. A setting at its default value is not written."
+msgstr "Impostazioni di ProVerif, per esempio set attacker = passive. Un'impostazione al suo valore predefinito non si scrive."
+
+#: src/app/model/DeclSpecs.ts:401 src/app/view/ActionDialog.ts:34
+msgid "Value"
+msgstr "Valore"
+
+#: src/app/model/DeclSpecs.ts:414
+msgid "Secrecy assumption (not)"
+msgstr "Ipotesi di segretezza (not)"
+
+#: src/app/model/DeclSpecs.ts:414
+msgid "Facts assumed unreachable, e.g. not attacker(new k). ProVerif checks them."
+msgstr "Fatti ritenuti irraggiungibili, per esempio not attacker(new k). ProVerif li controlla."
+
+#: src/app/model/DeclSpecs.ts:415
+msgid "Unification hint (nounif)"
+msgstr "Indicazione di unificazione (nounif)"
+
+#: src/app/model/DeclSpecs.ts:415
+msgid "nounif / select / noselect guide the resolution strategy, e.g. nounif x: key; attacker(f(*x))."
+msgstr "nounif / select / noselect guidano la strategia di risoluzione, per esempio nounif x: key; attacker(f(*x))."
+
+#: src/app/model/DeclSpecs.ts:416
+msgid "Facts always true for a predicate."
+msgstr "Fatti sempre veri per un predicato."
+
+#: src/app/model/DeclSpecs.ts:417
+msgid "Clauses"
+msgstr "Clausole"
+
+#: src/app/model/DeclSpecs.ts:417
+msgid "Horn clauses defining predicates."
+msgstr "Clausole di Horn che definiscono predicati."
+
+#: src/app/model/DeclSpecs.ts:418
+msgid "Macro (def)"
+msgstr "Macro (def)"
+
+#: src/app/model/DeclSpecs.ts:418
+msgid "A parameterised block of declarations, instantiated with expand."
+msgstr "Un blocco di dichiarazioni con parametri, istanziato con expand."
+
+#: src/app/model/DeclSpecs.ts:419
+msgid "Macro expansion"
+msgstr "Espansione di una macro"
+
+#: src/app/model/DeclSpecs.ts:419
+msgid "Instantiates a def macro."
+msgstr "Istanzia una macro def."
+
+#: src/app/model/DeclSpecs.ts:420
+msgid "CryptoVerif declaration"
+msgstr "Dichiarazione di CryptoVerif"
+
+#: src/app/model/DeclSpecs.ts:420
+msgid "param, proba, letproba, proof, implementation: ProVerif ignores them (they are kept for CryptoVerif)."
+msgstr "param, proba, letproba, proof, implementation: ProVerif le ignora (restano per CryptoVerif)."
+
+#: src/app/model/DeclSpecs.ts:429
+msgid "Types and names"
+msgstr "Tipi e nomi"
+
+#: src/app/model/DeclSpecs.ts:430
+msgid "Cryptographic primitives"
+msgstr "Primitive crittografiche"
+
+#: src/app/model/DeclSpecs.ts:431
+msgid "Protocol"
+msgstr "Protocollo"
+
+#: src/app/model/DeclSpecs.ts:432 src/app/model/ReportWriter.ts:45
+#: src/app/view/DeclarationsPanel.ts:26
+msgid "Security goals"
+msgstr "Obiettivi di sicurezza"
+
+#: src/app/model/DeclSpecs.ts:433
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: src/app/model/DeclSpecs.ts:509
+msgid "empty declaration"
+msgstr "dichiarazione vuota"
+
+#: src/app/model/DeclSpecs.ts:651 src/app/model/DeclSpecs.ts:653
+msgid "Secrecy of {name}"
+msgstr "Segretezza di {name}"
+
+#: src/app/model/DeclSpecs.ts:665
+msgid "Authentication: {end} implies {begin}"
+msgstr "Autenticazione: {end} implica {begin}"
+
+#: src/app/model/DeclSpecs.ts:666
+msgid "Injective: {end} implies {begin}"
+msgstr "Iniettiva: {end} implica {begin}"
+
+#: src/app/model/DeclSpecs.ts:669
+msgid "Reachability of {name}"
+msgstr "Raggiungibilità di {name}"
+
+#: src/app/model/DeclSpecs.ts:673
+msgid "Real-or-random secrecy of {name}"
+msgstr "Segretezza real-or-random di {name}"
+
+#: src/app/model/DiagramModel.ts:108
+msgid "Main process"
+msgstr "Processo principale"
+
+#: src/app/model/DiagramModel.ts:111
+msgid "Equivalence, side {number}"
+msgstr "Equivalenza, lato {number}"
+
+#: src/app/model/Examples.ts:20
+msgid "Handshake (flawed)"
+msgstr "Handshake (difettoso)"
+
+#: src/app/model/Examples.ts:21
+msgid "Secrecy and authentication fail: a man in the middle learns the key."
+msgstr "Segretezza e autenticazione falliscono: un attaccante man-in-the-middle scopre la chiave."
+
+#: src/app/model/Examples.ts:28
+msgid "Handshake (fixed)"
+msgstr "Handshake (corretto)"
+
+#: src/app/model/Examples.ts:29
+msgid "The server signs the client key: all queries hold."
+msgstr "Il server firma la chiave del client: tutte le query sono soddisfatte."
+
+#: src/app/model/Examples.ts:36
+msgid "Signed Diffie-Hellman, in paper notation"
+msgstr "Diffie-Hellman firmato, nella notazione degli articoli"
+
+#: src/app/model/Examples.ts:37
+msgid "Pretty printing hints: g^a, {m}_k, x || y."
+msgstr "Indicazioni di notazione: g^a, {m}_k, x || y."
+
+#: src/app/model/Examples.ts:44
+msgid "Key confirmation (symmetric role)"
+msgstr "Conferma della chiave (ruolo simmetrico)"
+
+#: src/app/model/Examples.ts:45
+msgid "One role run by both devices, drawn with its mirrored copy."
+msgstr "Un ruolo eseguito da entrambi i dispositivi, disegnato con la sua copia speculare."
+
+#: src/app/model/Examples.ts:52
+msgid "Needham-Schroeder public key"
+msgstr "Needham-Schroeder a chiave pubblica"
+
+#: src/app/model/Examples.ts:53
+msgid "Lowe's attack on the authentication of the responder."
+msgstr "L'attacco di Lowe all'autenticazione del rispondente."
+
+#: src/app/model/Examples.ts:60
+msgid "Needham-Schroeder-Lowe"
+msgstr "Needham-Schroeder-Lowe"
+
+#: src/app/model/Examples.ts:61
+msgid "The fix: the responder names itself in message 2."
+msgstr "La correzione: il rispondente si nomina nel messaggio 2."
+
+#: src/app/model/Examples.ts:68
+msgid "Signed Diffie-Hellman, phases"
+msgstr "Diffie-Hellman firmato, fasi"
+
+#: src/app/model/Examples.ts:69
+msgid "Long-term keys leak in phase 1; the session secret survives."
+msgstr "Le chiavi a lungo termine trapelano nella fase 1; il segreto di sessione sopravvive."
+
+#: src/app/model/Examples.ts:76
+msgid "Weak secret and non-interference"
+msgstr "Segreto debole e non interferenza"
+
+#: src/app/model/Examples.ts:77
+msgid "Off-line guessing breaks the password."
+msgstr "Gli attacchi off-line per tentativi rompono la password."
+
+#: src/app/model/Examples.ts:84
+msgid "Strong secrecy (biprocess)"
+msgstr "Segretezza forte (biprocesso)"
+
+#: src/app/model/Examples.ts:85
+msgid "choice[,] and observational equivalence."
+msgstr "choice[,] ed equivalenza osservazionale."
+
+#: src/app/model/Examples.ts:92
+msgid "Mixed goals (split export)"
+msgstr "Obiettivi misti (esportazione divisa)"
+
+#: src/app/model/Examples.ts:93
+msgid "Queries and choice together: verified, and exported, as several files."
+msgstr "Query e choice insieme: verifica ed esportazione in più file."
+
+#: src/app/model/RefactorSession.ts:129
+msgid "No occurrence is chosen."
+msgstr "Non hai scelto alcuna occorrenza."
+
+#: src/app/model/RefactorSession.ts:132
+msgid "The name is the same."
+msgstr "Il nome è lo stesso."
+
+#: src/app/model/RefactorSession.ts:147
+msgid "With this name, the renamed occurrences would not all refer to the same declaration."
+msgstr "Con questo nome, le occorrenze rinominate non si riferirebbero tutte alla stessa dichiarazione."
+
+#: src/app/model/RefactorSession.ts:158
+msgid "The name {name} is already used on line {line}: it would refer to the renamed declaration."
+msgstr "Il nome {name} è già usato alla riga {line}: si riferirebbe alla dichiarazione rinominata."
+
+#: src/app/model/RefactorSession.ts:167
+msgid "The name {name} is already used in the selection: the renamed declaration would hide it, or be hidden by it."
+msgstr "Il nome {name} è già usato nella selezione: la dichiarazione rinominata lo nasconderebbe, o ne sarebbe nascosta."
+
+#: src/app/model/RefactorSession.ts:168
+msgid "The name {name} is already used in the model: the renamed declaration would hide it, or be hidden by it."
+msgstr "Il nome {name} è già usato nel modello: la dichiarazione rinominata lo nasconderebbe, o ne sarebbe nascosta."
+
+#: src/app/model/RefactorSession.ts:173
+msgid "The model would have new errors: {message} (line {line})."
+msgstr "Il modello avrebbe nuovi errori: {message} (riga {line})."
+
+#: src/app/model/ReportWriter.ts:26
+msgid "attack"
+msgstr "attacco"
+
+#: src/app/model/ReportWriter.ts:32
+msgid "Attack on {goal}"
+msgstr "Attacco a {goal}"
+
+#: src/app/model/ReportWriter.ts:34
+msgid "Library {name}"
+msgstr "Libreria {name}"
+
+#: src/app/model/ReportWriter.ts:37
+msgid "{file}: verification report"
+msgstr "{file}: rapporto di verifica"
+
+#: src/app/model/ReportWriter.ts:43
+msgid "Verified with ProVerif 2.05 in PieStudio, {date}."
+msgstr "Verificato con ProVerif 2.05 in PieStudio, {date}."
+
+#: src/app/model/ReportWriter.ts:44
+msgid "Time: {seconds} s, memory: {size} MB."
+msgstr "Tempo: {seconds} s, memoria: {size} MB."
+
+#: src/app/model/ReportWriter.ts:46 src/app/view/BottomPanel.ts:170
+msgid "Result"
+msgstr "Risultato"
+
+#: src/app/model/ReportWriter.ts:46
+msgid "Goal"
+msgstr "Obiettivo"
+
+#: src/app/model/ReportWriter.ts:47
+msgid "Attack traces"
+msgstr "Tracce d'attacco"
+
+#: src/app/model/ReportWriter.ts:48
+msgid "Model"
+msgstr "Modello"
+
+#: src/app/model/ReportWriter.ts:51
+msgid "Written by PieStudio."
+msgstr "Scritto da PieStudio."
+
+#: src/app/engine/OutputParser.ts:35
+msgid "true"
+msgstr "vero"
+
+#: src/app/engine/OutputParser.ts:36
+msgid "false"
+msgstr "falso"
+
+#: src/app/engine/OutputParser.ts:37
+msgid "cannot be proved"
+msgstr "non dimostrabile"
+
+#: src/app/engine/TraceMapper.ts:348
+msgid "new {name}: {type} creating {value}"
+msgstr "new {name}: {type}, che crea {value}"
+
+#: src/app/engine/TraceMapper.ts:354
+msgid "{channel}: {message} (between processes)"
+msgstr "{channel}: {message} (tra processi)"
+
+#: src/app/engine/TraceMapper.ts:369
+msgid "attacker obtains {message}"
+msgstr "l'attaccante ottiene {message}"
+
+#: src/app/engine/TraceMapper.ts:372
+msgid "event {event} executed"
+msgstr "evento {event} eseguito"
+
+#: src/app/view/DeclarationsPanel.ts:20 src/app/view/SettingsDialog.ts:99
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: src/app/view/DeclarationsPanel.ts:21
+msgid "Types"
+msgstr "Tipi"
+
+#: src/app/view/DeclarationsPanel.ts:22
+msgid "Names and channels"
+msgstr "Nomi e canali"
+
+#: src/app/view/DeclarationsPanel.ts:23
+msgid "Functions and equations"
+msgstr "Funzioni ed equazioni"
+
+#: src/app/view/DeclarationsPanel.ts:24
+msgid "Events, tables, predicates"
+msgstr "Eventi, tabelle, predicati"
+
+#: src/app/view/DeclarationsPanel.ts:25
+msgid "Term macros"
+msgstr "Macro di termini"
+
+#: src/app/view/DeclarationsPanel.ts:27
+msgid "Parties (processes)"
+msgstr "Partecipanti (processi)"
+
+#: src/app/view/DeclarationsPanel.ts:188 src/app/view/FormBuilder.ts:310
+#: src/app/view/DeclarationDialog.ts:123 src/app/view/ActionDialog.ts:182
+msgid "Add"
+msgstr "Aggiungi"
+
+#: src/app/view/DeclarationsPanel.ts:193
+msgid "Show more ({count} not shown)"
+msgstr "Mostra le altre ({count})"
+
+#: src/app/view/DeclarationsPanel.ts:196
+msgid "None yet"
+msgstr "Ancora nessuna"
+
+#: src/app/view/DeclarationsPanel.ts:198
+msgid "None matches"
+msgstr "Nessuna corrisponde"
+
+#: src/app/view/DeclarationsPanel.ts:221
+msgid "Libraries (-lib)"
+msgstr "Librerie (-lib)"
+
+#: src/app/view/DeclarationsPanel.ts:227
+msgid "{name}: {count} declaration"
+msgid_plural "{name}: {count} declarations"
+msgstr[0] "{name}: {count} dichiarazione"
+msgstr[1] "{name}: {count} dichiarazioni"
+
+#: src/app/view/DeclarationsPanel.ts:230
+msgid "{count} decl."
+msgstr "{count} dich."
+
+#: src/app/view/DeclarationsPanel.ts:230
+msgid "not used by this model"
+msgstr "non usata da questo modello"
+
+#: src/app/view/DeclarationsPanel.ts:232 src/app/controller/PieStudio.ts:495
+msgid "{count} error"
+msgid_plural "{count} errors"
+msgstr[0] "{count} errore"
+msgstr[1] "{count} errori"
+
+#: src/app/view/DeclarationsPanel.ts:234
+msgid "Edit the library"
+msgstr "Modifica la libreria"
+
+#: src/app/view/DeclarationsPanel.ts:235
+msgid "Remove the library"
+msgstr "Rimuovi la libreria"
+
+#: src/app/view/DeclarationsPanel.ts:239
+msgid "The model needs {name} (@library): open it"
+msgstr "Il modello richiede {name} (@library): aprila"
+
+#: src/app/view/DeclarationsPanel.ts:241
+msgid "missing"
+msgstr "mancante"
+
+#: src/app/view/TraceView.ts:68
+msgid "Attacker"
+msgstr "Attaccante"
+
+#: src/app/view/TraceView.ts:125
+msgid "attacker has"
+msgstr "l'attaccante ha"
+
+#: src/app/view/TraceView.ts:128
+msgid "goal: event"
+msgstr "obiettivo: evento"
+
+#: src/app/view/TraceView.ts:131
+msgid "attacker test"
+msgstr "test dell'attaccante"
+
+#: src/app/view/BottomPanel.ts:103
+msgid "No problems: ProVerif accepts this model."
+msgstr "Nessun problema: ProVerif accetta questo modello."
+
+#: src/app/view/BottomPanel.ts:113
+msgid "Reported by ProVerif 2.05 itself"
+msgstr "Segnalato da ProVerif 2.05 stesso"
+
+#: src/app/view/BottomPanel.ts:139
+msgid "Verify the model (F5) to see the results of its security goals."
+msgstr "Verifica il modello (F5) per vedere i risultati dei suoi obiettivi di sicurezza."
+
+#: src/app/view/BottomPanel.ts:143
+msgid "ProVerif is working..."
+msgstr "ProVerif sta lavorando..."
+
+#: src/app/view/BottomPanel.ts:153
+msgid "Memory of the engine: {used} MB, with no budget"
+msgstr "Memoria del motore: {used} MB, senza limite"
+
+#: src/app/view/BottomPanel.ts:154
+msgid "Memory of the engine: {used} MB of a budget of {limit} MB"
+msgstr "Memoria del motore: {used} MB su un limite di {limit} MB"
+
+#: src/app/view/BottomPanel.ts:156
+msgid "{used} MB, no limit"
+msgstr "{used} MB, senza limite"
+
+#: src/app/view/BottomPanel.ts:170
+msgid "Security goal"
+msgstr "Obiettivo di sicurezza"
+
+#: src/app/view/BottomPanel.ts:179
+msgid "trace"
+msgstr "traccia"
+
+#: src/app/view/BottomPanel.ts:214
+msgid "Verify the model, then choose a result that has an attack trace."
+msgstr "Verifica il modello, poi scegli un risultato che ha una traccia d'attacco."
+
+#: src/app/view/BottomPanel.ts:222
+msgid "Previous step"
+msgstr "Passo precedente"
+
+#: src/app/view/BottomPanel.ts:223
+msgid "Next step"
+msgstr "Passo successivo"
+
+#: src/app/view/BottomPanel.ts:234
+msgid "ProVerif found an attack but could not rebuild a trace of it."
+msgstr "ProVerif ha trovato un attacco, ma non è riuscito a ricostruirne una traccia."
+
+#: src/app/view/BottomPanel.ts:235
+msgid "The goal holds: there is no attack to show."
+msgstr "L'obiettivo è soddisfatto: non c'è alcun attacco da mostrare."
+
+#: src/app/view/BottomPanel.ts:235
+msgid "ProVerif could neither prove the goal nor find an attack."
+msgstr "ProVerif non è riuscito né a dimostrare l'obiettivo né a trovare un attacco."
+
+#: src/app/view/BottomPanel.ts:240
+msgid "Derivation ({count} step)"
+msgid_plural "Derivation ({count} steps)"
+msgstr[0] "Derivazione ({count} passo)"
+msgstr[1] "Derivazione ({count} passi)"
+
+#: src/app/view/BottomPanel.ts:255
+msgid "Step {number} of {count}: {text}"
+msgstr "Passo {number} di {count}: {text}"
+
+#: src/app/view/BottomPanel.ts:256
+msgid "{count} step. Click a step to see the action that made it."
+msgid_plural "{count} steps. Click a step to see the action that made it."
+msgstr[0] "{count} passo. Fai clic su un passo per vedere l'azione che lo ha prodotto."
+msgstr[1] "{count} passi. Fai clic su un passo per vedere l'azione che lo ha prodotto."
+
+#: src/app/view/FormBuilder.ts:68
+msgid "Modifiers"
+msgstr "Modificatori"
+
+#: src/app/view/FormBuilder.ts:168
+msgid "Find the types from the events and tables"
+msgstr "Trova i tipi dagli eventi e dalle tabelle"
+
+#: src/app/view/FormBuilder.ts:168
+msgid "Infer"
+msgstr "Deduci"
+
+#: src/app/view/FormBuilder.ts:209
+msgid "any value (empty)"
+msgstr "qualsiasi valore (vuoto)"
+
+#: src/app/view/FormBuilder.ts:235
+msgid "Default: {value}."
+msgstr "Predefinito: {value}."
+
+#: src/app/view/FormBuilder.ts:254
+msgid "{value} (default)"
+msgstr "{value} (predefinito)"
+
+#: src/app/view/FormBuilder.ts:273
+msgid "for example {example}"
+msgstr "per esempio {example}"
+
+#: src/app/view/FormBuilder.ts:275
+msgid "Shown as"
+msgstr "Mostrato come"
+
+#: src/app/view/FormBuilder.ts:294
+msgid "Suggestions"
+msgstr "Suggerimenti"
+
+#: src/app/view/DeclarationDialog.ts:86
+msgid "Form"
+msgstr "Modulo"
+
+#: src/app/view/DeclarationDialog.ts:89
+msgid "ProVerif source"
+msgstr "Sorgente ProVerif"
+
+#: src/app/view/DeclarationDialog.ts:117
+msgid "Edit {what}"
+msgstr "Modifica {what}"
+
+#: src/app/view/DeclarationDialog.ts:117 src/app/controller/PieStudio.ts:1037
+msgid "Add {what}"
+msgstr "Aggiungi {what}"
+
+#: src/app/view/DeclarationDialog.ts:249
+msgid "Fill in the form: the declaration is checked as you type."
+msgstr "Compila il modulo: la dichiarazione viene controllata mentre scrivi."
+
+#: src/app/view/DeclarationDialog.ts:259
+msgid "Valid"
+msgstr "Valida"
+
+#: src/app/view/DeclarationDialog.ts:292
+msgid "the default"
+msgstr "quella predefinita"
+
+#: src/app/view/DeclarationDialog.ts:330
+msgid "Declare events and names first"
+msgstr "Prima dichiara eventi e nomi"
+
+#: src/app/view/ActionDialog.ts:21 src/app/view/ActionDialog.ts:36
+msgid "as in CryptoVerif"
+msgstr "come in CryptoVerif"
+
+#: src/app/view/ActionDialog.ts:21
+msgid "k <-R key; instead of new k: key; ProVerif reads both"
+msgstr "k <-R key; invece di new k: key; ProVerif accetta entrambe le forme"
+
+#: src/app/view/ActionDialog.ts:25
+msgid "Pattern (what is received)"
+msgstr "Pattern (ciò che si riceve)"
+
+#: src/app/view/ActionDialog.ts:26
+msgid "a more precise analysis of this input (ProVerif 2.03 and later)"
+msgstr "un'analisi più precisa di questo input (ProVerif 2.03 e successivi)"
+
+#: src/app/view/ActionDialog.ts:33
+msgid "Pattern"
+msgstr "Pattern"
+
+#: src/app/view/ActionDialog.ts:35 src/app/view/ActionDialog.ts:42
+#: src/app/view/ActionDialog.ts:46 src/app/view/ActionDialog.ts:61
+msgid "else branch"
+msgstr "ramo else"
+
+#: src/app/view/ActionDialog.ts:35
+msgid "what to do when the value does not match"
+msgstr "cosa fare quando il valore non corrisponde"
+
+#: src/app/view/ActionDialog.ts:36
+msgid "x <- M; instead of let x = M in, for a variable or _ without else branch; ProVerif reads both"
+msgstr "x <- M; invece di let x = M in, per una variabile o _ senza ramo else; ProVerif accetta entrambe le forme"
+
+#: src/app/view/ActionDialog.ts:40 src/app/view/ActionDialog.ts:45
+msgid "Condition"
+msgstr "Condizione"
+
+#: src/app/view/ActionDialog.ts:41
+msgid "a more precise analysis of this choice"
+msgstr "un'analisi più precisa di questa scelta"
+
+#: src/app/view/ActionDialog.ts:42
+msgid "what to do when no value fits"
+msgstr "cosa fare quando nessun valore va bene"
+
+#: src/app/view/ActionDialog.ts:46
+msgid "what to do when the condition is false"
+msgstr "cosa fare quando la condizione è falsa"
+
+#: src/app/view/ActionDialog.ts:50 src/app/view/ActionDialog.ts:65
+msgid "Arguments"
+msgstr "Argomenti"
+
+#: src/app/view/ActionDialog.ts:54
+msgid "Row"
+msgstr "Riga"
+
+#: src/app/view/ActionDialog.ts:58
+msgid "Row patterns"
+msgstr "Pattern della riga"
+
+#: src/app/view/ActionDialog.ts:59
+msgid "Condition (optional)"
+msgstr "Condizione (facoltativa)"
+
+#: src/app/view/ActionDialog.ts:60
+msgid "a more precise analysis of this lookup"
+msgstr "un'analisi più precisa di questa ricerca"
+
+#: src/app/view/ActionDialog.ts:61
+msgid "what to do when no row matches"
+msgstr "cosa fare quando nessuna riga corrisponde"
+
+#: src/app/view/ActionDialog.ts:64
+msgid "Process"
+msgstr "Processo"
+
+#: src/app/view/ActionDialog.ts:68
+msgid "Phase"
+msgstr "Fase"
+
+#: src/app/view/ActionDialog.ts:71
+msgid "Barrier"
+msgstr "Barriera"
+
+#: src/app/view/ActionDialog.ts:72
+msgid "Tag (optional)"
+msgstr "Etichetta (facoltativa)"
+
+#: src/app/view/ActionDialog.ts:110
+msgid "Add a fresh name (new)"
+msgstr "Aggiungi un nome fresco (new)"
+
+#: src/app/view/ActionDialog.ts:110
+msgid "Edit the fresh name (new)"
+msgstr "Modifica il nome fresco (new)"
+
+#: src/app/view/ActionDialog.ts:111
+msgid "Add an input (in)"
+msgstr "Aggiungi un input (in)"
+
+#: src/app/view/ActionDialog.ts:111
+msgid "Edit the input (in)"
+msgstr "Modifica l'input (in)"
+
+#: src/app/view/ActionDialog.ts:112
+msgid "Add an output (out)"
+msgstr "Aggiungi un output (out)"
+
+#: src/app/view/ActionDialog.ts:112
+msgid "Edit the output (out)"
+msgstr "Modifica l'output (out)"
+
+#: src/app/view/ActionDialog.ts:113
+msgid "Add an assignment or a match (let)"
+msgstr "Aggiungi un assegnamento o un confronto (let)"
+
+#: src/app/view/ActionDialog.ts:113
+msgid "Edit the assignment or match (let)"
+msgstr "Modifica l'assegnamento o il confronto (let)"
+
+#: src/app/view/ActionDialog.ts:114
+msgid "Add a choice (let ... suchthat)"
+msgstr "Aggiungi una scelta (let ... suchthat)"
+
+#: src/app/view/ActionDialog.ts:114
+msgid "Edit the choice (let ... suchthat)"
+msgstr "Modifica la scelta (let ... suchthat)"
+
+#: src/app/view/ActionDialog.ts:115
+msgid "Add a test (if)"
+msgstr "Aggiungi un test (if)"
+
+#: src/app/view/ActionDialog.ts:115
+msgid "Edit the test (if)"
+msgstr "Modifica il test (if)"
+
+#: src/app/view/ActionDialog.ts:116
+msgid "Add an event"
+msgstr "Aggiungi un evento"
+
+#: src/app/view/ActionDialog.ts:116
+msgid "Edit the event"
+msgstr "Modifica l'evento"
+
+#: src/app/view/ActionDialog.ts:117
+msgid "Add an insertion into a table"
+msgstr "Aggiungi un inserimento in una tabella"
+
+#: src/app/view/ActionDialog.ts:117
+msgid "Edit the insertion into a table"
+msgstr "Modifica l'inserimento in una tabella"
+
+#: src/app/view/ActionDialog.ts:118
+msgid "Add a lookup in a table (get)"
+msgstr "Aggiungi una ricerca in una tabella (get)"
+
+#: src/app/view/ActionDialog.ts:118
+msgid "Edit the lookup in a table (get)"
+msgstr "Modifica la ricerca in una tabella (get)"
+
+#: src/app/view/ActionDialog.ts:119
+msgid "Add a call of a process"
+msgstr "Aggiungi una chiamata di un processo"
+
+#: src/app/view/ActionDialog.ts:119
+msgid "Edit the call of a process"
+msgstr "Modifica la chiamata di un processo"
+
+#: src/app/view/ActionDialog.ts:120
+msgid "Add a phase"
+msgstr "Aggiungi una fase"
+
+#: src/app/view/ActionDialog.ts:120
+msgid "Edit the phase"
+msgstr "Modifica la fase"
+
+#: src/app/view/ActionDialog.ts:121
+msgid "Add a synchronisation (sync)"
+msgstr "Aggiungi una sincronizzazione (sync)"
+
+#: src/app/view/ActionDialog.ts:121
+msgid "Edit the synchronisation (sync)"
+msgstr "Modifica la sincronizzazione (sync)"
+
+#: src/app/view/SettingsDialog.ts:21
+msgid "As the model writes most of them"
+msgstr "Come li scrive per lo più il modello"
+
+#: src/app/view/SettingsDialog.ts:22
+msgid "As in ProVerif: new k: key; and let x = M in"
+msgstr "Come in ProVerif: new k: key; e let x = M in"
+
+#: src/app/view/SettingsDialog.ts:23
+msgid "As in CryptoVerif: k <-R key; and x <- M;"
+msgstr "Come in CryptoVerif: k <-R key; e x <- M;"
+
+#: src/app/view/SettingsDialog.ts:32
+msgid "Engine"
+msgstr "Motore"
+
+#: src/app/view/SettingsDialog.ts:33
+msgid "Notation"
+msgstr "Notazione"
+
+#: src/app/view/SettingsDialog.ts:34
+msgid "Theme"
+msgstr "Tema"
+
+#: src/app/view/SettingsDialog.ts:35
+msgid "Language"
+msgstr "Lingua"
+
+#: src/app/view/SettingsDialog.ts:105
+msgid "Save"
+msgstr "Salva"
+
+#: src/app/view/SettingsDialog.ts:125
+msgid "No limit: as much as the browser gives (at most 4 GB, all that WebAssembly can address)"
+msgstr "Nessun limite: quanta ne dà il browser (al più 4 GB, tutta quella che WebAssembly può indirizzare)"
+
+#: src/app/view/SettingsDialog.ts:133
+msgid "Memory budget of a verification"
+msgstr "Memoria massima di una verifica"
+
+#: src/app/view/SettingsDialog.ts:134
+msgid "ProVerif runs in a WebAssembly module whose memory grows as needed, up to this budget. Beyond it, or when the browser has no more memory to give, the verification stops with a clear message, and the page is not affected."
+msgstr "ProVerif gira in un modulo WebAssembly la cui memoria cresce quando serve, fino a questo limite. Oltre il limite, o quando il browser non ha più memoria da dare, la verifica si ferma con un messaggio chiaro, e la pagina non ne risente."
+
+#: src/app/view/SettingsDialog.ts:136
+msgid "Time limit, in seconds (0 for none)"
+msgstr "Limite di tempo, in secondi (0 per nessun limite)"
+
+#: src/app/view/SettingsDialog.ts:138
+msgid "A verification that runs in the page (opened from a file) cannot be interrupted."
+msgstr "Una verifica che gira nella pagina (aperta da un file) non si può interrompere."
+
+#: src/app/view/SettingsDialog.ts:139
+msgid "Extra command line arguments"
+msgstr "Argomenti aggiuntivi della riga di comando"
+
+#: src/app/view/SettingsDialog.ts:142
+msgid "Check the model with ProVerif while editing"
+msgstr "Controlla il modello con ProVerif durante le modifiche"
+
+#: src/app/view/SettingsDialog.ts:143
+msgid "ProVerif 2.05 parses the model with -parse-only after each change"
+msgstr "ProVerif 2.05 analizza il modello con -parse-only dopo ogni modifica"
+
+#: src/app/view/SettingsDialog.ts:182
+msgid "The default"
+msgstr "Predefinito"
+
+#: src/app/view/SettingsDialog.ts:193
+msgid "Preset"
+msgstr "Preimpostazione"
+
+#: src/app/view/SettingsDialog.ts:195
+msgid "Font of the code"
+msgstr "Carattere del codice"
+
+#: src/app/view/SettingsDialog.ts:196
+msgid "Size of the interface"
+msgstr "Dimensione dell'interfaccia"
+
+#: src/app/view/SettingsDialog.ts:198
+msgid "Explain the constructs"
+msgstr "Spiega i costrutti"
+
+#: src/app/view/SettingsDialog.ts:199
+msgid "A short description shows when the pointer rests on a block of the diagram or on a keyword of the code"
+msgstr "Una breve descrizione appare quando il puntatore si ferma su un blocco del diagramma o su una parola chiave del codice"
+
+#: src/app/view/SettingsDialog.ts:235
+msgid "New names and lets that the diagram adds"
+msgstr "Nomi freschi e let che il diagramma aggiunge"
+
+#: src/app/view/SettingsDialog.ts:236
+msgid "ProVerif 2.05 reads both styles. Edit, Write new and let as in CryptoVerif (or as in ProVerif) rewrites those of the model."
+msgstr "ProVerif 2.05 accetta entrambi gli stili. Modifica, Scrivi new e let come in CryptoVerif (o come in ProVerif) riscrive quelli del modello."
+
+#: src/app/view/SettingsDialog.ts:237
+msgid "LaTeX templates of the Design mode: #1, #2 are the parts of the action (see the placeholders), # is the identifier in the styles. Hints in the model (@notation, @infix) take precedence."
+msgstr "Schemi LaTeX della modalità Design: #1, #2 sono le parti dell'azione (vedi i segnaposto), # è l'identificatore negli stili. Le indicazioni nel modello (@notation, @infix) hanno la precedenza."
+
+#: src/app/view/SettingsDialog.ts:266
+msgid "Restore the defaults"
+msgstr "Ripristina i valori predefiniti"
+
+#: src/app/controller/Toolbox.ts:66 src/app/controller/PieStudio.ts:1064
+msgid "Fix the syntax errors of the code first."
+msgstr "Prima correggi gli errori di sintassi del codice."
+
+#: src/app/controller/Toolbox.ts:81
+msgid "There is no name to rename in the selection."
+msgstr "Nella selezione non c'è alcun nome da rinominare."
+
+#: src/app/controller/Toolbox.ts:162
+msgid "Rename {name} to {to} ({count} place)"
+msgid_plural "Rename {name} to {to} ({count} places)"
+msgstr[0] "Rinomina {name} in {to} ({count} punto)"
+msgstr[1] "Rinomina {name} in {to} ({count} punti)"
+
+#: src/app/controller/Toolbox.ts:173
+msgid "Apply the refactoring?"
+msgstr "Applicare il refactoring?"
+
+#: src/app/controller/Toolbox.ts:173
+msgid "Apply anyway"
+msgstr "Applica comunque"
+
+#: src/app/controller/Toolbox.ts:214
+msgid "Library {names} loaded: its declarations are checked with the model and given to ProVerif."
+msgid_plural "Libraries {names} loaded: their declarations are checked with the model and given to ProVerif."
+msgstr[0] "Libreria {names} caricata: le sue dichiarazioni vengono controllate insieme al modello e passate a ProVerif."
+msgstr[1] "Librerie {names} caricate: le loro dichiarazioni vengono controllate insieme al modello e passate a ProVerif."
+
+#: src/app/controller/Toolbox.ts:268
+msgid "{name} changed: the model is checked with it again."
+msgstr "{name} modificata: il modello viene ricontrollato con essa."
+
+#: src/app/controller/Toolbox.ts:332
+msgid "LaTeX of the protocol (TikZ)"
+msgstr "LaTeX del protocollo (TikZ)"
+
+#: src/app/controller/Toolbox.ts:335
+msgid "The honest run, as paired in the diagram, in the notation of the Design mode."
+msgstr "L'esecuzione onesta, con i messaggi abbinati come nel diagramma, nella notazione della modalità Design."
+
+#: src/app/controller/Toolbox.ts:338
+msgid "Copy"
+msgstr "Copia"
+
+#: src/app/controller/Toolbox.ts:339
+msgid "LaTeX copied."
+msgstr "LaTeX copiato."
+
+#: src/app/controller/Toolbox.ts:343
+msgid "Download .tex"
+msgstr "Scarica .tex"
+
+#: src/app/controller/Toolbox.ts:359
+msgid "Verify the model first: the report gives the results of the last verification."
+msgstr "Prima verifica il modello: il rapporto dà i risultati dell'ultima verifica."
+
+#: src/app/controller/Toolbox.ts:373
+msgid "The model is verified again after each change."
+msgstr "Il modello viene verificato di nuovo dopo ogni modifica."
+
+#: src/app/controller/Toolbox.ts:373
+msgid "Verify with F5."
+msgstr "Verifica con F5."
+
+#: src/app/controller/Verifier.ts:94
+msgid "A verification is already running."
+msgstr "Una verifica è già in corso."
+
+#: src/app/controller/Verifier.ts:103
+msgid "The code has syntax errors: fix them before verifying."
+msgstr "Il codice ha errori di sintassi: correggili prima di verificare."
+
+#: src/app/controller/Verifier.ts:110
+msgid "all goals"
+msgstr "tutti gli obiettivi"
+
+#: src/app/controller/Verifier.ts:114
+msgid "Verifying {count} file: the goals need separate runs."
+msgid_plural "Verifying {count} files: the goals need separate runs."
+msgstr[0] "Verifica di {count} file: gli obiettivi richiedono esecuzioni separate."
+msgstr[1] "Verifica di {count} file: gli obiettivi richiedono esecuzioni separate."
+
+#: src/app/controller/Verifier.ts:115
+msgid "ProVerif is verifying the model..."
+msgstr "ProVerif sta verificando il modello..."
+
+#: src/app/controller/Verifier.ts:138
+msgid "Verifying {count} file at the same time, one verifier each."
+msgid_plural "Verifying {count} files at the same time, one verifier each."
+msgstr[0] "Verifica di {count} file in contemporanea, con un verificatore ciascuno."
+msgstr[1] "Verifica di {count} file in contemporanea, con un verificatore ciascuno."
+
+#: src/app/controller/Verifier.ts:142 src/app/controller/Verifier.ts:160
+msgid "File {name}: {description}"
+msgstr "File {name}: {description}"
+
+#: src/app/controller/Verifier.ts:235
+msgid "{count} goal: {proved} proved, {failed} false, {other} cannot be proved."
+msgid_plural "{count} goals: {proved} proved, {failed} false, {other} cannot be proved."
+msgstr[0] "{count} obiettivo. Dimostrati: {proved}; falsi: {failed}; non dimostrabili: {other}."
+msgstr[1] "{count} obiettivi. Dimostrati: {proved}; falsi: {failed}; non dimostrabili: {other}."
+
+#: src/app/controller/Verifier.ts:236
+msgid "{count} goal: {proved} proved, {failed} false."
+msgid_plural "{count} goals: {proved} proved, {failed} false."
+msgstr[0] "{count} obiettivo. Dimostrati: {proved}; falsi: {failed}."
+msgstr[1] "{count} obiettivi. Dimostrati: {proved}; falsi: {failed}."
+
+#: src/app/controller/Verifier.ts:239
+msgid "ProVerif stopped: {message}"
+msgstr "ProVerif si è fermato: {message}"
+
+#: src/app/controller/Verifier.ts:241
+msgid "ProVerif accepts the model; it has no security goals to verify (add a query)."
+msgstr "ProVerif accetta il modello; non ha obiettivi di sicurezza da verificare (aggiungi una query)."
+
+#: src/app/controller/Verifier.ts:245
+msgid "Stopped: the browser gave the engine no more memory, after {size} MB (WebAssembly can address at most 4 GB)."
+msgstr "Fermato: il browser non ha dato altra memoria al motore, dopo {size} MB (WebAssembly può indirizzare al più 4 GB)."
+
+#: src/app/controller/Verifier.ts:248
+msgid "Stopped: the verification reached its memory budget of {size} MB (Settings, Engine)."
+msgstr "Fermato: la verifica ha raggiunto il suo limite di memoria di {size} MB (Impostazioni, Motore)."
+
+#: src/app/controller/Verifier.ts:251
+msgid "Stopped: the verification reached its time limit of {seconds} s (Settings, Engine)."
+msgstr "Fermato: la verifica ha raggiunto il suo limite di tempo di {seconds} s (Impostazioni, Motore)."
+
+#: src/app/controller/Verifier.ts:254
+msgid "Cancelled."
+msgstr "Annullato."
+
+#: src/app/controller/Verifier.ts:256
+msgid "The engine failed: {message}"
+msgstr "Errore del motore: {message}"
+
+#: src/app/controller/Verifier.ts:318
+msgid "Stop"
+msgstr "Ferma"
+
+#: src/app/controller/PieStudio.ts:45
+msgid "A new model. Add declarations with the + of the panel on the left, parties with the + of Parties, and actions by dragging them from the palette onto a party."
+msgstr "Un nuovo modello. Aggiungi le dichiarazioni con il + del pannello a sinistra, i partecipanti con il + di Partecipanti, e le azioni trascinandole dalla palette su un partecipante."
+
+#: src/app/controller/PieStudio.ts:239
+msgid "Opened {file}: {count} problem to fix."
+msgid_plural "Opened {file}: {count} problems to fix."
+msgstr[0] "Aperto {file}: {count} problema da correggere."
+msgstr[1] "Aperto {file}: {count} problemi da correggere."
+
+#: src/app/controller/PieStudio.ts:240
+msgid "Opened {file}"
+msgstr "Aperto {file}"
+
+#: src/app/controller/PieStudio.ts:407
+msgid "{message}: PieStudio verifies and exports these goals as separate files."
+msgstr "{message}: PieStudio verifica ed esporta questi obiettivi come file separati."
+
+#: src/app/controller/PieStudio.ts:441
+msgid "The model needs the library {name} (@library): open it with File, Open a library, or choose it with the model."
+msgstr "Il modello richiede la libreria {name} (@library): aprila con File, Apri una libreria, o sceglila insieme al modello."
+
+#: src/app/controller/PieStudio.ts:449
+msgid "{library}, line {line}: {message}"
+msgstr "{library}, riga {line}: {message}"
+
+#: src/app/controller/PieStudio.ts:488
+msgid "Passive attacker: listens only. Click to change."
+msgstr "Attaccante passivo: si limita ad ascoltare. Fai clic per cambiare."
+
+#: src/app/controller/PieStudio.ts:488
+msgid "Active attacker: reads, writes and blocks public channels. Click to change."
+msgstr "Attaccante attivo: legge, scrive e blocca i canali pubblici. Fai clic per cambiare."
+
+#: src/app/controller/PieStudio.ts:489
+msgid "passive attacker"
+msgstr "attaccante passivo"
+
+#: src/app/controller/PieStudio.ts:509
+msgid "Start: {file}"
+msgstr "Inizio: {file}"
+
+#: src/app/controller/PieStudio.ts:811
+msgid "Hints of {file} applied to the model."
+msgstr "Indicazioni di {file} applicate al modello."
+
+#: src/app/controller/PieStudio.ts:816
+msgid "Choose a ProVerif model (.pv), and possibly its hints (.pp)."
+msgstr "Scegli un modello ProVerif (.pv), ed eventualmente le sue indicazioni (.pp)."
+
+#: src/app/controller/PieStudio.ts:837
+msgid "Opened the model of the link."
+msgstr "Aperto il modello del link."
+
+#: src/app/controller/PieStudio.ts:851
+msgid "Unsaved changes"
+msgstr "Modifiche non salvate"
+
+#: src/app/controller/PieStudio.ts:851
+msgid "The changes to {file} are not saved. Replace the model anyway?"
+msgstr "Le modifiche a {file} non sono salvate. Sostituire comunque il modello?"
+
+#: src/app/controller/PieStudio.ts:851
+msgid "Replace"
+msgstr "Sostituisci"
+
+#: src/app/controller/PieStudio.ts:886
+msgid "Undid: {label}"
+msgstr "Annullato: {label}"
+
+#: src/app/controller/PieStudio.ts:897
+msgid "Redid: {label}"
+msgstr "Ripetuto: {label}"
+
+#: src/app/controller/PieStudio.ts:989
+msgid "Fix the syntax errors of the code first: the diagram shows the last version that parsed."
+msgstr "Prima correggi gli errori di sintassi del codice: il diagramma mostra l'ultima versione senza errori."
+
+#: src/app/controller/PieStudio.ts:1015
+msgid "Edit {kind}"
+msgstr "Modifica {kind}"
+
+#: src/app/controller/PieStudio.ts:1070
+msgid "Nothing to rewrite: the new names and the lets that can be are written as in {style}."
+msgstr "Niente da riscrivere: i nomi freschi e i let che possono esserlo sono già scritti come in {style}."
+
+#: src/app/controller/PieStudio.ts:1073
+msgid "Write new and let as in {style}"
+msgstr "Scrivi new e let come in {style}"
+
+#: src/app/controller/PieStudio.ts:1074
+msgid "{count} new name or let written as in {style}."
+msgid_plural "{count} new names and lets written as in {style}."
+msgstr[0] "{count} nome fresco o let scritto come in {style}."
+msgstr[1] "{count} nomi freschi e let scritti come in {style}."
+
+#: src/app/controller/PieStudio.ts:1084
+msgid "Move an action"
+msgstr "Sposta un'azione"
+
+#: src/app/controller/PieStudio.ts:1106
+msgid "Remove the else branch"
+msgstr "Rimuovi il ramo else"
+
+#: src/app/controller/PieStudio.ts:1106 src/app/controller/PieStudio.ts:1108
+msgid "Add an else branch"
+msgstr "Aggiungi un ramo else"
+
+#: src/app/controller/PieStudio.ts:1108
+msgid "Remove an else branch"
+msgstr "Rimuovi un ramo else"
+
+#: src/app/controller/PieStudio.ts:1112
+msgid "Remove the replication"
+msgstr "Rimuovi la replicazione"
+
+#: src/app/controller/PieStudio.ts:1112
+msgid "Replicate (!)"
+msgstr "Replica (!)"
+
+#: src/app/controller/PieStudio.ts:1113
+msgid "Replication"
+msgstr "Replicazione"
+
+#: src/app/controller/PieStudio.ts:1114
+msgid "Run in parallel with another process"
+msgstr "Esegui in parallelo con un altro processo"
+
+#: src/app/controller/PieStudio.ts:1115
+msgid "Parallel composition"
+msgstr "Composizione parallela"
+
+#: src/app/controller/PieStudio.ts:1117
+msgid "Show as code"
+msgstr "Mostra come codice"
+
+#: src/app/controller/PieStudio.ts:1117
+msgid "Show as a formula"
+msgstr "Mostra come formula"
+
+#: src/app/controller/PieStudio.ts:1120 src/app/controller/PieStudio.ts:1279
+msgid "Delete"
+msgstr "Elimina"
+
+#: src/app/controller/PieStudio.ts:1134
+msgid "Delete {kind}"
+msgstr "Elimina {kind}"
+
+#: src/app/controller/PieStudio.ts:1183 src/app/controller/PieStudio.ts:1185
+msgid "Show {party} once"
+msgstr "Mostra {party} una volta sola"
+
+#: src/app/controller/PieStudio.ts:1189
+msgid "Show {party} as symmetric"
+msgstr "Mostra {party} come simmetrico"
+
+#: src/app/controller/PieStudio.ts:1227
+msgid "Edit the party {name}"
+msgstr "Modifica il partecipante {name}"
+
+#: src/app/controller/PieStudio.ts:1231
+msgid "Edit a declaration"
+msgstr "Modifica una dichiarazione"
+
+#: src/app/controller/PieStudio.ts:1254
+msgid "Add the party {name}"
+msgstr "Aggiungi il partecipante {name}"
+
+#: src/app/controller/PieStudio.ts:1256
+msgid "Add a declaration"
+msgstr "Aggiungi una dichiarazione"
+
+#: src/app/controller/PieStudio.ts:1276
+msgid "Move up"
+msgstr "Sposta su"
+
+#: src/app/controller/PieStudio.ts:1277
+msgid "Move down"
+msgstr "Sposta giù"
+
+#: src/app/controller/PieStudio.ts:1291
+msgid "Move a declaration"
+msgstr "Sposta una dichiarazione"
+
+#: src/app/controller/PieStudio.ts:1304
+msgid "Delete a declaration"
+msgstr "Elimina una dichiarazione"
+
+#: src/app/controller/PieStudio.ts:1330
+msgid "This declaration has no name to rename."
+msgstr "Questa dichiarazione non ha un nome da rinominare."
+
+#: src/app/controller/PieStudio.ts:1342
+msgid "Fix the syntax errors first."
+msgstr "Prima correggi gli errori di sintassi."
+
+#: src/app/controller/PieStudio.ts:1347
+msgid "Put the caret on a name to rename it."
+msgstr "Metti il cursore su un nome per rinominarlo."
+
+#: src/app/controller/PieStudio.ts:1352
+msgid "Rename {name}"
+msgstr "Rinomina {name}"
+
+#: src/app/controller/PieStudio.ts:1353
+msgid "New name of the {kind} {name} ({count} occurrence)"
+msgid_plural "New name of the {kind} {name} ({count} occurrences)"
+msgstr[0] "Nuovo nome di {name}, {kind} ({count} occorrenza)"
+msgstr[1] "Nuovo nome di {name}, {kind} ({count} occorrenze)"
+
+#: src/app/controller/PieStudio.ts:1365
+msgid "Rename {name} to {to}"
+msgstr "Rinomina {name} in {to}"
+
+#: src/app/controller/PieStudio.ts:1366
+msgid "Renamed {name} to {to} ({count} occurrence)."
+msgid_plural "Renamed {name} to {to} ({count} occurrences)."
+msgstr[0] "{name} rinominato in {to} ({count} occorrenza)."
+msgstr[1] "{name} rinominato in {to} ({count} occorrenze)."
+
+#: src/app/controller/PieStudio.ts:1440
+msgid "Active attacker"
+msgstr "Attaccante attivo"
+
+#: src/app/controller/PieStudio.ts:1440
+msgid "Passive attacker"
+msgstr "Attaccante passivo"
+
+#: src/app/controller/PieStudio.ts:1487
+msgid "Settings saved."
+msgstr "Impostazioni salvate."
+
+#: src/app/controller/PieStudio.ts:1507
+msgid "ProVerif cannot verify these goals in one run ({reason}): the model is exported as {count} file, valid on its own."
+msgid_plural "ProVerif cannot verify these goals in one run ({reason}): the model is exported as {count} files, each valid on its own."
+msgstr[0] "ProVerif non può verificare questi obiettivi in un'unica esecuzione ({reason}): il modello viene esportato come {count} file, valido da solo."
+msgstr[1] "ProVerif non può verificare questi obiettivi in un'unica esecuzione ({reason}): il modello viene esportato come {count} file, ciascuno valido da solo."
+
+#: src/app/controller/PieStudio.ts:1509
+msgid "incompatible goals"
+msgstr "obiettivi incompatibili"
+
+#: src/app/controller/PieStudio.ts:1520
+msgid "Export for ProVerif"
+msgstr "Esporta per ProVerif"
+
+#: src/app/controller/PieStudio.ts:1526
+msgid "Download all (.zip)"
+msgstr "Scarica tutto (.zip)"

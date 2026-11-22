@@ -1,0 +1,62 @@
+Biprocess 0 (that is, the initial process):
+{1}new k: key;
+(
+    {2}out(c, senc(choice[m1,m2],k))
+) | (
+    {3}out(c, senc(m1,k))
+)
+
+-- Observational equivalence in biprocess 0.
+Translating the process into Horn clauses...
+Termination warning: v ≠ v_1 && attacker2(v_2,v) && attacker2(v_2,v_1) -> bad
+Selecting 0
+Termination warning: v ≠ v_1 && attacker2(v,v_2) && attacker2(v_1,v_2) -> bad
+Selecting 0
+Completing...
+Termination warning: v ≠ v_1 && attacker2(v_2,v) && attacker2(v_2,v_1) -> bad
+Selecting 0
+Termination warning: v ≠ v_1 && attacker2(v,v_2) && attacker2(v_1,v_2) -> bad
+Selecting 0
+goal reachable: bad
+
+Derivation:
+
+1. The message senc(m1[],k[]) (resp. senc(m1[],k[])) may be sent to the attacker at output {3}.
+attacker2(senc(m1[],k[]),senc(m1[],k[])).
+
+2. The message senc(m1[],k[]) (resp. senc(m2[],k[])) may be sent to the attacker at output {2}.
+attacker2(senc(m1[],k[]),senc(m2[],k[])).
+
+3. By 2, the attacker may know senc(m1[],k[]) (resp. senc(m2[],k[])).
+By 1, the attacker may know senc(m1[],k[]) (resp. senc(m1[],k[])).
+We have senc(m2[],k[]) ≠ senc(m1[],k[]).
+The attacker tests equality between the two terms he knows, which may allow it to distinguish cases.
+bad.
+
+
+A more detailed output of the traces is available with
+  set traceDisplay = long.
+
+new k: key creating k_1 at {1}
+
+out(c, ~M) with ~M = senc(m1,k_1) at {3}
+
+out(c, ~M_1) with ~M_1 = senc(choice[m1,m2],k_1) at {2}
+
+The attacker tests whether
+~M_1 = senc(choice[m1,m2],k_1)
+is equal to
+~M = senc(m1,k_1).
+The result in the left-hand side is different from the result in the right-hand side.
+A trace has been found.
+RESULT Observational equivalence cannot be proved.
+Looking for simplified processes ...
+No simplified process found.
+
+--------------------------------------------------------------
+Verification summary:
+
+Observational equivalence cannot be proved.
+
+--------------------------------------------------------------
+

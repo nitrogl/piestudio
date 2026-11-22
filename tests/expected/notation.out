@@ -1,0 +1,156 @@
+Linear part:
+exp(exp(g,x),y) = exp(exp(g,y),x)
+Completing equations...
+Completed equations:
+exp(exp(g,x),y) = exp(exp(g,y),x)
+Convergent part: No equation.
+Process 0 (that is, the initial process):
+{1}new skA: skey;
+{2}new skB: skey;
+{3}out(c, pk(skA));
+{4}out(c, pk(skB));
+(
+    {5}!
+    {6}let skA_1: skey = skA in
+    {7}let pkB: pkey = pk(skB) in
+    {8}new a: exponent;
+    {9}out(c, exp(g,a));
+    {10}in(c, (gb: G,s: bitstring));
+    {11}let (=exp(g,a),=gb) = checksign(s,pkB) in
+    {12}let k: key = h(exp(gb,a)) in
+    {13}event sent(payload,exp(g,a),gb);
+    {14}out(c, senc(concat(idA,payload),k))
+) | (
+    {15}!
+    {16}let skB_1: skey = skB in
+    {17}let pkA: pkey = pk(skA) in
+    {18}in(c, ga: G);
+    {19}new b: exponent;
+    {20}out(c, (exp(g,b),sign((ga,exp(g,b)),skB_1)));
+    {21}in(c, m: bitstring);
+    {22}let k_1: key = h(exp(ga,b)) in
+    {23}let x: bitstring = sdec(m,k_1) in
+    {24}if (fst(x) = idA) then
+    {25}event received(snd(x),ga,exp(g,b))
+)
+
+--  Process 1 (that is, process 0, with let moved downwards):
+{1}new skA: skey;
+{2}new skB: skey;
+{3}out(c, pk(skA));
+{4}out(c, pk(skB));
+(
+    {5}!
+    {8}new a: exponent;
+    {9}out(c, exp(g,a));
+    {10}in(c, (gb: G,s: bitstring));
+    {7}let pkB: pkey = pk(skB) in
+    {11}let (=exp(g,a),=gb) = checksign(s,pkB) in
+    {13}event sent(payload,exp(g,a),gb);
+    {12}let k: key = h(exp(gb,a)) in
+    {14}out(c, senc(concat(idA,payload),k))
+) | (
+    {15}!
+    {18}in(c, ga: G);
+    {19}new b: exponent;
+    {16}let skB_1: skey = skB in
+    {20}out(c, (exp(g,b),sign((ga,exp(g,b)),skB_1)));
+    {21}in(c, m: bitstring);
+    {22}let k_1: key = h(exp(ga,b)) in
+    {23}let x: bitstring = sdec(m,k_1) in
+    {24}if (fst(x) = idA) then
+    {25}event received(snd(x),ga,exp(g,b))
+)
+
+-- Query not attacker(payload[]) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query not attacker(payload[])
+RESULT not attacker(payload[]) is true.
+-- Query event(received(x_1,ga_1,gb_1)) ==> event(sent(x_1,ga_1,gb_1)) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query event(received(x_1,ga_1,gb_1)) ==> event(sent(x_1,ga_1,gb_1))
+goal reachable: attacker(x_1) -> event(received(x_1,g,exp(g,b_1)))
+Abbreviations:
+b_1 = b[ga = g,!1 = @sid]
+
+Derivation:
+Abbreviations:
+b_1 = b[ga = g,!1 = @sid]
+
+1. Using the function g the attacker may obtain g.
+attacker(g).
+
+2. The message g that the attacker may have by 1 may be received at input {18}.
+So the message (exp(g,b_1),sign((g,exp(g,b_1)),skB[])) may be sent to the attacker at output {20}.
+attacker((exp(g,b_1),sign((g,exp(g,b_1)),skB[]))).
+
+3. By 2, the attacker may know (exp(g,b_1),sign((g,exp(g,b_1)),skB[])).
+Using the function 1-proj-2-tuple the attacker may obtain exp(g,b_1).
+attacker(exp(g,b_1)).
+
+4. By 3, the attacker may know exp(g,b_1).
+Using the function h the attacker may obtain h(exp(g,b_1)).
+attacker(h(exp(g,b_1))).
+
+5. We assume as hypothesis that
+attacker(x_1).
+
+6. The attacker initially knows idA[].
+attacker(idA[]).
+
+7. By 6, the attacker may know idA[].
+By 5, the attacker may know x_1.
+Using the function concat the attacker may obtain concat(idA[],x_1).
+attacker(concat(idA[],x_1)).
+
+8. By 7, the attacker may know concat(idA[],x_1).
+By 4, the attacker may know h(exp(g,b_1)).
+Using the function senc the attacker may obtain senc(concat(idA[],x_1),h(exp(g,b_1))).
+attacker(senc(concat(idA[],x_1),h(exp(g,b_1)))).
+
+9. The message g that the attacker may have by 1 may be received at input {18}.
+The message senc(concat(idA[],x_1),h(exp(g,b_1))) that the attacker may have by 8 may be received at input {21}.
+So event received(x_1,g,exp(g,b_1)) may be executed at {25}.
+event(received(x_1,g,exp(g,b_1))).
+
+10. By 9, event(received(x_1,g,exp(g,b_1))).
+The goal is reached, represented in the following fact:
+event(received(x_1,g,exp(g,b_1))).
+
+
+A more detailed output of the traces is available with
+  set traceDisplay = long.
+
+new skA: skey creating skA_2 at {1}
+
+new skB: skey creating skB_2 at {2}
+
+out(c, ~M) with ~M = pk(skA_2) at {3}
+
+out(c, ~M_1) with ~M_1 = pk(skB_2) at {4}
+
+in(c, g) at {18} in copy a_1
+
+new b: exponent creating b_2 at {19} in copy a_1
+
+out(c, (~M_2,~M_3)) with ~M_2 = exp(g,b_2), ~M_3 = sign((g,exp(g,b_2)),skB_2) at {20} in copy a_1
+
+in(c, senc(concat(idA,a_2),h(~M_2))) with senc(concat(idA,a_2),h(~M_2)) = senc(concat(idA,a_2),h(exp(g,b_2))) at {21} in copy a_1
+
+event received(a_2,g,exp(g,b_2)) at {25} in copy a_1 (goal)
+
+The event received(a_2,g,exp(g,b_2)) is executed at {25} in copy a_1.
+A trace has been found.
+RESULT event(received(x_1,ga_1,gb_1)) ==> event(sent(x_1,ga_1,gb_1)) is false.
+
+--------------------------------------------------------------
+Verification summary:
+
+Query not attacker(payload[]) is true.
+
+Query event(received(x_1,ga_1,gb_1)) ==> event(sent(x_1,ga_1,gb_1)) is false.
+
+--------------------------------------------------------------
+

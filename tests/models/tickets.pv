@@ -1,0 +1,32 @@
+free c: channel.
+free prize: bitstring [private].
+
+type skey.
+type pkey.
+type nonce.
+
+fun spk(skey): pkey.
+fun sign(bitstring, skey): bitstring.
+reduc forall m: bitstring, k: skey; checksign(sign(m, k), spk(k)) = m.
+fun hsh(bitstring): bitstring.
+
+query attacker(prize).
+
+let ticketOffice(skT: skey) =
+  new serial: nonce;
+  new validity: nonce;
+  new seat: nonce;
+  out(c, sign((serial, validity, seat, hsh((serial, validity, seat)), spk(skT)), skT)).
+
+let gate(pkT: pkey) =
+  in(c, (t1: bitstring, t2: bitstring, t3: bitstring));
+  let (s1: nonce, v1: nonce, e1: nonce, h1: bitstring, =pkT) = checksign(t1, pkT) in
+  let (s2: nonce, v2: nonce, e2: nonce, h2: bitstring, =pkT) = checksign(t2, pkT) in
+  let (s3: nonce, v3: nonce, e3: nonce, h3: bitstring, =pkT) = checksign(t3, pkT) in
+  if s1 <> s2 && s2 <> s3 && s1 <> s3 then
+  out(c, (hsh((t1, t2, t3)), prize)).
+
+process
+  new skT: skey;
+  out(c, spk(skT));
+  (!ticketOffice(skT) | !gate(spk(skT)))

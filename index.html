@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>PieStudio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Draw security protocols whose blocks are lines of ProVerif, and verify them with ProVerif in the browser" />
+    <meta name="author" content="Roberto Metere" />
+    <meta name="keywords" content="ProVerif, security protocols, formal verification, applied pi calculus" />
+
+    <link rel="icon" href="img/piestudio.svg" type="image/svg+xml" />
+
+    <style type="text/css" media="all">
+      @import url("css/piestudio.css");
+    </style>
+  </head>
+<body data-mode="design">
+  <!-- Top bar -->
+  <header class="st-topbar">
+    <a class="st-brand" href="#" data-command="about" data-i18n="title" title="About PieStudio">
+      <img class="st-logo" alt="" src="img/piestudio.svg" /><span>PieStudio</span>
+    </a>
+    <span class="st-file-name st-mono" id="file-name" data-i18n="title" title="Model file">untitled.pv</span>
+
+    <nav class="st-menus">
+      <div class="dropdown">
+        <button class="btn btn-sm st-menu-button dropdown-toggle" data-bs-toggle="dropdown" type="button" data-i18n>File</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" data-i18n href="#" data-command="new"><i class="far fa-file"></i>New model</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="open"><i class="far fa-folder-open"></i>Open a model (.pv, .pp)...<kbd class="st-shortcut" data-i18n>Ctrl+O</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="save"><i class="far fa-floppy-disk"></i>Save the model (.pv)<kbd class="st-shortcut" data-i18n>Ctrl+S</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="export"><i class="fas fa-file-export"></i>Export for ProVerif...<kbd class="st-shortcut" data-i18n>Ctrl+E</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="openLibrary"><i class="fas fa-book"></i>Open a library (.pvl)...</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="exportTikz"><i class="fas fa-file-lines"></i>LaTeX of the protocol (TikZ)...</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><h6 class="dropdown-header" data-i18n>Examples</h6></li>
+          <li><ul class="list-unstyled" id="examples-menu"></ul></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-sm st-menu-button dropdown-toggle" data-bs-toggle="dropdown" type="button" data-i18n>Edit</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" data-i18n href="#" data-command="undo"><i class="fas fa-rotate-left"></i>Undo<kbd class="st-shortcut" data-i18n>Ctrl+Z</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="redo"><i class="fas fa-rotate-right"></i>Redo<kbd class="st-shortcut" data-i18n>Ctrl+Shift+Z</kbd></a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="addParty"><i class="fas fa-user-plus"></i>Add a party</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="rename"><i class="fas fa-i-cursor"></i>Rename everywhere<kbd class="st-shortcut">F2</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="refactor"><i class="fas fa-wand-magic-sparkles"></i>Refactor in the selection...<kbd class="st-shortcut" data-i18n>Shift+F2</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="restyle" data-style="cryptoverif" title="k <-R key; and x <- M;"><i class="fas fa-arrow-left-long"></i>Write new and let as in CryptoVerif</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="restyle" data-style="proverif" title="new k: key; and let x = M in"><i class="fas fa-equals"></i>Write new and let as in ProVerif</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="delete"><i class="far fa-trash-can"></i>Delete the selection<kbd class="st-shortcut" data-i18n>Del</kbd></a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="toggleAttacker"><i class="fas fa-user-secret"></i>Active or passive attacker</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-sm st-menu-button dropdown-toggle" data-bs-toggle="dropdown" type="button" data-i18n>View</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" data-i18n href="#" data-command="mode" data-mode="design"><i class="fas fa-square-root-variable"></i>Design mode (formulas)<kbd class="st-shortcut">F9</kbd></a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="mode" data-mode="expert"><i class="fas fa-code"></i>Expert mode (ProVerif)<kbd class="st-shortcut">F9</kbd></a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="view" data-view="diagram"><i class="fas fa-diagram-project"></i>Diagram</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="view" data-view="both"><i class="fas fa-table-columns"></i>Diagram and code</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="view" data-view="code"><i class="fas fa-file-code"></i>Code</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="zoomIn"><i class="fas fa-magnifying-glass-plus"></i>Zoom in</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="zoomOut"><i class="fas fa-magnifying-glass-minus"></i>Zoom out</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="zoomReset"><i class="fas fa-magnifying-glass"></i>Actual size</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="theme"><i class="fas fa-circle-half-stroke"></i>Light or dark theme</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="settings" data-tab="notation"><i class="fas fa-square-root-variable"></i>Notation...</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="settings" data-tab="theme"><i class="fas fa-palette"></i>Theme...</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="settings" data-tab="language"><i class="fas fa-language"></i>Language...</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-sm st-menu-button dropdown-toggle" data-bs-toggle="dropdown" type="button" data-i18n>Help</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" data-i18n href="docs/index.html" target="_blank" rel="noopener"><i class="fas fa-book-open"></i>User guide</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="shortcuts"><i class="far fa-keyboard"></i>Keyboard shortcuts</a></li>
+          <li><a class="dropdown-item" data-i18n href="https://bblanche.gitlabpages.inria.fr/proverif/manual.pdf" target="_blank" rel="noopener"><i class="fas fa-book"></i>ProVerif manual (online)</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="about"><i class="fas fa-circle-info"></i>About PieStudio</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="st-history-buttons">
+      <button type="button" class="btn btn-sm st-icon-button" data-command="undo" data-bs-toggle="tooltip" data-i18n="title" title="Undo (Ctrl+Z)"><i class="fas fa-rotate-left"></i></button>
+      <button type="button" class="btn btn-sm st-icon-button" data-command="redo" data-bs-toggle="tooltip" data-i18n="title" title="Redo (Ctrl+Shift+Z)"><i class="fas fa-rotate-right"></i></button>
+    </div>
+
+    <div class="st-actions">
+      <div class="btn-group btn-group-sm st-toggle" role="group" data-i18n="aria-label" aria-label="Mode">
+        <button type="button" class="btn" data-command="mode" data-mode="design" data-bs-toggle="tooltip" data-i18n="title" title="Design mode: blocks as formulas (F9)"><i class="fas fa-square-root-variable"></i><span data-i18n>Design</span></button>
+        <button type="button" class="btn" data-command="mode" data-mode="expert" data-bs-toggle="tooltip" data-i18n="title" title="Expert mode: blocks as ProVerif code (F9)"><i class="fas fa-code"></i><span data-i18n>Expert</span></button>
+      </div>
+      <div class="btn-group btn-group-sm st-toggle st-view-toggle" role="group" data-i18n="aria-label" aria-label="View">
+        <button type="button" class="btn" data-command="view" data-view="diagram" data-i18n="title" title="Diagram"><i class="fas fa-diagram-project"></i></button>
+        <button type="button" class="btn" data-command="view" data-view="both" data-i18n="title" title="Diagram and code"><i class="fas fa-table-columns"></i></button>
+        <button type="button" class="btn" data-command="view" data-view="code" data-i18n="title" title="Code"><i class="fas fa-file-code"></i></button>
+      </div>
+      <div class="btn-group btn-group-sm st-verify" role="group">
+        <button type="button" class="btn btn-primary" id="verify-button" data-command="verify" data-i18n="title" title="Verify with ProVerif 2.05 (F5)"><i class="fas fa-play"></i><span data-i18n> Verify</span></button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" data-i18n="aria-label" aria-label="Verification options"></button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" data-i18n href="#" data-command="verify"><i class="fas fa-play"></i>Verify<kbd class="st-shortcut">F5</kbd></a></li>
+          <li><a class="dropdown-item disabled" data-i18n href="#" data-command="cancel"><i class="fas fa-stop"></i>Stop the verification</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="toggleWatch"><i class="far fa-square st-check-mark"></i>Verify as I edit</a></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="report"><i class="fas fa-file-contract"></i>Report of the verification (HTML)</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" data-i18n href="#" data-command="settings" data-tab="engine"><i class="fas fa-sliders"></i>Engine settings (memory, time)...</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="st-workspace">
+    <!-- Declarations -->
+    <aside class="st-panel st-left" id="left-panel">
+      <div class="st-panel-header">
+        <span data-i18n>Declarations</span>
+        <span class="st-count" id="declarations-count">0</span>
+      </div>
+      <div class="st-filter">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="search" class="form-control form-control-sm" id="declarations-filter" data-i18n="placeholder" placeholder="Filter declarations" autocomplete="off">
+      </div>
+      <div class="st-panel-body" id="declarations"></div>
+    </aside>
+
+    <section class="st-center">
+      <div class="st-editors" id="editors" data-view="both">
+        <!-- Diagram -->
+        <div class="st-pane" id="diagram-pane">
+          <div class="st-pane-header">
+            <span class="st-pane-title" data-i18n>Diagram</span>
+            <button type="button" class="btn btn-sm st-tool" data-command="addParty" data-bs-toggle="tooltip" data-i18n="title" title="Add a party (a process macro)"><i class="fas fa-user-plus"></i></button>
+            <span class="st-spacer"></span>
+            <span class="st-attacker" id="attacker-badge" data-command="toggleAttacker"><i class="fas fa-user-secret"></i><span data-i18n>active attacker</span></span>
+            <button type="button" class="btn btn-sm st-tool" data-command="zoomOut" data-i18n="title" title="Zoom out"><i class="fas fa-magnifying-glass-minus"></i></button>
+            <button type="button" class="btn btn-sm st-tool" data-command="zoomIn" data-i18n="title" title="Zoom in"><i class="fas fa-magnifying-glass-plus"></i></button>
+          </div>
+          <div class="st-stale" id="diagram-stale" data-i18n><i class="fas fa-triangle-exclamation"></i> The code has syntax errors: the diagram and the declarations show the last version that parsed.</div>
+          <div class="st-diagram-body">
+            <div class="st-palette" id="palette"></div>
+            <div class="st-diagram" id="diagram"></div>
+          </div>
+        </div>
+
+        <!-- Code -->
+        <div class="st-pane" id="code-pane">
+          <div class="st-pane-header">
+            <span class="st-pane-title" data-i18n>Code</span>
+            <span class="st-spacer"></span>
+            <span class="st-check-status" id="check-status"></span>
+          </div>
+          <div class="st-code" id="code"></div>
+        </div>
+      </div>
+
+      <!-- Problems, results, trace, output, history -->
+      <section class="st-bottom" id="bottom">
+        <div class="st-tabs">
+          <button type="button" class="st-tab active" data-i18n data-tab="problems"><i class="fas fa-triangle-exclamation"></i> Problems <span class="st-badge"></span></button>
+          <button type="button" class="st-tab" data-i18n data-tab="results"><i class="fas fa-shield-halved"></i> Results <span class="st-badge"></span></button>
+          <button type="button" class="st-tab" data-i18n data-tab="trace"><i class="fas fa-route"></i> Attack trace</button>
+          <button type="button" class="st-tab" data-i18n data-tab="output"><i class="fas fa-terminal"></i> ProVerif output</button>
+          <button type="button" class="st-tab" data-i18n data-tab="history"><i class="fas fa-clock-rotate-left"></i> History</button>
+          <span class="st-spacer"></span>
+          <button type="button" class="btn btn-sm st-tool" data-command="toggleBottom" data-i18n="title" title="Hide or show the panel"><i class="fas fa-chevron-down"></i></button>
+        </div>
+        <div class="st-tab-panes">
+          <div class="st-tab-pane active" data-pane="problems"></div>
+          <div class="st-tab-pane" data-pane="results"></div>
+          <div class="st-tab-pane" data-pane="trace"></div>
+          <div class="st-tab-pane" data-pane="output"><pre class="st-output"></pre></div>
+          <div class="st-tab-pane" data-pane="history"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- The pop-ups -->
+  <div class="modal fade" id="st-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" data-i18n="aria-label" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+
+  <template id="about-template">
+    <div class="well" data-i18n>
+      <svg xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-label="Shield">
+        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+      </svg>
+      The model never leaves your computer.
+    </div>
+    <div class="credits-logo"></div><p data-i18n-html><b>PieStudio v2.1.32</b> is a visual editor for ProVerif models. Each block of the diagram is one construct of ProVerif's typed pi calculus; the diagram and the code are two views of the same model, and ProVerif 2.05 verifies it in your browser.</p>
+    <p class="st-muted" data-i18n>Free software: you can redistribute it and modify it under the terms of the GNU General Public License, version 2 or (at your option) any later version (COPYING). Roberto Metere.</p>
+    <p class="st-muted" data-i18n>The verifier is ProVerif 2.05 by Bruno Blanchet, Vincent Cheval and Marc Sylvestre (INRIA, CNRS), as ProVerif for WebAssembly: compiled with the OCaml 5.4 runtime to WebAssembly by Roberto Metere, and distributed under the GNU GPL v2 or later (engine/NOTICE, engine/COPYING; the OCaml runtime is under the LGPL 2.1 with the OCaml linking exception, engine/LICENSE-OCaml.txt, and the parts of Emscripten under the MIT licence, engine/LICENSE-Emscripten.txt). Studio Core, the parts that PieStudio shares with CryStudio, is by Roberto Metere under the MIT licence (studio-core/LICENSE). Bootstrap, jQuery, jQuery UI and KaTeX are under the MIT licence; Font Awesome Free under the SIL OFL (fonts) and MIT (code).</p>
+  </template>
+
+  <template id="shortcuts-template">
+    <table class="table table-sm mb-0">
+      <tbody>
+        <tr><td><kbd>F5</kbd></td><td data-i18n>Verify with ProVerif</td></tr>
+        <tr><td><kbd>F9</kbd></td><td data-i18n>Design or Expert mode</td></tr>
+        <tr><td><kbd data-i18n>Ctrl</kbd>+<kbd>Z</kbd>, <kbd data-i18n>Ctrl</kbd>+<kbd data-i18n>Shift</kbd>+<kbd>Z</kbd></td><td data-i18n>Undo, redo (no limit)</td></tr>
+        <tr><td><kbd data-i18n>Ctrl</kbd>+<kbd>O</kbd>, <kbd data-i18n>Ctrl</kbd>+<kbd>S</kbd>, <kbd data-i18n>Ctrl</kbd>+<kbd>E</kbd></td><td data-i18n>Open, save, export</td></tr>
+        <tr><td><kbd data-i18n>Enter</kbd>, <span data-i18n>double click</span></td><td data-i18n>Edit the selected block or declaration</td></tr>
+        <tr><td><kbd data-i18n>Del</kbd></td><td data-i18n>Delete the selection</td></tr>
+        <tr><td><kbd>F2</kbd></td><td data-i18n>Rename everywhere</td></tr>
+        <tr><td><kbd data-i18n>Shift</kbd>+<kbd>F2</kbd></td><td data-i18n>Refactor in the selection</td></tr>
+        <tr><td><kbd>F12</kbd>, <kbd data-i18n>Ctrl</kbd>+<span data-i18n>click</span></td><td data-i18n>Go to the declaration (in the code)</td></tr>
+        <tr><td data-i18n>Right click</td><td data-i18n>The menu of a block or a declaration</td></tr>
+      </tbody>
+    </table>
+  </template>
+
+  <div class="toast-container st-toasts" id="st-toasts"></div>
+  <input type="file" id="file-input" accept=".pv,.pp,.pvl" multiple hidden />
+  <input type="file" id="library-input" accept=".pvl" multiple hidden />
+
+  <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/katex.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Core: Studio Core, copied into studio-core/ by scripts/update-core.sh -->
+  <script src="studio-core/studio-core.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Engine: ProVerif for WebAssembly, copied from its repository by scripts/update-engine.sh -->
+  <script src="engine/ProVerifEngine.js" type="text/javascript" charset="utf-8"></script>
+  <script src="engine/ProVerifRunner.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Language -->
+  <script src="js/app/language/PvToken.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/Ast.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/CommentAttacher.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvLexer.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvParser.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvPrinter.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/Scope.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvSettings.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/MacroExpander.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/QueryChecker.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvChecker.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/Modifiers.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvExplain.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/language/PvLanguage.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Model -->
+  <script src="js/app/model/Analysis.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/ModelEditor.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/ProcessEditor.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/ExportPlanner.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/DeclSpecs.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/DiagramModel.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/Examples.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/RefactorSession.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/model/ReportWriter.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Notation -->
+  <script src="js/app/notation/LatexWriter.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/notation/TraceWriter.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Engine bridge -->
+  <script src="js/app/engine/OutputParser.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/engine/TraceMapper.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/engine/TraceNames.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/engine/LiveChecker.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Views -->
+  <script src="js/app/view/DeclarationsPanel.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/view/TraceView.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/view/BottomPanel.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/view/FormBuilder.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/view/DeclarationDialog.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/view/ActionDialog.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/view/SettingsDialog.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Controller -->
+  <script src="js/app/controller/Toolbox.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/controller/Verifier.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app/controller/PieStudio.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/piestudio.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Languages: the translations of lang/, compiled by scripts/build-i18n.js -->
+  <script src="lang/languages.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

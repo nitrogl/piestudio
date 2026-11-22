@@ -1,0 +1,36 @@
+{
+  "name": "piestudio",
+  "version": "2.1.32",
+  "private": true,
+  "description": "Draw security protocols whose blocks are lines of ProVerif, and verify them with ProVerif 2.05 in the browser",
+  "author": "Roberto Metere",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "scripts": {
+    "prebuild": "test -f studio-core/studio-core.d.ts && test -f engine/ProVerifRunner.d.ts || (echo 'studio-core/ or engine/ is empty: scripts/update-core.sh path/to/studio-core, scripts/update-engine.sh path/to/proverif-cryptoverif-wasm' && exit 1)",
+    "build": "tsc -p .",
+    "watch": "tsc -p . --watch",
+    "typecheck": "npm run build && tsc -p tsconfig.node.json",
+    "start": "npm run build && python3 -m http.server 8000",
+    "test": "npm run typecheck && node tests/check-style.ts && node tests/check-language.ts && node tests/check-model.ts && node tests/check-parser.ts && node tests/check-tools.ts && node tests/check-engine.ts && node tests/check-i18n.ts",
+    "test:ui": "npm run build && node tests/check-ui.ts",
+    "dist": "./dist.sh",
+    "examples": "npm run build && node scripts/build-examples.ts",
+    "i18n": "node scripts/build-i18n.ts",
+    "docs": "studio-core/tools/build-docs.sh"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "5.2.11",
+    "@types/jquery": "4.0.1",
+    "@types/jqueryui": "1.12.24",
+    "@types/node": "26.6.6",
+    "katex": "0.19.1",
+    "lightningcss-cli": "1.33.0",
+    "playwright": "1.56.0",
+    "terser": "5.51.2",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}

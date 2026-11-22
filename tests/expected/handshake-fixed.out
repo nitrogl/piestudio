@@ -1,0 +1,96 @@
+Process 0 (that is, the initial process):
+{1}new skA: skey;
+{2}new skB: sskey;
+{3}let pkA: pkey = pk(skA) in
+{4}out(c, pkA);
+{5}let pkB: spkey = spk(skB) in
+{6}out(c, pkB);
+(
+    {7}!
+    {8}let skA_1: skey = skA in
+    {9}out(c, pkA);
+    {10}in(c, x: bitstring);
+    {11}let y: bitstring = adec(x,skA_1) in
+    {12}let (=pkA,=pkB,k: key) = checksign(y,pkB) in
+    {13}event acceptsClient(k);
+    {14}out(c, senc(s,k));
+    {15}event termClient(k,pkA)
+) | (
+    {16}!
+    {17}let skB_1: sskey = skB in
+    {18}in(c, pkX: pkey);
+    {19}new k_1: key;
+    {20}event acceptsServer(k_1,pkX);
+    {21}out(c, aenc(sign((pkX,pkB,k_1),skB_1),pkX));
+    {22}in(c, x_1: bitstring);
+    {23}let z: bitstring = sdec(x_1,k_1) in
+    {24}if (pkX = pkA) then
+    {25}event termServer(k_1)
+)
+
+--  Process 1 (that is, process 0, with let moved downwards):
+{1}new skA: skey;
+{2}new skB: sskey;
+{3}let pkA: pkey = pk(skA) in
+{4}out(c, pkA);
+{5}let pkB: spkey = spk(skB) in
+{6}out(c, pkB);
+(
+    {7}!
+    {9}out(c, pkA);
+    {10}in(c, x: bitstring);
+    {8}let skA_1: skey = skA in
+    {11}let y: bitstring = adec(x,skA_1) in
+    {12}let (=pkA,=pkB,k: key) = checksign(y,pkB) in
+    {13}event acceptsClient(k);
+    {14}out(c, senc(s,k));
+    {15}event termClient(k,pkA)
+) | (
+    {16}!
+    {18}in(c, pkX: pkey);
+    {19}new k_1: key;
+    {20}event acceptsServer(k_1,pkX);
+    {17}let skB_1: sskey = skB in
+    {21}out(c, aenc(sign((pkX,pkB,k_1),skB_1),pkX));
+    {22}in(c, x_1: bitstring);
+    {23}let z: bitstring = sdec(x_1,k_1) in
+    {24}if (pkX = pkA) then
+    {25}event termServer(k_1)
+)
+
+-- Query not attacker(s[]) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query not attacker(s[])
+RESULT not attacker(s[]) is true.
+-- Query event(termClient(x_2,y_1)) ==> event(acceptsServer(x_2,y_1)) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query event(termClient(x_2,y_1)) ==> event(acceptsServer(x_2,y_1))
+goal reachable: b-event(acceptsServer(k_2,pk(skA[]))) -> event(termClient(k_2,pk(skA[])))
+Abbreviations:
+k_2 = k_1[pkX = pk(skA[]),!1 = @sid]
+RESULT event(termClient(x_2,y_1)) ==> event(acceptsServer(x_2,y_1)) is true.
+-- Query inj-event(termServer(x_2)) ==> inj-event(acceptsClient(x_2)) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query inj-event(termServer(x_2)) ==> inj-event(acceptsClient(x_2))
+goal reachable: b-inj-event(acceptsClient(k_2),@occ13_1) -> inj-event(termServer(k_2),@occ25_1)
+The hypothesis occurs strictly before the conclusion.
+Abbreviations:
+k_2 = k_1[pkX = pk(skA[]),!1 = @sid]
+@occ25_1 = @occ25[x_1 = senc(s[],k_2),pkX = pk(skA[]),!1 = @sid]
+@occ13_1 = @occ13[x = aenc(sign((pk(skA[]),spk(skB[]),k_2),skB[]),pk(skA[])),!1 = @sid_1]
+RESULT inj-event(termServer(x_2)) ==> inj-event(acceptsClient(x_2)) is true.
+
+--------------------------------------------------------------
+Verification summary:
+
+Query not attacker(s[]) is true.
+
+Query event(termClient(x_2,y_1)) ==> event(acceptsServer(x_2,y_1)) is true.
+
+Query inj-event(termServer(x_2)) ==> inj-event(acceptsClient(x_2)) is true.
+
+--------------------------------------------------------------
+

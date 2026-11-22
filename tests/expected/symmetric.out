@@ -1,0 +1,86 @@
+Process 0 (that is, the initial process):
+(
+    {1}!
+    {2}let k: key = kAB in
+    {3}let me: host = A in
+    {4}let peer: host = B in
+    {5}new n: nonce;
+    {6}out(c, (me,n));
+    {7}in(c, (=peer,m: nonce));
+    {8}event running(me,peer,n,m);
+    {9}out(c, mac((me,n,m),k));
+    {10}in(c, t: bitstring);
+    {11}if (t = mac((peer,m,n),k)) then
+    {12}event commit(me,peer,n,m)
+) | (
+    {13}!
+    {14}let k_1: key = kAB in
+    {15}let me_1: host = B in
+    {16}let peer_1: host = A in
+    {17}new n_1: nonce;
+    {18}out(c, (me_1,n_1));
+    {19}in(c, (=peer_1,m_1: nonce));
+    {20}event running(me_1,peer_1,n_1,m_1);
+    {21}out(c, mac((me_1,n_1,m_1),k_1));
+    {22}in(c, t_1: bitstring);
+    {23}if (t_1 = mac((peer_1,m_1,n_1),k_1)) then
+    {24}event commit(me_1,peer_1,n_1,m_1)
+)
+
+--  Process 1 (that is, process 0, with let moved downwards):
+(
+    {1}!
+    {5}new n: nonce;
+    {3}let me: host = A in
+    {6}out(c, (me,n));
+    {4}let peer: host = B in
+    {7}in(c, (=peer,m: nonce));
+    {8}event running(me,peer,n,m);
+    {2}let k: key = kAB in
+    {9}out(c, mac((me,n,m),k));
+    {10}in(c, t: bitstring);
+    {11}if (t = mac((peer,m,n),k)) then
+    {12}event commit(me,peer,n,m)
+) | (
+    {13}!
+    {17}new n_1: nonce;
+    {15}let me_1: host = B in
+    {18}out(c, (me_1,n_1));
+    {16}let peer_1: host = A in
+    {19}in(c, (=peer_1,m_1: nonce));
+    {20}event running(me_1,peer_1,n_1,m_1);
+    {14}let k_1: key = kAB in
+    {21}out(c, mac((me_1,n_1,m_1),k_1));
+    {22}in(c, t_1: bitstring);
+    {23}if (t_1 = mac((peer_1,m_1,n_1),k_1)) then
+    {24}event commit(me_1,peer_1,n_1,m_1)
+)
+
+-- Query not attacker(kAB[]) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query not attacker(kAB[])
+RESULT not attacker(kAB[]) is true.
+-- Query event(commit(a,b,x,y)) ==> event(running(b,a,y,x)) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query event(commit(a,b,x,y)) ==> event(running(b,a,y,x))
+goal reachable: b-event(running(A[],B[],n_2,n_3)) && b-event(running(B[],A[],n_3,n_2)) -> event(commit(B[],A[],n_3,n_2))
+Abbreviations:
+n_3 = n_1[!1 = @sid]
+n_2 = n[!1 = @sid_1]
+goal reachable: b-event(running(B[],A[],n_2,n_3)) && b-event(running(A[],B[],n_3,n_2)) -> event(commit(A[],B[],n_3,n_2))
+Abbreviations:
+n_3 = n[!1 = @sid]
+n_2 = n_1[!1 = @sid_1]
+RESULT event(commit(a,b,x,y)) ==> event(running(b,a,y,x)) is true.
+
+--------------------------------------------------------------
+Verification summary:
+
+Query not attacker(kAB[]) is true.
+
+Query event(commit(a,b,x,y)) ==> event(running(b,a,y,x)) is true.
+
+--------------------------------------------------------------
+

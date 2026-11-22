@@ -1,0 +1,42 @@
+(* Key confirmation between two devices that share a long-term key.
+   Both devices run the same role, so the diagram shows the role once and
+   its mirrored copy in grey: each output of one is the matching input of
+   the other. The MAC names both devices, so the attacker cannot reflect a
+   device's own message back to it: all the goals hold. To see the
+   reflection attack, take the names out of both MACs (mac((n, m), k) and
+   mac((m, n), k)) and verify again. *)
+
+free c: channel.
+
+type host.
+type nonce.
+type key.
+
+(* @notation '\mathsf{mac}_{#2}(#1)' *)
+fun mac(bitstring, key): bitstring.
+
+free A, B: host.
+free kAB: key [private].
+
+event running(host, host, nonce, nonce).
+event commit(host, host, nonce, nonce).
+
+(* @label 'kAB stays secret' *)
+query attacker(kAB).
+(* @label 'agreement on both nonces' *)
+query a: host, b: host, x: nonce, y: nonce; event(commit(a, b, x, y)) ==> event(running(b, a, y, x)).
+
+(* @label 'Paired device'
+   @symmetric *)
+let Device(k: key, me: host, peer: host) =
+  new n: nonce;
+  out(c, (me, n));
+  in(c, (=peer, m: nonce));
+  event running(me, peer, n, m);
+  out(c, mac((me, n, m), k));
+  in(c, t: bitstring);
+  if t = mac((peer, m, n), k) then
+  event commit(me, peer, n, m).
+
+process
+  ( !Device(kAB, A, B) | !Device(kAB, B, A) )

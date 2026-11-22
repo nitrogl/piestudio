@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="piestuio.svg"
+   inkscape:version="1.4.4 (1:1.4.4+202605061435+dcaf3e7d9e)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.5456291"
+     inkscape:cx="-29.114359"
+     inkscape:cy="55.640775"
+     inkscape:window-width="1742"
+     inkscape:window-height="927"
+     inkscape:window-x="44"
+     inkscape:window-y="7"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer3" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="PieStudio back"
+     style="display:inline">
+    <rect
+       style="fill:#f0ffbc;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:21.4;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="rect15"
+       width="64"
+       height="64"
+       x="9.2387199e-07"
+       y="9.2387199e-07"
+       ry="9.4044828" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g11"
+     inkscape:label="PieStudio logo"
+     style="display:inline">
+    <circle
+       style="fill:#f0ffbc;fill-opacity:1;stroke:#90a700;stroke-width:3.25211;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:21.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="circle8"
+       cx="17.084761"
+       cy="34.455944"
+       r="10.242879" />
+    <path
+       id="path11"
+       style="fill:#f0ffbc;fill-opacity:1;stroke:#90a700;stroke-width:3.25211;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:21.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 38.938121,27.537054 -8.5954,21.291019 16.626837,3.238659 13.000566,-10.665714 z" />
+    <path
+       id="path8"
+       style="fill:#f0ffbc;fill-opacity:1;stroke:#90a700;stroke-width:3.25211;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:21.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 13.431354,14.511637 0.054,7.830967 6.242263,6.461001 27.751165,0.289404 2.010346,-9.971036 -24.21184,-4.989483 z"
+       sodipodi:nodetypes="ccccccc" />
+  </g>
+</svg>

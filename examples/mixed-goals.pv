@@ -1,0 +1,30 @@
+(* A model with goals ProVerif cannot verify in one run:
+   a reachability query (secrecy of the key) and strong secrecy of the
+   vote (a biprocess with choice).  Export it as several files to verify
+   each goal separately. *)
+
+free c: channel.
+type key.
+fun senc(bitstring, key): bitstring.
+reduc forall m: bitstring, k: key; sdec(senc(m, k), k) = m.
+fun h(bitstring): bitstring.
+
+free yes, no: bitstring.
+free voterKey: key [private].
+event voted(bitstring).
+
+query attacker(voterKey).
+query v: bitstring; event(voted(v)).
+
+let Voter(k: key, v: bitstring) =
+  new r: bitstring;
+  event voted(v);
+  out(c, senc((v, r), k)).
+
+let Authority(k: key) =
+  in(c, x: bitstring);
+  let (v: bitstring, r: bitstring) = sdec(x, k) in
+  out(c, h(r)).
+
+process
+  ( !Voter(voterKey, choice[yes, no]) | !Authority(voterKey) )

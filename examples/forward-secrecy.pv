@@ -1,0 +1,60 @@
+(* Forward secrecy with phases: the long-term key leaks in phase 1.
+   A session key encrypted under the long-term key is not forward secret;
+   a Diffie-Hellman key signed with the long-term key is. *)
+
+free c: channel.
+
+type G.
+type exponent.
+type sskey.
+type spkey.
+type key.
+
+const g: G [data].
+fun exp(G, exponent): G.
+equation forall x: exponent, y: exponent; exp(exp(g, x), y) = exp(exp(g, y), x).
+fun G2key(G): key [typeConverter].
+
+fun spk(sskey): spkey.
+fun sign(bitstring, sskey): bitstring.
+reduc forall m: bitstring, k: sskey; checksign(sign(m, k), spk(k)) = m.
+
+fun senc(bitstring, key): bitstring.
+reduc forall m: bitstring, k: key; sdec(senc(m, k), k) = m.
+
+fun G2b(G): bitstring [data, typeConverter].
+
+free secretA: bitstring [private].
+
+query attacker(secretA) phase 1.
+
+table done(G).
+
+let initiator(skA: sskey, pkB: spkey) =
+  new x: exponent;
+  out(c, sign(G2b(exp(g, x)), skA));
+  in(c, m: bitstring);
+  let G2b(gy) = checksign(m, pkB) in
+  let k = G2key(exp(gy, x)) in
+  insert done(exp(g, x));
+  out(c, senc(secretA, k)).
+
+let responder(skB: sskey, pkA: spkey) =
+  in(c, m: bitstring);
+  let G2b(gx) = checksign(m, pkA) in
+  new y: exponent;
+  out(c, sign(G2b(exp(g, y)), skB)).
+
+process
+  new skA: sskey;
+  new skB: sskey;
+  out(c, spk(skA));
+  out(c, spk(skB));
+  (
+    !initiator(skA, spk(skB))
+  ) | (
+    !responder(skB, spk(skA))
+  ) | (
+    phase 1;
+    out(c, (skA, skB))
+  )

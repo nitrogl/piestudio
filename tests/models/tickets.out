@@ -1,0 +1,135 @@
+Process 0 (that is, the initial process):
+{1}new skT: skey;
+{2}out(c, spk(skT));
+(
+    {3}!
+    {4}let skT_1: skey = skT in
+    {5}new serial: nonce;
+    {6}new validity: nonce;
+    {7}new seat: nonce;
+    {8}out(c, sign((serial,validity,seat,hsh((serial,validity,seat)),spk(skT_1)),skT_1))
+) | (
+    {9}!
+    {10}let pkT: pkey = spk(skT) in
+    {11}in(c, (t1: bitstring,t2: bitstring,t3: bitstring));
+    {12}let (s1: nonce,v1: nonce,e1: nonce,h1: bitstring,=pkT) = checksign(t1,pkT) in
+    {13}let (s2: nonce,v2: nonce,e2: nonce,h2: bitstring,=pkT) = checksign(t2,pkT) in
+    {14}let (s3: nonce,v3: nonce,e3: nonce,h3: bitstring,=pkT) = checksign(t3,pkT) in
+    {15}if ((s1 ≠ s2) && ((s2 ≠ s3) && (s1 ≠ s3))) then
+    {16}out(c, (hsh((t1,t2,t3)),prize))
+)
+
+--  Process 1 (that is, process 0, with let moved downwards):
+{1}new skT: skey;
+{2}out(c, spk(skT));
+(
+    {3}!
+    {5}new serial: nonce;
+    {6}new validity: nonce;
+    {7}new seat: nonce;
+    {4}let skT_1: skey = skT in
+    {8}out(c, sign((serial,validity,seat,hsh((serial,validity,seat)),spk(skT_1)),skT_1))
+) | (
+    {9}!
+    {11}in(c, (t1: bitstring,t2: bitstring,t3: bitstring));
+    {10}let pkT: pkey = spk(skT) in
+    {12}let (s1: nonce,v1: nonce,e1: nonce,h1: bitstring,=pkT) = checksign(t1,pkT) in
+    {13}let (s2: nonce,v2: nonce,e2: nonce,h2: bitstring,=pkT) = checksign(t2,pkT) in
+    {14}let (s3: nonce,v3: nonce,e3: nonce,h3: bitstring,=pkT) = checksign(t3,pkT) in
+    {15}if ((s1 ≠ s2) && ((s2 ≠ s3) && (s1 ≠ s3))) then
+    {16}out(c, (hsh((t1,t2,t3)),prize))
+)
+
+-- Query not attacker(prize[]) in process 1.
+Translating the process into Horn clauses...
+Completing...
+Starting query not attacker(prize[])
+goal reachable: attacker(prize[])
+
+Derivation:
+Abbreviations:
+serial_1 = serial[!1 = @sid]
+validity_1 = validity[!1 = @sid]
+seat_1 = seat[!1 = @sid]
+serial_2 = serial[!1 = @sid_1]
+validity_2 = validity[!1 = @sid_1]
+seat_2 = seat[!1 = @sid_1]
+serial_3 = serial[!1 = @sid_2]
+validity_3 = validity[!1 = @sid_2]
+seat_3 = seat[!1 = @sid_2]
+
+1. The message sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[]) may be sent to the attacker at output {8}.
+attacker(sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[])).
+
+2. The message sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]) may be sent to the attacker at output {8}.
+attacker(sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[])).
+
+3. The message sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]) may be sent to the attacker at output {8}.
+attacker(sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[])).
+
+4. By 3, the attacker may know sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]).
+By 2, the attacker may know sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]).
+By 1, the attacker may know sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[]).
+Using the function 3-tuple the attacker may obtain (sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]),sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]),sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[])).
+attacker((sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]),sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]),sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[]))).
+
+5. The message (sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]),sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]),sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[])) that the attacker may have by 4 may be received at input {11}.
+We have serial_1 ≠ serial_3 && serial_2 ≠ serial_3 && serial_1 ≠ serial_2.
+So the message (hsh((sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]),sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]),sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[]))),prize[]) may be sent to the attacker at output {16}.
+attacker((hsh((sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]),sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]),sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[]))),prize[])).
+
+6. By 5, the attacker may know (hsh((sign((serial_1,validity_1,seat_1,hsh((serial_1,validity_1,seat_1)),spk(skT[])),skT[]),sign((serial_2,validity_2,seat_2,hsh((serial_2,validity_2,seat_2)),spk(skT[])),skT[]),sign((serial_3,validity_3,seat_3,hsh((serial_3,validity_3,seat_3)),spk(skT[])),skT[]))),prize[]).
+Using the function 2-proj-2-tuple the attacker may obtain prize[].
+attacker(prize[]).
+
+7. By 6, attacker(prize[]).
+The goal is reached, represented in the following fact:
+attacker(prize[]).
+
+
+A more detailed output of the traces is available with
+  set traceDisplay = long.
+
+new skT: skey creating skT_2 at {1}
+
+out(c, ~M) with ~M = spk(skT_2) at {2}
+
+new serial: nonce creating serial_4 at {5} in copy a
+
+new validity: nonce creating validity_4 at {6} in copy a
+
+new seat: nonce creating seat_4 at {7} in copy a
+
+out(c, ~M_1) with ~M_1 = sign((serial_4,validity_4,seat_4,hsh((serial_4,validity_4,seat_4)),spk(skT_2)),skT_2) at {8} in copy a
+
+new serial: nonce creating serial_5 at {5} in copy a_1
+
+new validity: nonce creating validity_5 at {6} in copy a_1
+
+new seat: nonce creating seat_5 at {7} in copy a_1
+
+out(c, ~M_2) with ~M_2 = sign((serial_5,validity_5,seat_5,hsh((serial_5,validity_5,seat_5)),spk(skT_2)),skT_2) at {8} in copy a_1
+
+new serial: nonce creating serial_6 at {5} in copy a_2
+
+new validity: nonce creating validity_6 at {6} in copy a_2
+
+new seat: nonce creating seat_6 at {7} in copy a_2
+
+out(c, ~M_3) with ~M_3 = sign((serial_6,validity_6,seat_6,hsh((serial_6,validity_6,seat_6)),spk(skT_2)),skT_2) at {8} in copy a_2
+
+in(c, (~M_3,~M_2,~M_1)) with ~M_3 = sign((serial_6,validity_6,seat_6,hsh((serial_6,validity_6,seat_6)),spk(skT_2)),skT_2), ~M_2 = sign((serial_5,validity_5,seat_5,hsh((serial_5,validity_5,seat_5)),spk(skT_2)),skT_2), ~M_1 = sign((serial_4,validity_4,seat_4,hsh((serial_4,validity_4,seat_4)),spk(skT_2)),skT_2) at {11} in copy a_3
+
+out(c, (~M_4,~M_5)) with ~M_4 = hsh((sign((serial_6,validity_6,seat_6,hsh((serial_6,validity_6,seat_6)),spk(skT_2)),skT_2),sign((serial_5,validity_5,seat_5,hsh((serial_5,validity_5,seat_5)),spk(skT_2)),skT_2),sign((serial_4,validity_4,seat_4,hsh((serial_4,validity_4,seat_4)),spk(skT_2)),skT_2))), ~M_5 = prize at {16} in copy a_3
+
+The attacker has the message ~M_5 = prize.
+A trace has been found.
+RESULT not attacker(prize[]) is false.
+
+--------------------------------------------------------------
+Verification summary:
+
+Query not attacker(prize[]) is false.
+
+--------------------------------------------------------------
+

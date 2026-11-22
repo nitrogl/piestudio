@@ -6,7 +6,7 @@
 
 A visual editor for [ProVerif](https://bblanche.gitlabpages.inria.fr/proverif/) models, running entirely in the browser. You draw a protocol as parties (lanes) and blocks, and each block is one construct of ProVerif's typed pi calculus, one line of the `.pv` file. The diagram, the declarations and the code are three views of the same text, so editing any one of them updates the others. Verification uses ProVerif 2.05, compiled to WebAssembly ([ProVerif and CryptoVerif for WebAssembly](https://github.com/nitrogl/proverif-cryptoverif-wasm)), with a memory budget you choose.
 
-**[Open PieStudio](https://nitrogl.github.io/piestudio/)** &middot; [User guide](https://nitrogl.github.io/piestudio/docs/) (also in [docs/](docs/index.md), and in Help, User guide) &middot; [The ProVerif manual](https://nitrogl.github.io/proverif-cryptoverif-wasm/docs/manuals/proverif/)
+**[Open PieStudio](https://www-users.york.ac.uk/roberto.metere/piestudio/)** &middot; I started the task to convert the [The ProVerif manual](https://bblanche.gitlabpages.inria.fr/proverif/manual.pdf) into a web-manual. I already started off with automated tools, but I still need more time to curate the content yet (not even sure it's complete). The aim is to reformat the original manual to make it more accessible to students with additional requirements.
 
 ![PieStudio with the Handshake example](docs/images/main.png)
 
@@ -20,8 +20,6 @@ PieStudio is free software under the GNU General Public License, version 2 or la
 - **Code editor.** Highlighting, errors as you type from a port of ProVerif's own checker and from ProVerif itself in the background, go to the declaration (F12), rename everywhere (F2), refactor in a selection (Shift+F2).
 - **Verification (F5).** Results per goal, attack traces drawn as message sequence charts linked to the blocks and the code, the output of ProVerif, goals that need several runs verified in parallel, a memory budget from 64 MB to 4 GB, a report in HTML.
 - **Files.** `.pv` models with their `.pp` hints, `.pvl` libraries (which a model names with `@library`, and which you can edit), export for ProVerif (split when it must be), the LaTeX of the protocol as a TikZ chart, and undo and redo with no limit; the model is kept in the browser.
-
-The [user guide](docs/index.md) explains it all, with pictures.
 
 ## Running it
 

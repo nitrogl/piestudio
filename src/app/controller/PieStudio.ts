@@ -733,27 +733,38 @@ class PieStudio {
         handles: "e"
       , minWidth: 190
       , maxWidth: 520
+      , resize: (event, ui) => StudioCore.resizing(ui)
       , stop: (event, ui) => remember("left", ui.size.width)
     });
+    const share = part => Math.min(0.85, Math.max(0.15, part));
+    const split = part => $("#diagram-pane").css({ flex: "0 0 " + (100*part).toFixed(2) + "%", width: "" });
     $("#diagram-pane").resizable({
         handles: "e"
       , minWidth: 260
       , start: () => $("#diagram-pane").css("flex", "none")
-      , resize: () => this.diagram.drawArrows()
+      , resize: (event, ui) => {
+          StudioCore.resizing(ui);
+          this.diagram.drawArrows();
+        }
       , stop: (event, ui) => {
-          remember("diagram", ui.size.width);
+          const part = share(ui.size.width/$("#editors").width());
+          split(part);
+          remember("split", part);
           this.diagram.drawArrows();
         }
     });
-    const diagramWidth = PieStudio.loadPreference("size.diagram", null);
-    if (diagramWidth) {
-      $("#diagram-pane").css({ flex: "none", width: diagramWidth });
+    const editors = $("#editors").width();
+    const pixels = PieStudio.loadPreference("size.diagram", null);
+    const part = PieStudio.loadPreference("size.split", pixels && editors ? share(pixels/editors) : null);
+    if (part) {
+      split(part);
     }
     $("#bottom").css("height", PieStudio.loadPreference("size.bottom", 230)).resizable({
         handles: "n"
       , minHeight: 90
       , maxHeight: 700
       , resize: (event, ui) => {
+          StudioCore.resizing(ui);
           // The panel grows upwards: it stays at the bottom of the page
           ui.element.css("top", "auto");
         }

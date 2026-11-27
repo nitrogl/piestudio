@@ -259,6 +259,7 @@ class DeclarationsPanel {
       , axis: "y"
       , distance: 6
       , placeholder: "st-decl-placeholder"
+      , sort: (event, ui) => StudioCore.sorting(ui, "y")
       , stop: (event, ui) => {
           const from = Number(ui.item.attr("data-index"));
           const $next = ui.item.next(".st-decl");

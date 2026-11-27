@@ -156,9 +156,11 @@ class FormBuilder {
       case "text":
       case "goalOptions":
         return $group.append(label(), this.input(field.key, value, { placeholder: field.placeholder, list: field.list, kind: field.kind }), hint());
+
       case "type":
       case "types":
         return $group.append(label(), this.input(field.key, value, { placeholder: field.placeholder, list: "types", kind: field.kind }), hint());
+
       case "vars": {
         const $line = $("<div class=\"input-group input-group-sm\"></div>").append(this.input(field.key, value, { placeholder: field.placeholder }));
         if (field.infer) {
@@ -167,9 +169,11 @@ class FormBuilder {
         }
         return $group.append(label(), $line, hint());
       }
+
       case "term":
         return $group.append(label(), $("<textarea class=\"form-control form-control-sm st-mono\" spellcheck=\"false\"></textarea>")
           .attr({ "data-key": field.key, rows: field.multiline ? 3 : 1, placeholder: field.placeholder || "" }).val(value || ""), hint());
+
       case "check": {
         const $check = $("<label class=\"st-check\" title=\"\"></label>").attr("title", field.hint ? I18n.t(field.hint) : "");
         $check.append($("<input type=\"checkbox\" class=\"form-check-input\">").attr("data-key", field.key).prop("checked", !!value));
@@ -179,23 +183,31 @@ class FormBuilder {
         }
         return $check;
       }
+
       case "select": {
         const $select = $("<select class=\"form-select form-select-sm\"></select>").attr("data-key", field.key);
         field.options.forEach(option => $select.append($("<option></option>").text(option).prop("selected", option === value)));
         return $group.append(label(), $select, hint());
       }
+
       case "setting":
         return $group.append(label(), this.settingSelect(field.key, value));
+
       case "settingValue":
         return $group.append(label(), this.settingValue(field.key, value));
+
       case "notation":
         return this.notationElement(field);
+
       case "rules":
         return this.rowsElement(field, ["forall", "lhs", "rhs"], ["x: bitstring", "sdec(senc(x, k), k)", "x"], field.eq ? "=" : "\u2192");
+
       case "queries":
         return this.rowsElement(field, ["q"], ["event(end(x)) ==> event(begin(x))"], null);
+
       case "items":
         return this.rowsElement(field, ["name", "among"], ["secret", I18n.t("any value (empty)")], "among");
+
       default:
         return $group.append(label(), this.input(field.key, value, {}));
     }

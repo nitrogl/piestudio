@@ -102,7 +102,7 @@ class SettingsDialog {
       , size: "lg"
       , buttons: [
             { label: I18n.t("Cancel"), style: "secondary", value: null }
-          , { label: I18n.t("Save"), style: "primary", action: () => ({ ...this.collect(panes.engine, panes.notation), theme: edited, explain: panes.theme.find("[data-key=explain]").prop("checked"), language: language.collect() }) }
+          , { label: I18n.t("Save"), style: "primary", action: () => ({ ...this.collect(panes.engine, panes.notation, { settings: params.settings }), theme: edited, explain: panes.theme.find("[data-key=explain]").prop("checked"), language: language.collect() }) }
         ]
     }).then(answer => {
       if (!answer) {
@@ -278,15 +278,21 @@ class SettingsDialog {
    *
    * @param {jQuery} $engine The form of the engine.
    * @param {jQuery} $notation The form of the notation.
+   * @param {Object} current What the form showed: {settings}, the engine
+   *   settings.
    * @return {Object} The engine settings, the conventions and the style of
    *   the code.
    */
-  collect($engine: JQuery, $notation: JQuery) {
+  collect($engine: JQuery, $notation: JQuery, current: { settings: EngineSettings }) {
+    const field = (key: string, kept: any) => {
+      const $field = $engine.find("[data-key=\"" + key + "\"]");
+      return !$field.length ? kept : $field.is(":checkbox") ? $field.prop("checked") : $field.val();
+    };
     const settings = new EngineSettings({
-        maxMemoryMB: Number($engine.find("[data-key=\"maxMemoryMB\"]").val())
-      , timeoutSeconds: Number($engine.find("[data-key=\"timeoutSeconds\"]").val())
-      , extraArgs: String($engine.find("[data-key=\"extraArgs\"]").val())
-      , liveChecks: $engine.find("[data-key=\"liveChecks\"]").prop("checked")
+        maxMemoryMB: Number(field("maxMemoryMB", current.settings.maxMemoryMB))
+      , timeoutSeconds: Number(field("timeoutSeconds", current.settings.timeoutSeconds))
+      , extraArgs: String(field("extraArgs", current.settings.extraArgs))
+      , liveChecks: field("liveChecks", current.settings.liveChecks)
     });
     const overrides = {};
     $notation.find("[data-convention]").each(function() {

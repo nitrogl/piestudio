@@ -335,10 +335,11 @@ class TraceView {
     const box = row.getBoundingClientRect();
     const frame = scroller.getBoundingClientRect();
     const top = heads ? heads.getBoundingClientRect().bottom : frame.top;
+    const zoom = StudioCore.zoom();
     if (box.top < top) {
-      scroller.scrollTop -= top - box.top + 8;
+      scroller.scrollTop -= (top - box.top)/zoom + 8;
     } else if (box.bottom > frame.bottom) {
-      scroller.scrollTop += box.bottom - frame.bottom + 8;
+      scroller.scrollTop += (box.bottom - frame.bottom)/zoom + 8;
     }
   }
 }

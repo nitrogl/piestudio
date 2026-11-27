@@ -149,23 +149,29 @@ class DeclarationDialog {
         case "TypeDecl":
           lists.types.push(decl.name.name);
           break;
+
         case "EventDecl":
           lists.events.push(decl.name.name);
           break;
+
         case "TableDecl":
           lists.tables.push(decl.name.name);
           break;
+
         case "ProcessDecl":
           lists.processes.push(decl.name.name);
           break;
+
         case "FunDecl":
         case "LetFunDecl":
           lists.functions.push(decl.name.name);
           break;
+
         case "FreeDecl":
         case "ConstDecl":
           decl.names.forEach(name => lists.names.push(name.name));
           break;
+
         default:
           break;
       }
